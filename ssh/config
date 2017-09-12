@@ -1,0 +1,36 @@
+# Fedora infrastructure
+Host bastion.fedoraproject.org
+  User jflory7
+  ProxyCommand none
+  ForwardAgent no
+Host *.phx2.fedoraproject.org *.qa.fedoraproject.org 10.5.125.* 10.5.126.* 10.5.127.* *.vpn.fedoraproject.org
+  User jflory7
+  ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
+Host fedorahosted.org *.fedorahosted.org
+  User jflory7
+
+# Personal infrastructure
+Host arguru
+  HostName arguru.justinwflory.com
+  User jflory
+Host argurumc
+  HostName arguru.justinwflory.com
+  User minecraft
+Host bryn
+  HostName bryn.justinwflory.com
+  User jflory
+Host cortana
+  HostName cortana.justinwflory.com
+  User jflory
+Host derezzed
+  HostName derezzed.justinwflory.com
+  User jflory
+Host ritlugirc
+  HostName irc-lug.rit.edu
+  User shared
+Host banjo
+  HostName banjo.rit.edu
+  User jwf9260
+Host serenity
+  HostName serenity.ist.rit.edu
+  User jwf9260
