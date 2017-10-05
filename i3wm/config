@@ -192,7 +192,7 @@ exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelt
 # ===== Start-up applications =====
 
 # Set a pretty wallpaper with feh
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/into-alley-dubrovnik.JPG
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 
 # Start the Xfce Power Manager (for low battery notifications)
 exec xfce4-power-manager
