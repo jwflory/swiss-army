@@ -1,0 +1,13 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+export CLASSPATH=.:/home/jflory/.local/bin/mysql-connector-java-5.1.39-bin.jar:/home/jflory/.local/bin/sqljdbc42.jar
+export GOPATH=$HOME/wkspc/go
+export JGRASP_HOME=/opt/jgrasp
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$(go env GOPATH)/bin

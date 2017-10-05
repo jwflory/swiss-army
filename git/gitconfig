@@ -1,0 +1,10 @@
+[user]
+	name = Justin W. Flory
+	email = git@jwf.io
+	signingkey = 39E45FB6014131E4
+[push]
+	default = simple
+[sendemail]
+	smtpencryption = tls
+[commit]
+	gpgsign = true

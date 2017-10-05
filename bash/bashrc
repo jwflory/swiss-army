@@ -1,0 +1,39 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+
+# Powerline configuration
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
+
+# Aliases
+alias lsa='ls -Alh'
+
+# Aliases: Servers
+alias arguru='mosh -p 60597 jflory@arguru.justinwflory.com'
+alias argurumc='mosh -p 60597 minecraft@arguru.justinwflory.com'
+alias bryn='mosh -p 60597 jflory@bryn.justinwflory.com'
+alias cortana='mosh -p 60597 jflory@cortana.justinwflory.com'
+alias derezzed='mosh -p 60597 jflory@derezzed.justinwflory.com'
+alias tron='mosh -p 60597 jflory@tron.student.rit.edu'
+alias ritlugirc='mosh -p 60001 shared@irc-lug.rit.edu'
+
+## TaskWarrior configuration
+alias t='task'
+alias ts='task sync'
+source ~/.bash_completion.d/task.sh
+
+# added by travis gem
+[ -f /home/jflory/.travis/travis.sh ] && source /home/jflory/.travis/travis.sh
