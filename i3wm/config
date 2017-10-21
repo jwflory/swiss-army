@@ -169,16 +169,16 @@ exec --no-startup-id setxkbmap -option "compose:ralt"
 # Function key config: https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
 
 # PulseAudio controls
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ unmute        # increase volume
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- unmute        # decrease volume
-bindsym XF86AudioMute exec amixer -D pulse set Master toggle                   # mute volume
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ unmute    # increase volume
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- unmute    # decrease volume
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle               # mute volume
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10                            # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10                          # decrease screen brightness
+bindsym XF86MonBrightnessUp exec sudo brightlight -p --increment 10        # increase screen brightness
+bindsym XF86MonBrightnessDown exec sudo brightlight -p --decrement 10      # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh                   # toggle touchpad
+bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh               # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
