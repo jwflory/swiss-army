@@ -1,25 +1,51 @@
 " Enable pathogen for plugin management
 execute pathogen#infect()
 
+
+" === Powerline configuration===
 set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
+
+" === Theming ===
+colorscheme slate
+set background=dark " Use a dark background
+
+
+" === Editor preferences ===
 syntax on
 filetype plugin indent on
+set cursorline      " Add line beneath cursor
+set mouse=a         " Enable mouse support
+set noshowmode      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set number          " Turn on line numbers
 
-set laststatus=2  " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode    " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set t_Co=256      " Set terminal color support to 256 colors (for Powerline)
-set tabstop=4     " Show existing tab with four spaces width
-set shiftwidth=4  " When indenting with '>', use four spaces width
-set expandtab     " On pressing tab, insert four spaces
 
-" Play nice with YAML
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+" === Encoding / color support ===
+set encoding=utf-8  " Force encoding to UTF-8 compliance
+set laststatus=2    " Always display the statusline in all windows
+set t_Co=256        " Set terminal color support to 256 colors (for Powerline)
 
-" filenames like *.xml, *.html, *.xhtml, *.shtml...
-" Then after you press <kbd>&gt;</kbd> in these files, this plugin will try to close the current tag.
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.shtml'
+
+" === Indentation preferences ===
+set expandtab       " On pressing tab, insert four spaces
+set shiftwidth=4    " When indenting with '>', use four spaces width
+set showtabline=2   " Always display the tabline, even if there is only one tab
+set tabstop=4       " Show existing tab with four spaces width
+
+
+" === Text formatting preferences ===
+set textwidth=80
+set colorcolumn=81
+set wrapscan
+
+
+" === Custom file preferences===
+autocmd FileType rst setlocal ts=3 sts=3 sw=3 expandtab     " reStructuredText
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab    " YAML
+
+
+" === Plugin configuration ===
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.shtml' " vim-closetags
