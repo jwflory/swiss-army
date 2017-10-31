@@ -78,7 +78,7 @@ ln -s $CONF_DIR/ssh/config $HOME/.ssh/config
 if [ -f "$HOME/.taskrc" ]; then
     rm $HOME/.taskrc
 fi
-ln -s $CONF_DIR/taskwarrior/taskrc $HOME/.taskrc
+ln -s $CONF_DIR/taskwarrior/taskrc.fedora $HOME/.taskrc
 
 if [ ! -d "$HOME/.bash_completion.d" ]; then
     mkdir -p $HOME/.bash_completion.d

@@ -13,7 +13,7 @@ CONF_DIR="$HOME/git/conf"
 
 # [INSTALL] Packages for all software
 sudo yum install -y epel-release
-sudo yum install -y git tmux vim
+sudo yum install -y git task tmux vim
 
 
 # [CREATE] Conf directory, if it doesn't exist yet
@@ -43,6 +43,18 @@ if [ -f "$HOME/.gitconfig" ]; then
     rm $HOME/.gitconfig
 fi
 ln -s $CONF_DIR/git/gitconfig $HOME/.gitconfig
+
+
+# [CONFIGURE] task
+if [ -f "$HOME/.taskrc" ]; then
+    rm $HOME/.taskrc
+fi
+ln -s $CONF_DIR/taskwarrior/taskrc.rhel $HOME/.taskrc
+
+if [ ! -d "$HOME/.bash_completion.d" ]; then
+    mkdir -p $HOME/.bash_completion.d
+fi
+ln -s $CONF_DIR/taskwarrior/task.sh $HOME/.bash_completion.d/task.sh
 
 
 # [CONFIGURE] tmux
