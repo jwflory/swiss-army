@@ -17,7 +17,7 @@ sudo yum install -y dunst git i3 i3lock i3status task tmux vim
 
 # Just for CentOS / RHEL…
 sudo yum install -y python34 python34-pip
-sudo pip3 install powerline
+sudo pip3 install powerline-status
 
 
 # [CREATE] Conf directory, if it doesn't exist yet
@@ -67,6 +67,13 @@ if [ -f "$HOME/.gitconfig" ]; then
     rm $HOME/.gitconfig
 fi
 ln -s $CONF_DIR/git/gitconfig $HOME/.gitconfig
+
+
+# [CONFIGURE] powerline
+if [ ! -d "/usr/share/powerline/bash" ]; then
+    sudo mkdir -p /usr/share/powerline/bash
+fi
+sudo ln -s /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh /usr/share/powerline/bash/powerline.sh
 
 
 # [CONFIGURE] ssh
