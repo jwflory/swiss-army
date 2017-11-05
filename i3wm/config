@@ -181,10 +181,9 @@ bindsym XF86MonBrightnessDown exec sudo brightlight -p --decrement 10      # dec
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh               # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec rhythmbox-client --no-start --play-pause
+bindsym XF86AudioNext exec rhythmbox-client --no-start --next
+bindsym XF86AudioPrev exec rhythmbox-client --no-start --previous
 
 # Invert scrolling (natural scrolling)
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
