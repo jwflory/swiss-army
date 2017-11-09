@@ -174,8 +174,8 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- unmute    # dec
 bindsym XF86AudioMute exec amixer -D pulse set Master toggle               # mute volume
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec sudo brightlight -p --increment 10        # increase screen brightness
-bindsym XF86MonBrightnessDown exec sudo brightlight -p --decrement 10      # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightlight -p --increment 10        # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightlight -p --decrement 10      # decrease screen brightness
 
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh               # toggle touchpad
