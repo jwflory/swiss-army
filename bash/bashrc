@@ -28,7 +28,7 @@ alias bryn='mosh -p 60597 jflory@bryn.justinwflory.com'
 alias cortana='mosh -p 60597 jflory@cortana.justinwflory.com'
 alias derezzed='mosh -p 60597 jflory@derezzed.justinwflory.com'
 alias estrella='mosh -p 60597 jflory@estrella.justinwflory.com'
-alias tron='mosh -p 60597 jflory@tron.student.rit.edu'
+alias tron='mosh -p 60597 jwf@tron.student.rit.edu'
 alias ritlugirc='mosh -p 60001 shared@irc-lug.rit.edu'
 
 ## TaskWarrior configuration
