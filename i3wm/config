@@ -156,7 +156,6 @@ bar {
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 overpassmono,FontAwesome 8
     status_command i3status
     tray_output primary
-    tray_padding 0
 
     colors {
         separator #268bd2
