@@ -6,5 +6,9 @@
 	default = simple
 [sendemail]
 	smtpencryption = tls
+[gpg]
+	program = gpg2
 [commit]
 	gpgsign = true
+[includeIf "gitdir:~/git/unicef/"]
+  path = .gitconfig-unicef
