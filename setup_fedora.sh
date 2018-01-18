@@ -12,7 +12,20 @@ CONF_DIR="$HOME/git/conf"
 
 
 # [INSTALL] Packages for all software
-sudo dnf install -y dunst git i3 i3lock i3status powerline task tmux tmux-powerline vim vim-powerline which
+sudo dnf install -y \
+    dunst \
+    git \
+    i3 \
+    i3lock \
+    i3status \
+    npm \
+    powerline \
+    task \
+    tmux \
+    tmux-powerline \
+    vim \
+    vim-powerline \
+    which
 
 
 # [CREATE] Conf directory, if it doesn't exist yet
@@ -66,6 +79,11 @@ if [ -f "$HOME/.gitconfig-unicef" ]; then
 fi
 ln -s $CONF_DIR/git/gitconfig $HOME/.gitconfig
 ln -s $CONF_DIR/git/gitconfig-unicef $HOME/.gitconfig-unicef
+
+
+# [CONFIGURE] npm
+mkdir $HOME/.npm-global
+npm config set prefix '$HOME/.npm-global'
 
 
 # [CONFIGURE] ssh
