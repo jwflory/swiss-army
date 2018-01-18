@@ -175,7 +175,6 @@ exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelt
 focus_follows_mouse no
 
 # Default workspaces
-assign [class="Firefox"] 1
 assign [class="Thunderbird"] 2
 assign [class="Rhythmbox"] 3
 assign [class="Spotify"] 3
