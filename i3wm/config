@@ -180,6 +180,7 @@ assign [class="Rhythmbox"] 3
 assign [class="Spotify"] 3
 assign [class="HexChat"] 4
 assign [class="Riot"] 4
+assign [class="Slack"] 4
 assign [class="Telegram"] 4
 
 
