@@ -12,12 +12,26 @@ CONF_DIR="$HOME/git/conf"
 
 
 # [INSTALL] Packages for all software
-sudo yum install -y epel-release
-sudo yum install -y dunst git i3 i3lock i3status task tmux vim
+sudo yum install -y \
+    epel-release
+sudo yum install -y \
+    dunst \
+    git \
+    i3 \
+    i3lock \
+    i3status \
+    npm \
+    nm-applet \
+    task \
+    tmux \
+    vim
 
 # Just for CentOS / RHEL…
-sudo yum install -y python34 python34-pip
-sudo pip3 install powerline-status
+sudo yum install -y \
+    python34 \
+    python34-pip
+sudo pip3 install \
+    powerline-status
 
 
 # [CREATE] Conf directory, if it doesn't exist yet
@@ -67,6 +81,11 @@ if [ -f "$HOME/.gitconfig" ]; then
     rm $HOME/.gitconfig
 fi
 ln -s $CONF_DIR/git/gitconfig $HOME/.gitconfig
+
+
+# [CONFIGURE] npm
+mkdir $HOME/.npm-global
+npm config set prefix '$HOME/.npm-global'
 
 
 # [CONFIGURE] powerline
