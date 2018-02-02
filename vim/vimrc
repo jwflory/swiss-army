@@ -42,6 +42,7 @@ set wrapscan
 
 
 " === Custom file preferences===
+autocmd FileType adoc setlocal textwidth="" colorcolumn=""   " AsciiDoc
 autocmd FileType java setlocal textwidth=120 colorcolumn=121 " Java
 autocmd FileType rst setlocal ts=3 sts=3 sw=3 expandtab      " reStructuredText
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab     " YAML
