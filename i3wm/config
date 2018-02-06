@@ -230,4 +230,3 @@ exec xautolock -time 15 -locker '~/.config/i3/fuzzy_lock.sh' &
 # Standard desktop applications I always use on start
 exec firefox
 exec thunderbird
-exec rhythmbox
