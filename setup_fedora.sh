@@ -15,6 +15,7 @@ CONF_DIR="$HOME/git/conf"
 sudo dnf install -y \
     dunst \
     git \
+    gnome-shell-extension-pomodoro \
     i3 \
     i3lock \
     i3status \
@@ -44,7 +45,7 @@ fi
 ln -s $CONF_DIR/i3wm/config $HOME/.config/i3/config
 ln -s $CONF_DIR/i3wm/fuzzy_lock.sh $HOME/.config/i3/fuzzy_lock.sh
 ln -s $CONF_DIR/i3wm/i3exit.sh $HOME/.config/i3/i3exit.sh
-ln -s $CONF_DIR/i3wm/i3status.conf $HOME/.i3status.conf
+ln -s $CONF_DIR/i3wm/i3status.conf $HOME/.config/i3/i3status.conf
 
 
 # [CONFIGURE] bash

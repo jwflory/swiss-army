@@ -149,8 +149,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1 overpassmono,FontAwesome 8
-    status_command i3status
+    font pango:overpassmono,FontAwesome 8
+    status_command i3status -c $HOME/.config/i3/i3status.conf
     tray_output primary
 
     colors {
