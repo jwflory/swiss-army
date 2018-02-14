@@ -31,6 +31,9 @@ Host estrella
 Host ritlugirc
   HostName irc-lug.rit.edu
   User shared
+Host loirc
+  Hostname vm205.documentfoundation.org
+  User jwf
 Host banjo
   HostName banjo.rit.edu
   User jwf9260
