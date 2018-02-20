@@ -222,6 +222,9 @@ exec dropbox start
 # nm-applet: Network management in systray
 exec nm-applet
 
+# gnome-pomodoro: Pomodoro timer in systray
+exec gnome-pomodoro --no-default-window
+
 # Restore GNOME-style locking
 bindsym $mod+Control+l exec i3exit lock
 bindsym $mod+Control+s exec i3exit suspend
