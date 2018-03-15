@@ -28,12 +28,15 @@ Host derezzed
 Host estrella
   HostName estrella.justinwflory.com
   User jflory
-Host ritlugirc
-  HostName irc-lug.rit.edu
-  User shared
-Host loirc
+Host ircfedora
+  Hostname telegram-irc.fedorainfracloud.org
+  User jflory
+Host irclo
   Hostname vm205.documentfoundation.org
   User jwf
+Host ircritlug
+  HostName irc-lug.rit.edu
+  User shared
 Host banjo
   HostName banjo.rit.edu
   User jwf9260
