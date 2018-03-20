@@ -84,7 +84,7 @@ ln -s $CONF_DIR/git/gitconfig-unicef $HOME/.gitconfig-unicef
 
 # [CONFIGURE] npm
 mkdir $HOME/.npm-global
-npm config set prefix '$HOME/.npm-global'
+npm config set prefix '${HOME}/.npm-global'
 
 
 # [CONFIGURE] ssh
