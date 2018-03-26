@@ -1,14 +1,20 @@
-[user]
-	name = Justin W. Flory
-	email = git@jwf.io
-	signingkey = 39E45FB6014131E4
+[commit]
+	gpgsign = true
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[gpg]
+	program = gpg2
+[merge]
+	tool = meld
 [push]
 	default = simple
 [sendemail]
 	smtpencryption = tls
-[gpg]
-	program = gpg2
-[commit]
-	gpgsign = true
+[user]
+	name = Justin W. Flory
+	email = git@jwf.io
+	signingkey = 39E45FB6014131E4
 [includeIf "gitdir:~/git/unicef/"]
   path = .gitconfig-unicef

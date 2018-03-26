@@ -20,6 +20,7 @@ sudo yum install -y \
     i3 \
     i3lock \
     i3status \
+    meld \
     npm \
     nm-applet \
     task \

@@ -19,6 +19,7 @@ sudo dnf install -y \
     i3 \
     i3lock \
     i3status \
+    meld \
     nm-applet \
     npm \
     powerline \
