@@ -15,19 +15,18 @@ CONF_DIR="$HOME/git/conf"
 sudo yum install -y \
     epel-release
 sudo yum install -y \
-    dunst \
     git \
     i3 \
     i3lock \
     i3status \
+    jpegoptim \
     meld \
     npm \
-    nm-applet \
     task \
     tmux \
     vim
 
-# Just for CentOS / RHEL…
+## Just for CentOS / RHEL…
 sudo yum install -y \
     python34 \
     python34-pip

@@ -19,8 +19,9 @@ sudo dnf install -y \
     i3 \
     i3lock \
     i3status \
+    jpegoptim \
     meld \
-    nm-applet \
+    network-manager-applet \
     npm \
     powerline \
     task \
@@ -30,6 +31,11 @@ sudo dnf install -y \
     vim-powerline \
     which
 
+## Package notes:
+## * dunst: Simple and configurable notification-daemon
+## * jpegoptim: Utility to optimize JPEG files
+## * meld: Visual diff and merge tool
+## * network-manager-applet: Network control / status applet for NetworkManager
 
 # [CREATE] Conf directory, if it doesn't exist yet
 if [ ! -d "$CONF_DIR" ]; then
