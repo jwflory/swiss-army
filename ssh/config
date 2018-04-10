@@ -28,6 +28,9 @@ Host derezzed
 Host estrella
   HostName estrella.justinwflory.com
   User jflory
+Host fiction
+  HostName fiction.justinwflory.com
+  User jflory
 Host ircfedora
   Hostname telegram-irc.fedorainfracloud.org
   User jflory
