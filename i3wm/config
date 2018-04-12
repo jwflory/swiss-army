@@ -219,6 +219,9 @@ exec xfce4-power-manager
 # dropbox: Start daemon
 exec dropbox start
 
+# blueman-applet: Bluetooth management in systray
+exec blueman-applet
+
 # nm-applet: Network management in systray
 exec nm-applet
 
