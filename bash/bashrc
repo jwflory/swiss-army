@@ -10,7 +10,11 @@ fi
 
 # User specific aliases and functions
 
-# Powerline configuration
+## Source all bash auto-completion files
+source ~/.bash_completion.d/*
+
+
+## Powerline configuration
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
@@ -18,10 +22,12 @@ if [ -f `which powerline-daemon` ]; then
   . /usr/share/powerline/bash/powerline.sh
 fi
 
-# Aliases
+
+## Aliases: Commands
 alias lsa='ls -Alh'
 
-# Aliases: Servers
+
+## Aliases: Servers
 alias arguru='mosh -p 60597 jflory@arguru.justinwflory.com'
 alias argurumc='mosh -p 60597 minecraft@arguru.justinwflory.com'
 alias bryn='mosh -p 60597 jflory@bryn.justinwflory.com'
@@ -32,10 +38,11 @@ alias tron='mosh -p 60597 jwf@tron.student.rit.edu'
 alias ircfedora='mosh -p 60001 jflory@telegram-irc.fedorainfracloud.org'
 alias ircritlug='mosh -p 60001 shared@irc-lug.rit.edu'
 
+
 ## TaskWarrior configuration
 alias t='task'
 alias ts='task sync'
-source ~/.bash_completion.d/task.sh
 
-# added by travis gem
+
+## added by travis gem
 [ -f /home/jflory/.travis/travis.sh ] && source /home/jflory/.travis/travis.sh
