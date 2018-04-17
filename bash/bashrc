@@ -24,6 +24,7 @@ fi
 
 
 ## Aliases: Commands
+alias gitup='git remote prune origin && git gc --prune=now'
 alias lsa='ls -Alh'
 
 
