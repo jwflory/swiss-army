@@ -25,6 +25,7 @@ fi
 
 ## Aliases: Commands
 alias gitup='git remote prune origin && git gc --prune=now'
+alias hdmi2primary='xrandr --output HDMI-0 --primary'
 alias lsa='ls -Alh'
 
 
