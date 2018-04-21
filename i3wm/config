@@ -229,9 +229,9 @@ exec nm-applet
 exec gnome-pomodoro --no-default-window
 
 # Restore GNOME-style locking
-bindsym $mod+Control+l exec i3exit lock
-bindsym $mod+Control+s exec i3exit suspend
-exec xautolock -time 15 -locker '~/.config/i3/fuzzy_lock.sh' &
+bindsym $mod+Control+l exec $HOME/.config/i3/i3exit.sh lock
+bindsym $mod+Control+s exec $HOME/.config/i3/i3exit.sh suspend
+exec xautolock -time 15 -locker '$HOME/.config/i3/fuzzy_lock.sh' &
 
 # Standard desktop applications I always use on start
 exec firefox
