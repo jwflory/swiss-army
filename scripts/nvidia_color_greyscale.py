@@ -68,4 +68,5 @@ def main():
     if args.greyscale:
         set_greyscale()
 
-main()
+if __name__ == '__main__':
+    main()
