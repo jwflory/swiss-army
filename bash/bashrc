@@ -42,6 +42,7 @@ alias ircritlug='mosh -p 60001 shared@irc-lug.rit.edu'
 
 
 ## TaskWarrior configuration
+source ~/.bash_completion.d/task.sh
 alias t='task'
 alias ts='task sync'
 

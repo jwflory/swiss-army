@@ -7,7 +7,7 @@ fi
 
 # User specific environment and startup programs
 
-export CLASSPATH=.:/home/jflory/.local/bin/mysql-connector-java-5.1.39-bin.jar:/home/jflory/.local/bin/sqljdbc42.jar
+export CLASSPATH=.:$HOME/wkspc/bin/mysql-connector-java-5.1.39-bin.jar:$HOME/wkspc/bin/sqljdbc42.jar
 export GOPATH=$HOME/wkspc/go
 export JGRASP_HOME=/opt/jgrasp
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin:$(go env GOPATH)/bin:$HOME/.npm-global/bin
+export PATH=$PATH:$HOME/wkspc/bin:$GOPATH/bin:$HOME/.npm-global/bin
