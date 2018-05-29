@@ -22,9 +22,11 @@ sudo yum install -y \
     jpegoptim \
     meld \
     npm \
+    pass \
     task \
     tmux \
-    vim
+    vim \
+    xclip
 
 ## Just for CentOS / RHEL…
 sudo yum install -y \
@@ -41,16 +43,16 @@ fi
 
 
 # [CONFIGURE] i3wm
-if [ ! -d "$HOME/.i3" ]; then
-    mkdir $HOME/.i3
+if [ ! -d "$HOME/.config/i3" ]; then
+    mkdir -p $HOME/.config/i3
 else
-    rm $HOME/.i3/config
+    rm $HOME/.config/i3/config
 fi
 
-ln -s $CONF_DIR/i3wm/config $HOME/.i3/config
-ln -s $CONF_DIR/i3wm/fuzzy_lock.sh $HOME/.i3/fuzzy_lock.sh
-ln -s $CONF_DIR/i3wm/i3exit.sh $HOME/.i3/i3exit.sh
-ln -s $CONF_DIR/i3wm/i3status.conf $HOME/.i3status.conf
+ln -s $CONF_DIR/i3wm/config $HOME/.config/i3/config
+ln -s $CONF_DIR/i3wm/fuzzy_lock.sh $HOME/.config/i3/fuzzy_lock.sh
+ln -s $CONF_DIR/i3wm/i3exit.sh $HOME/.config/i3/i3exit.sh
+ln -s $CONF_DIR/i3wm/i3status.conf $HOME/.config/i3/i3status.conf
 
 
 # [CONFIGURE] bash

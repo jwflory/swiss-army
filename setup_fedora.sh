@@ -23,6 +23,7 @@ sudo dnf install -y \
     meld \
     network-manager-applet \
     npm \
+    pass \
     powerline \
     task \
     tmux \
