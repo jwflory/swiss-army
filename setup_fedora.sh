@@ -83,10 +83,14 @@ ln -s $CONF_DIR/dunst/dunstrc $HOME/.config/dunst/dunstrc
 if [ -f "$HOME/.gitconfig" ]; then
     rm $HOME/.gitconfig
 fi
+if [ -f "$HOME/.gitconfig-jump" ]; then
+    rm $HOME/.gitconfig-jump
+fi
 if [ -f "$HOME/.gitconfig-unicef" ]; then
     rm $HOME/.gitconfig-unicef
 fi
 ln -s $CONF_DIR/git/gitconfig $HOME/.gitconfig
+ln -s $CONF_DIR/git/gitconfig-jump $HOME/.gitconfig-jump
 ln -s $CONF_DIR/git/gitconfig-unicef $HOME/.gitconfig-unicef
 
 

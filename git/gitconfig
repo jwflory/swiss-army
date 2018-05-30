@@ -16,5 +16,7 @@
 	name = Justin W. Flory
 	email = git@jwf.io
 	signingkey = 39E45FB6014131E4
+[includeIf "gitdir:~/git/jump/"]
+  path = .gitconfig-jump
 [includeIf "gitdir:~/git/unicef/"]
   path = .gitconfig-unicef
