@@ -23,6 +23,7 @@ sudo yum install -y \
     meld \
     npm \
     pass \
+    python-flake8 \
     task \
     tmux \
     vim \
@@ -146,6 +147,7 @@ curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone -q https://github.com/mbbill/code_complete.git $HOME/.vim/bundle/code_complete
 git clone -q https://github.com/ekalinin/Dockerfile.vim.git $HOME/.vim/bundle/Dockerfile
 git clone -q https://github.com/alvan/vim-closetag.git $HOME/.vim/bundle/vim-closetag
+git clone -q https://github.com/nvie/vim-flake8.git $HOME/.vim/bundle/vim-flake8
 git clone -q https://github.com/honza/vim-snippets.git $HOME/.vim/bundle/vim-snippets
 git clone -q https://github.com/tpope/vim-surround.git $HOME/.vim/bundle/vim-surround
 

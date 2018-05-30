@@ -12,11 +12,19 @@ CONF_DIR="$HOME/git/conf"
 
 
 # [INSTALL] Packages for all software
-sudo yum install -y epel-release
-sudo yum install -y git task tmux vim
+sudo yum install -y \
+    epel-release
+sudo yum install -y \
+    git \
+    python-flake8 \
+    task \
+    tmux \
+    vim
 
 # Just for CentOS / RHEL…
-sudo yum install -y python34 python34-pip
+sudo yum install -y \
+    python34 \
+    python34-pip
 sudo pip3 install powerline-status
 
 
@@ -87,6 +95,7 @@ curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone -q https://github.com/mbbill/code_complete.git $HOME/.vim/bundle/code_complete
 git clone -q https://github.com/ekalinin/Dockerfile.vim.git $HOME/.vim/bundle/Dockerfile
 git clone -q https://github.com/alvan/vim-closetag.git $HOME/.vim/bundle/vim-closetag
+git clone -q https://github.com/nvie/vim-flake8.git $HOME/.vim/bundle/vim-flake8
 git clone -q https://github.com/honza/vim-snippets.git $HOME/.vim/bundle/vim-snippets
 git clone -q https://github.com/tpope/vim-surround.git $HOME/.vim/bundle/vim-surround
 
