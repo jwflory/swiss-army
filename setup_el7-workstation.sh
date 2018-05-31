@@ -23,6 +23,8 @@ sudo yum install -y \
     meld \
     npm \
     pass \
+    pavucontrol \
+    pulseaudio-utils \
     python-flake8 \
     task \
     tmux \

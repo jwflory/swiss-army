@@ -24,7 +24,9 @@ sudo dnf install -y \
     network-manager-applet \
     npm \
     pass \
+    pavucontrol \
     powerline \
+    pulseaudio-utils \
     python2-flake8 \
     python3-flake8 \
     task \
