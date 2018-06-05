@@ -4,7 +4,7 @@
 # custom configurations and changes.
 #
 # * Author: Justin W. Flory (@jflory7)
-# * Date: 2017-10-04
+# * Date: 2018-06-05
 #
 
 # [CONFIGURATION OPTIONS] Change these if your system doesn't follow defaults
@@ -33,7 +33,6 @@ sudo dnf install -y \
     tmux \
     tmux-powerline \
     vim \
-    vim-powerline \
     which
 
 ## Package notes:
@@ -143,6 +142,7 @@ mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle
 curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone -q https://github.com/mbbill/code_complete.git $HOME/.vim/bundle/code_complete
 git clone -q https://github.com/ekalinin/Dockerfile.vim.git $HOME/.vim/bundle/Dockerfile
+git clone -q https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 git clone -q https://github.com/alvan/vim-closetag.git $HOME/.vim/bundle/vim-closetag
 git clone -q https://github.com/nvie/vim-flake8.git $HOME/.vim/bundle/vim-flake8
 git clone -q https://github.com/honza/vim-snippets.git $HOME/.vim/bundle/vim-snippets

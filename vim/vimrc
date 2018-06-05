@@ -2,13 +2,6 @@
 execute pathogen#infect()
 
 
-" === Powerline configuration===
-set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-
-
 " === Theming ===
 colorscheme slate
 set background=dark " Use a dark background
@@ -41,7 +34,7 @@ set colorcolumn=81
 set wrapscan
 
 
-" === Custom file preferences===
+" === Custom file preferences ===
 
 " AsciiDoc
 autocmd FileType asciidoc setlocal textwidth=0 colorcolumn=0 expandtab
@@ -62,4 +55,5 @@ let g:user_defined_snippets = ["/home/$USER/.vim/bundle/vim-snippets/snippets/*"
 
 " === Plugin configuration ===
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.shtml' " vim-closetags
-
+let g:airline#extensions#tabline#enabled = 1                " vim-airline
+let g:airline_powerline_fonts = 1                           " vim-airline
