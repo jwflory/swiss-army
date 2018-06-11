@@ -1,4 +1,6 @@
-" Enable pathogen for plugin management
+" === Plugin management: Pathogen ===
+" Note: Eventually, this can be deprecated when versions of Vim with proper
+"       package management are more widely available on enterprise Linux distros
 execute pathogen#infect()
 
 
@@ -49,11 +51,21 @@ autocmd FileType rst setlocal textwidth=0 colorcolumn=0 expandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
-" === Code completion configuration ===
-let g:user_defined_snippets = ["/home/$USER/.vim/bundle/vim-snippets/snippets/*"]
-
-
 " === Plugin configuration ===
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.shtml' " vim-closetags
 let g:airline#extensions#tabline#enabled = 1                " vim-airline
 let g:airline_powerline_fonts = 1                           " vim-airline
+let g:user_defined_snippets = ["/home/$USER/.vim/bundle/vim-snippets/snippets/*"]
+
+" vim-syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 4
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = "--ignore=W503"

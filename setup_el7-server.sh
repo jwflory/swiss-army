@@ -94,6 +94,7 @@ mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle
 curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 git clone -q https://github.com/mbbill/code_complete.git $HOME/.vim/bundle/code_complete
 git clone -q https://github.com/ekalinin/Dockerfile.vim.git $HOME/.vim/bundle/Dockerfile
+git clone -q --depth=1 https://github.com/vim-syntastic/syntastic.git $HOME/.vim/bundle/syntastic
 git clone -q https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 git clone -q https://github.com/alvan/vim-closetag.git $HOME/.vim/bundle/vim-closetag
 git clone -q https://github.com/nvie/vim-flake8.git $HOME/.vim/bundle/vim-flake8
