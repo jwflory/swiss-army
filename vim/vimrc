@@ -40,16 +40,19 @@ set wrapscan
 " === Custom file preferences ===
 
 " AsciiDoc
-autocmd FileType asciidoc setlocal textwidth=0 colorcolumn=0 expandtab
+autocmd FileType asciidoc setlocal textwidth=0 colorcolumn=0
+
+" git commits
+autocmd FileType gitcommit setlocal colorcolumn=73
 
 " Java
 autocmd FileType java setlocal textwidth=120 colorcolumn=121
 
 " reStructuredText
-autocmd FileType rst setlocal textwidth=0 colorcolumn=0 expandtab
+autocmd FileType rst setlocal textwidth=0 colorcolumn=0
 
 " YAML
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2
 
 
 " === Plugin configuration ===

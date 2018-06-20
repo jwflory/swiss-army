@@ -1,5 +1,7 @@
 [commit]
 	gpgsign = true
+[core]
+	editor = vim
 [diff]
 	tool = meld
 [difftool]
