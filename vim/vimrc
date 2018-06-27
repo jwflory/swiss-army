@@ -45,6 +45,9 @@ autocmd FileType asciidoc setlocal textwidth=0 colorcolumn=0
 " git commits
 autocmd FileType gitcommit setlocal colorcolumn=73
 
+" HTML
+autocmd FileType html setlocal textwidth=0 colorcolumn=0
+
 " Java
 autocmd FileType java setlocal textwidth=120 colorcolumn=121
 
