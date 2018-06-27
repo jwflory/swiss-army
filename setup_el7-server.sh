@@ -98,6 +98,7 @@ git clone -q --depth=1 https://github.com/vim-syntastic/syntastic.git $HOME/.vim
 git clone -q https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 git clone -q https://github.com/alvan/vim-closetag.git $HOME/.vim/bundle/vim-closetag
 git clone -q https://github.com/nvie/vim-flake8.git $HOME/.vim/bundle/vim-flake8
+git clone -q https://github.com/mitsuhiko/vim-jinja.git $HOME/.vim/bundle/vim-jinja
 git clone -q https://github.com/honza/vim-snippets.git $HOME/.vim/bundle/vim-snippets
 git clone -q https://github.com/tpope/vim-surround.git $HOME/.vim/bundle/vim-surround
 
