@@ -47,9 +47,13 @@ autocmd FileType gitcommit setlocal colorcolumn=73
 
 " HTML
 autocmd FileType html setlocal textwidth=0 colorcolumn=0
+autocmd FileType htmljinja setlocal textwidth=0 colorcolumn=0
 
 " Java
 autocmd FileType java setlocal textwidth=120 colorcolumn=121
+
+" Markdown
+autocmd FileType markdown setlocal textwidth=0 colorcolumn=0
 
 " reStructuredText
 autocmd FileType rst setlocal textwidth=0 colorcolumn=0
