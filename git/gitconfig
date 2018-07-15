@@ -12,6 +12,8 @@
 	tool = meld
 [push]
 	default = simple
+[rebase]
+	autoStash = true
 [sendemail]
 	smtpencryption = tls
 [user]
