@@ -1,0 +1,112 @@
+---
+- hosts: localhost
+  tasks:
+    # dunst: Simple and configurable notification-daemon
+    - name: package install - dunst
+      become: yes
+      package:
+        name: dunst
+        state: present
+    - name: package install - git
+      become: yes
+      package:
+        name: git
+        state: present
+    - name: package install - gnome-shell-extension-pomodoro
+      become: yes
+      package:
+        name: gnome-shell-extension-pomodoro
+        state: present
+    - name: package install - i3
+      become: yes
+      package:
+        name: i3
+        state: present
+    - name: package install - i3lock
+      become: yes
+      package:
+        name: i3lock
+        state: present
+    - name: package install - i3status
+      become: yes
+      package:
+        name: i3status
+        state: present
+    # jpegoptim: Utility to optimize JPEG files
+    - name: package install - jpegoptim
+      become: yes
+      package:
+        name: jpegoptim
+        state: present
+    # meld: Visual diff and merge tool
+    - name: package install - meld
+      become: yes
+      package:
+        name: meld
+        state: present
+    # network-manager-applet: Network control / status applet for NetworkManager
+    - name: package install - network-manager-applet
+      become: yes
+      package:
+        name: network-manager-applet
+        state: present
+    - name: package install - npm
+      become: yes
+      package:
+        name: npm
+        state: present
+    - name: package install - pass
+      become: yes
+      package:
+        name: pass
+        state: present
+    - name: package install - pavucontrol
+      become: yes
+      package:
+        name: pavucontrol
+        state: present
+    - name: package install - powerline
+      become: yes
+      package:
+        name: powerline
+        state: present
+    - name: package install - pulseaudio-utils
+      become: yes
+      package:
+        name: pulseaudio-utils
+        state: present
+    - name: package install - python2-flake8
+      become: yes
+      package:
+        name: python2-flake8
+        state: present
+    - name: package install - python3-flake8
+      become: yes
+      package:
+        name: python3-flake8
+        state: present
+    - name: package install - task
+      become: yes
+      package:
+        name: task
+        state: present
+    - name: package install - tmux
+      become: yes
+      package:
+        name: tmux
+        state: present
+    - name: package install - tmux-powerline
+      become: yes
+      package:
+        name: tmux-powerline
+        state: present
+    - name: package install - vim
+      become: yes
+      package:
+        name: vim
+        state: present
+    - name: package install - which
+      become: yes
+      package:
+        name: which
+        state: present
