@@ -28,6 +28,7 @@ set t_Co=256        " Set terminal color support to 256 colors (for Powerline)
 set expandtab       " On pressing tab, insert four spaces
 set shiftwidth=4    " When indenting with '>', use four spaces width
 set showtabline=2   " Always display the tabline, even if there is only one tab
+set smarttab        " On pressing tab, indent to previous line's indention
 set tabstop=4       " Show existing tab with four spaces width
 
 
@@ -43,7 +44,7 @@ set wrapscan
 autocmd FileType asciidoc setlocal textwidth=0 colorcolumn=0
 
 " git commits
-autocmd FileType gitcommit setlocal colorcolumn=73
+autocmd FileType gitcommit setlocal colorcolumn=73 softtabstop=4 tabstop=4
 
 " HTML
 autocmd FileType html setlocal textwidth=0 colorcolumn=0
@@ -59,7 +60,7 @@ autocmd FileType markdown setlocal textwidth=0 colorcolumn=0
 autocmd FileType rst setlocal textwidth=0 colorcolumn=0
 
 " YAML
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2
+autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 
 " === Plugin configuration ===
