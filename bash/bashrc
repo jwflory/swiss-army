@@ -5,9 +5,6 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
 # User specific aliases and functions
 
 ## Source all bash auto-completion files
@@ -41,8 +38,6 @@ alias gitud='git_upstream_pull_downstream_push'
 
 
 ## Aliases: Servers
-alias arguru='mosh -p 60597 jflory@arguru.justinwflory.com'
-alias argurumc='mosh -p 60597 minecraft@arguru.justinwflory.com'
 alias bryn='mosh -p 60597 jflory@bryn.justinwflory.com'
 alias cortana='mosh -p 60597 jflory@cortana.justinwflory.com'
 alias derezzed='mosh -p 60597 jflory@derezzed.justinwflory.com'
