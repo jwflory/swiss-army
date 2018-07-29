@@ -24,9 +24,20 @@ fi
 
 
 ## Aliases: Commands
-alias gitup='git remote update --prune && git gc --prune=now'
 alias hdmi2primary='xrandr --output HDMI-0 --primary'
 alias lsa='ls -Alh'
+
+### Aliases: Commands: git
+alias git_cleanup='git remote update --prune && git gc --prune=now'
+alias git_dammit2='git rebase -i HEAD~2'
+alias git_dammit3='git rebase -i HEAD~3'
+alias git_upstream_pull_downstream_push='git pull upstream master && git push'
+
+### Aliases: Commands: git [short versions]
+alias gitcl='git_cleanup'
+alias gitd2='git_dammit2'
+alias gitd3='git_dammit3'
+alias gitud='git_upstream_pull_downstream_push'
 
 
 ## Aliases: Servers
