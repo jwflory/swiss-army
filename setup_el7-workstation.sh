@@ -26,6 +26,7 @@ sudo yum install -y \
     pavucontrol \
     pulseaudio-utils \
     python-flake8 \
+    strace \
     task \
     tmux \
     vim \

@@ -29,6 +29,7 @@ sudo dnf install -y \
     pulseaudio-utils \
     python2-flake8 \
     python3-flake8 \
+    strace \
     task \
     tmux \
     tmux-powerline \

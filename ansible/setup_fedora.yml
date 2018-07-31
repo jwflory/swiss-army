@@ -85,6 +85,11 @@
       package:
         name: python3-flake8
         state: present
+    - name: package install - strace
+      become: yes
+      package:
+        name: strace
+        state: present
     - name: package install - task
       become: yes
       package:
