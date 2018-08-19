@@ -20,6 +20,7 @@ sudo yum install -y \
     i3lock \
     i3status \
     jpegoptim \
+    jq \
     meld \
     npm \
     pass \

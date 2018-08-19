@@ -20,6 +20,7 @@ sudo dnf install -y \
     i3lock \
     i3status \
     jpegoptim \
+    jq \
     meld \
     network-manager-applet \
     npm \
