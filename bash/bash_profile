@@ -7,6 +7,8 @@ fi
 
 # User specific environment and startup programs
 
+eval $(ssh-agent)  # required for desktop ssh-agent to work as expected
+
 export CLASSPATH=.:$HOME/wkspc/bin/mysql-connector-java-5.1.39-bin.jar:$HOME/wkspc/bin/sqljdbc42.jar
 export GOPATH=$HOME/wkspc/go
 export JGRASP_HOME=/opt/jgrasp
