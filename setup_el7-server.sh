@@ -64,6 +64,14 @@ if [ ! -d "/usr/share/powerline/bash" ]; then
 fi
 sudo ln -s /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh /usr/share/powerline/bash/powerline.sh
 
+if [ ! -d "$HOME/.config/powerline" ]; then
+    mkdir $HOME/.config/powerline
+fi
+if [ -f "$HOME/.config/powerline/config.json" ]; then
+    rm $HOME/.config/powerline/config.json
+fi
+ln -s $CONF_DIR/powerline/config.json $HOME/.config/powerline/config.json
+
 
 # [CONFIGURE] task
 if [ -f "$HOME/.taskrc" ]; then
