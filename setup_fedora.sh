@@ -13,6 +13,7 @@ CONF_DIR="$HOME/git/conf"
 
 # [INSTALL] Packages for all software
 sudo dnf install -y \
+    bugwarrior \
     dunst \
     git \
     gnome-shell-extension-pomodoro \
