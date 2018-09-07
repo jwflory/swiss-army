@@ -46,6 +46,6 @@ taskd.credentials=inthe_am/jflory7/cfa28328-ec58-4ed9-94ac-bab207ff727c
 taskd.trust=ignore hostname
 
 # Context configuration
-context.opensource=+opensource or +fedora or +foss or +fossrit
+context.academics=+education or +rit or +school or +class
+context.opensource=+opensource or +fedora or +foss
 context.work=+work or +jumptrading or +fossmagic or +freelance
-context.school=+education or +rit or +school or +class

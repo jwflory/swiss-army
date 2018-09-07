@@ -78,6 +78,13 @@ if [ ! -d "$HOME/wkspc" ]; then
 fi
 
 
+# [CONFIGURE] bugwarrior
+if [ ! -d "$HOME/.config/bugwarrior" ]; then
+    mkdir -p $HOME/.config/bugwarrior
+fi
+ln -s $CONF_DIR/bugwarrior/bugwarriorrc $HOME/.config/bugwarrior/bugwarriorrc
+
+
 # [CONFIGURE] dunst
 if [ ! -d "$HOME/.config/dunst" ]; then
     mkdir -p $HOME/.config/dunst
