@@ -6,5 +6,5 @@
 # This command works for CDs that return multiple matches.
 #
 
-ripright -a -o "%b/%D/%N %T.flac"
+ripright -c /dev/sr1 -a -o "%b/%D/%N %T.flac"
 
