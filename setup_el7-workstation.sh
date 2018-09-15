@@ -109,7 +109,7 @@ fi
 sudo ln -s /usr/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh /usr/share/powerline/bash/powerline.sh
 
 if [ ! -d "$HOME/.config/powerline" ]; then
-    mkdir $HOME/.config/powerline
+    mkdir -p $HOME/.config/powerline
 fi
 if [ -f "$HOME/.config/powerline/config.json" ]; then
     rm $HOME/.config/powerline/config.json
