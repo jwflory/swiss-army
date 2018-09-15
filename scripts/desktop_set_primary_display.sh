@@ -9,4 +9,4 @@
 # Copy this script to /etc/rc.d/init.d/
 #
 
-xrandr --output HDMI-0 --primary
+xrandr --output HDMI-2 --primary
