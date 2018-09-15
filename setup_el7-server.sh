@@ -26,7 +26,7 @@ sudo yum install -y \
 sudo yum install -y \
     python34 \
     python34-pip
-pip3 install --user powerline-status
+sudo pip3 install powerline-status
 
 
 # [CREATE] Conf directory, if it doesn't exist yet
