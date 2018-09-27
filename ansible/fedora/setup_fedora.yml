@@ -6,7 +6,7 @@
     git_conf_dir: /home/jflory/git/conf
     target_user: jflory
     user_home_dir: /home/jflory
-  
+
   tasks:
     - name: import third-party repository signing keys
       rpm_key: key={{ item }} state=present
@@ -122,6 +122,7 @@
           - vagrant-sshfs
           - vim
           - '@virtualization'
+          - visualboyadvance-m
 
     - name: start Docker
       service:
