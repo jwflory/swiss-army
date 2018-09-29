@@ -1,14 +1,16 @@
 # .bashrc
 
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+
 # User specific aliases and functions
 
 ## Source all bash auto-completion files
-source ~/.bash_completion.d/*
+source ~/.bash_completion.d/task.sh
 
 
 ## Powerline configuration
@@ -25,10 +27,11 @@ alias hdmi2primary='xrandr --output HDMI-0 --primary'
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%Y-%m-%d %H:%M"'
 alias lsa='ls -Alh'
 alias lsz='ls -AZlh'
+alias t='task'
+alias ts='task sync'
 
 ### Aliases: Commands: git
 alias git_cleanup='git remote update --prune && git gc --prune=now'
-alias git_tree="git log --graph --all --pretty=format:'%C(bold yellow)%h%C(reset)%C(bold red)%d%C(reset)%n%C(white)%s%C(reset)%C(dim white) - %an%C(reset)%n'"
 alias git_upstream_pull_downstream_push='git pull upstream master && git push'
 
 alias git_dammit1='git rebase -i HEAD~1'
@@ -43,7 +46,6 @@ alias git_dammit9='git rebase -i HEAD~9'
 
 ### Aliases: Commands: git [short versions]
 alias gitcl='git_cleanup'
-alias gittr='git_tree'
 alias gitud='git_upstream_pull_downstream_push'
 
 alias gitd1='git_dammit1'
@@ -55,9 +57,3 @@ alias gitd6='git_dammit6'
 alias gitd7='git_dammit7'
 alias gitd8='git_dammit8'
 alias gitd9='git_dammit9'
-
-
-## TaskWarrior configuration
-source ~/.bash_completion.d/task.sh
-alias t='task'
-alias ts='task sync'

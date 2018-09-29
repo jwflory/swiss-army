@@ -1,3 +1,9 @@
+[alias]
+    ll = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]%C(reset)' --decorate --stat --find-renames
+    ls = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
+    tree = log --graph --all --author-date-order --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
+    unstage = reset --
+    wipe = !git reset --hard && git clean -ffd
 [commit]
 	gpgsign = true
 [core]
