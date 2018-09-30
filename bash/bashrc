@@ -1,28 +1,29 @@
 # .bashrc
 
 
-# Source global definitions
+# --- source global definitions ------------------------------------------------
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
 
-# User specific aliases and functions
+# --- user-specific configuration and functions --------------------------------
 
-## Source all bash auto-completion files
+## -- source all shell auto-completion definition files ----
 source ~/.bash_completion.d/task.sh
 
 
-## Powerline configuration
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+## -- powerline-go configuration ---------------------------
+# https://github.com/justjanne/powerline-go
+function _update_ps1() {
+    PS1="$($GOPATH/bin/powerline-go -error $?)"
+}
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 
-## Aliases: Commands
+# --- aliases ------------------------------------------------------------------
 alias hdmi2primary='xrandr --output HDMI-0 --primary'
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%Y-%m-%d %H:%M"'
 alias lsa='ls -Alh'
@@ -30,7 +31,7 @@ alias lsz='ls -AZlh'
 alias t='task'
 alias ts='task sync'
 
-### Aliases: Commands: git
+## -- aliases: git -----------------------------------------
 alias git_cleanup='git remote update --prune && git gc --prune=now'
 alias git_upstream_pull_downstream_push='git pull upstream master && git push'
 
@@ -44,7 +45,7 @@ alias git_dammit7='git rebase -i HEAD~7'
 alias git_dammit8='git rebase -i HEAD~8'
 alias git_dammit9='git rebase -i HEAD~9'
 
-### Aliases: Commands: git [short versions]
+## -- aliases: git [short versions] ------------------------
 alias gitcl='git_cleanup'
 alias gitud='git_upstream_pull_downstream_push'
 
