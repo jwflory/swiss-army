@@ -128,12 +128,18 @@
           - '@virtualization'
           - visualboyadvance-m
 
-    - name: start Docker
+    - name: start docker daemon
       service:
         name: docker
         state: started
 
-    - name: start and enable NTP
+    - name: start and enable firewalld
+      service:
+        name: firewalld
+        state: started
+        enabled: y
+
+    - name: start and enable ntpd
       service:
         name: ntpd
         state: started
@@ -203,7 +209,8 @@
         - i3status.conf
 
     - name: configure npm
-      shell: npm config set prefix '${HOME}/.npm-global'
+      become_user: "{{ target_user }}"
+      file: force=yes src={{ git_conf_dir }}/npm/npmrc dest={{ user_home_dir }}/.npmrc state=link
 
     - name: configure ssh
       become_user: "{{ target_user }}"
