@@ -15,10 +15,11 @@
         - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
 
     - name: add RPM Fusion repositories
-      package: name={{ item }} state=present
-      with_items:
-        - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
-        - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
+      package:
+        state: present
+        name:
+          - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
+          - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
 
     - name: add other third-party repositories
       shell: dnf config-manager --add-repo {{ item }}
@@ -46,6 +47,9 @@
           - gnome-photos
           - gnome-system-monitor
           - gnome-weather
+          - powerline
+          - powerline-fonts
+          - tmux-powerline
 
     - name: install base packages
       ### Package notes ###
@@ -75,6 +79,7 @@
           - git
           - gnome-shell-extension-pomodoro
           - gobby05
+          - golang
           - google-roboto-slab-fonts
           - gstreamer-ffmpeg
           - gstreamer1-plugins-bad-free-extras
@@ -143,9 +148,11 @@
         append: yes
 
     - name: configure dotfiles
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/jwflory/conf.git dest={{ git_conf_dir }}
 
     - name: populate config directories
+      become_user: "{{ target_user }}"
       file: path={{ user_home_dir }}/{{ item }} state=directory
       with_items:
         - .bash_completion.d
@@ -159,7 +166,37 @@
         - .vim/bundle
         - wkspc
 
+    - name: configure bash
+      become_user: "{{ target_user }}"
+      file: force=yes src={{ git_conf_dir }}/bash/{{ item }} dest={{ user_home_dir }}/.{{ item }} state=link
+      with_items:
+        - bashrc
+        - bash_profile
+
+    - name: configure bash auto-completion scripts
+      become_user: "{{ target_user }}"
+      file: force=yes src={{ git_conf_dir }}/taskwarrior/{{ item }} dest={{ user_home_dir }}/.bash_completion.d/{{ item }} state=link
+      with_items:
+        - task.sh
+
+    - name: configure bugwarrior
+      become_user: "{{ target_user }}"
+      file: force=yes src={{ git_conf_dir }}/bugwarrior/bugwarriorrc dest={{ user_home_dir }}/.config/bugwarrior/bugwarriorrc state=link
+
+    - name: configure dunst
+      become_user: "{{ target_user }}"
+      file: force=yes src={{ git_conf_dir }}/dunst/dunstrc dest={{ user_home_dir }}/.config/dunst/dunstrc state=link
+
+    - name: configure git
+      become_user: "{{ target_user }}"
+      file: force=yes src={{ git_conf_dir }}/git/{{ item }} dest={{ user_home_dir }}/.{{ item }} state=link
+      with_items:
+        - gitconfig
+        - gitconfig-jump
+        - gitconfig-unicef
+
     - name: configure i3wm
+      become_user: "{{ target_user }}"
       file: force=yes src={{ git_conf_dir }}/i3wm/{{ item }} dest={{ user_home_dir }}/.config/i3/{{ item }} state=link
       with_items:
         - config
@@ -167,77 +204,64 @@
         - i3exit.sh
         - i3status.conf
 
-    - name: configure bash
-      file: force=yes src={{ git_conf_dir }}/bash/{{ item }} dest={{ user_home_dir }}/.{{ item }} state=link
-      with_items:
-        - bashrc
-        - bash_profile
-
-    - name: configure bash auto-completion scripts
-      file: force=yes src={{ git_conf_dir }}/taskwarrior/{{ item }} dest={{ user_home_dir }}/.bash_completion.d/{{ item }} state=link
-      with_items:
-        - task.sh
-
-    - name: configure bugwarrior
-      file: force=yes src={{ git_conf_dir }}/bugwarrior/bugwarriorrc dest={{ user_home_dir }}/.config/bugwarrior/bugwarriorrc state=link
-
-    - name: configure dunst
-      file: force=yes src={{ git_conf_dir }}/dunst/dunstrc dest={{ user_home_dir }}/.config/dunst/dunstrc state=link
-
-    - name: configure git
-      file: force=yes src={{ git_conf_dir }}/git/{{ item }} dest={{ user_home_dir }}/.{{ item }} state=link
-      with_items:
-        - gitconfig
-        - gitconfig-jump
-        - gitconfig-unicef
-
     - name: configure npm
       shell: npm config set prefix '${HOME}/.npm-global'
 
-    - name: configure powerline
-      file: force=yes src={{ git_conf_dir }}/powerline/config.json dest={{ user_home_dir }}/.config/powerline/config.json state=link
-
     - name: configure ssh
+      become_user: "{{ target_user }}"
       file: force=yes src={{ git_conf_dir }}/ssh/config dest={{ user_home_dir }}/.ssh/config state=link
 
     - name: configure task
+      become_user: "{{ target_user }}"
       file: force=yes src={{ git_conf_dir }}/taskwarrior/taskrc.fedora dest={{ user_home_dir }}/.taskrc state=link
 
     - name: configure tmux
+      become_user: "{{ target_user }}"
       file: force=yes src={{ git_conf_dir }}/tmux/tmux.conf dest={{ user_home_dir }}/.tmux.conf state=link
 
     - name: configure vim
+      become_user: "{{ target_user }}"
       file: force=yes src={{ git_conf_dir }}/vim/vimrc dest={{ user_home_dir }}/.vimrc state=link
 
     - name: configure vim - pathogen
+      become_user: "{{ target_user }}"
       get_url: url=https://tpo.pe/pathogen.vim dest={{ user_home_dir }}/.vim/autoload/pathogen.vim mode=0750
 
     - name: add vim plugin - code_complete
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/mbbill/code_complete.git dest={{ user_home_dir }}/.vim/bundle/vim-code-complete
 
     - name: add vim plugin - Dockerfile.vim
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/ekalinin/Dockerfile.vim.git dest={{ user_home_dir }}/.vim/bundle/vim-dockerfile
 
     - name: add vim plugin - syntastic
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/vim-syntastic/syntastic.git dest={{ user_home_dir }}/.vim/bundle/vim-syntastic
 
     - name: add vim plugin - vim-airline
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/vim-airline/vim-airline.git dest={{ user_home_dir }}/.vim/bundle/vim-airline
 
     - name: add vim plugin - vim-closetag
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/alvan/vim-closetag.git dest={{ user_home_dir }}/.vim/bundle/vim-closetag
 
     - name: add vim plugin - vim-flake8
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/nvie/vim-flake8.git dest={{ user_home_dir }}/.vim/bundle/vim-flake8
 
     - name: add vim plugin - vim-jinja
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/mitsuhiko/vim-jinja.git dest={{ user_home_dir }}/.vim/bundle/vim-jinja
 
     - name: add vim plugin - vim-snippets
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/honza/vim-snippets.git dest={{ user_home_dir }}/.vim/bundle/vim-snippets
 
     - name: add vim plugin - vim-surround
+      become_user: "{{ target_user }}"
       git: repo=https://github.com/tpope/vim-surround.git dest={{ user_home_dir }}/.vim/bundle/vim-surround
    
-    - name: set correct owner/group on target user home directory
-      file: dest=/home/{{ target_user }} owner={{ target_user }} group={{ target_user }} recurse=yes
+    # - name: set correct owner/group on target user home directory
+    #   file: dest=/home/{{ target_user }} owner={{ target_user }} group={{ target_user }} recurse=yes
