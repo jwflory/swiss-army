@@ -24,7 +24,7 @@ fi
 
 
 # --- aliases ------------------------------------------------------------------
-alias hdmi2primary='xrandr --output HDMI-0 --primary'
+alias hdmi2primary='xrandr --output HDMI-2 --primary'
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%Y-%m-%d %H:%M"'
 alias lsa='ls -Alh'
 alias lsz='ls -AZlh'
