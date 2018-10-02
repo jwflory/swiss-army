@@ -24,6 +24,8 @@ fi
 
 
 # --- aliases ------------------------------------------------------------------
+
+## -- aliases: general -------------------------------------
 alias hdmi2primary='xrandr --output HDMI-2 --primary'
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%Y-%m-%d %H:%M"'
 alias lsa='ls -Alh'
@@ -31,30 +33,17 @@ alias lsz='ls -AZlh'
 alias t='task'
 alias ts='task sync'
 
-## -- aliases: git -----------------------------------------
-alias git_cleanup='git remote update --prune && git gc --prune=now'
-alias git_upstream_pull_downstream_push='git pull upstream master && git push'
-
-alias git_dammit1='git rebase -i HEAD~1'
-alias git_dammit2='git rebase -i HEAD~2'
-alias git_dammit3='git rebase -i HEAD~3'
-alias git_dammit4='git rebase -i HEAD~4'
-alias git_dammit5='git rebase -i HEAD~5'
-alias git_dammit6='git rebase -i HEAD~6'
-alias git_dammit7='git rebase -i HEAD~7'
-alias git_dammit8='git rebase -i HEAD~8'
-alias git_dammit9='git rebase -i HEAD~9'
-
 ## -- aliases: git [short versions] ------------------------
-alias gitcl='git_cleanup'
-alias gitud='git_upstream_pull_downstream_push'
+alias gitss='git shoeshine'
+alias gitstat='git short-status'
+alias gitsfm='git sync-fork-master'
 
-alias gitd1='git_dammit1'
-alias gitd2='git_dammit2'
-alias gitd3='git_dammit3'
-alias gitd4='git_dammit4'
-alias gitd5='git_dammit5'
-alias gitd6='git_dammit6'
-alias gitd7='git_dammit7'
-alias gitd8='git_dammit8'
-alias gitd9='git_dammit9'
+alias gitd1='git dammit1'
+alias gitd2='git dammit2'
+alias gitd3='git dammit3'
+alias gitd4='git dammit4'
+alias gitd5='git dammit5'
+alias gitd6='git dammit6'
+alias gitd7='git dammit7'
+alias gitd8='git dammit8'
+alias gitd9='git dammit9'

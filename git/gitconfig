@@ -1,9 +1,25 @@
 [alias]
+    # git log
     ll = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]%C(reset)' --decorate --stat --find-renames
     ls = log --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
     tree = log --graph --all --author-date-order --pretty=format:'%C(yellow)%h%C(bold red)%d %C(reset)%s%C(blue) [%cn]'
+    # git rebase
+    dammit1 = rebase -i HEAD~1
+    dammit2 = rebase -i HEAD~2
+    dammit3 = rebase -i HEAD~3
+    dammit4 = rebase -i HEAD~4
+    dammit5 = rebase -i HEAD~5
+    dammit6 = rebase -i HEAD~6
+    dammit7 = rebase -i HEAD~7
+    dammit8 = rebase -i HEAD~8
+    dammit9 = rebase -i HEAD~9
+    # git reset
     unstage = reset --
     wipe = !git reset --hard && git clean -ffd
+    # miscellaneous
+    shoeshine = !git remote update --prune && git gc --prune=now
+    short-status = status -s
+    sync-fork-master = !git pull upstream master && git push
 [commit]
 	gpgsign = true
 [core]
