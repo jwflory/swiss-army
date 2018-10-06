@@ -67,7 +67,7 @@ autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.shtml' " vim-closetags
 let g:airline#extensions#tabline#enabled = 1                " vim-airline
 let g:airline_powerline_fonts = 1                           " vim-airline
-let g:user_defined_snippets = ["/home/$USER/.vim/bundle/vim-snippets/snippets/*"]
+let g:user_defined_snippets = ["$HOME/.vim/bundle/vim-snippets/snippets/*"]
 
 " vim-syntastic
 set statusline+=%#warningmsg#
