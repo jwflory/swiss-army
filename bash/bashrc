@@ -37,6 +37,7 @@ alias ts='task sync'
 alias gitss='git shoeshine'
 alias gitstat='git short-status'
 alias gitsfm='git sync-fork-master'
+alias gittr='git tree'
 
 alias gitd1='git dammit1'
 alias gitd2='git dammit2'
