@@ -48,6 +48,7 @@
           - gnome-system-monitor
           - gnome-weather
           - powerline
+          - ntp
           - tmux-powerline
 
     - name: install base packages
@@ -99,7 +100,6 @@
           - nautilus-dropbox
           - network-manager-applet
           - npm
-          - ntp
           - overpass-fonts
           - overpass-mono-fonts
           - pandoc
@@ -136,12 +136,6 @@
     - name: start and enable firewalld
       service:
         name: firewalld
-        state: started
-        enabled: y
-
-    - name: start and enable ntpd
-      service:
-        name: ntpd
         state: started
         enabled: yes
 

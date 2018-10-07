@@ -90,7 +90,6 @@
           # - mpv
           - network-manager-applet
           - npm
-          - ntp
           - overpass-fonts
           # - overpass-mono-fonts
           - pandoc
@@ -122,11 +121,6 @@
         state: started
         enabled: yes
   
-    - name: start and enable ntpd
-      service:
-        name: ntpd
-        state: started
-        enabled: yes
 
     - name: add new user - jflory
       user:
