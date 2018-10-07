@@ -114,20 +114,13 @@
           - vim
           - which
           - xclip
- 
-    - name: start and enable docker daemon
-      service:
-        name: docker
-        state: started
-        enabled: yes
-  
 
-    - name: add new user - jflory
-      user:
-        name: jflory
-        comment: Justin W. Flory
-        groups: libvirt,wheel
-        append: yes
+    - name: add new group - docker
+      group:
+        name: docker
+
+    - name: add target user
+      user: name={{ target_user }} comment='Justin W. Flory' groups=docker,libvirt,wheel append=yes
 
     - name: configure dotfiles
       become_user: "{{ target_user }}"

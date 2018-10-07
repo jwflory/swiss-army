@@ -128,23 +128,14 @@
           - '@virtualization'
           - visualboyadvance-m
 
-    - name: start docker daemon
-      service:
-        name: docker
-        state: started
-
     - name: start and enable firewalld
       service:
         name: firewalld
         state: started
         enabled: yes
 
-    - name: add new user - jflory
-      user:
-        name: jflory
-        comment: Justin W. Flory
-        groups: libvirt,wheel
-        append: yes
+    - name: add target user
+      user: name={{ target_user }} comment='Justin W. Flory' groups=docker,libvirt,wheel append=yes
 
     - name: configure dotfiles
       become_user: "{{ target_user }}"
