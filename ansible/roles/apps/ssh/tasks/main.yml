@@ -1,0 +1,8 @@
+---
+- name: create ssh config directories
+  become_user: "{{ target_user }}"
+  file: path={{ user_home_dir }}/.ssh state=directory
+
+- name: configure ssh
+  become_user: "{{ target_user }}"
+  file: force=yes src={{ git_conf_dir }}/ssh/config dest={{ user_home_dir }}/.ssh/config state=link

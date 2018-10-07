@@ -1,0 +1,19 @@
+---
+- name: create bash config directories
+  become_user: "{{ target_user }}"
+  file: path={{ user_home_dir }}/{{ item }} state=directory
+  with_items:
+    - .bash_completion.d
+
+- name: configure bash
+  become_user: "{{ target_user }}"
+  file: force=yes src={{ git_conf_dir }}/bash/{{ item }} dest={{ user_home_dir }}/.{{ item }} state=link
+  with_items:
+    - bashrc
+    - bash_profile
+
+- name: configure bash auto-completion scripts
+  become_user: "{{ target_user }}"
+  file: force=yes src={{ git_conf_dir }}/taskwarrior/{{ item }} dest={{ user_home_dir }}/.bash_completion.d/{{ item }} state=link
+  with_items:
+    - task.sh

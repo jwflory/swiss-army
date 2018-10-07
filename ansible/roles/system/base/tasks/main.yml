@@ -1,0 +1,32 @@
+---
+- name: remove unused packages
+  package:
+    state: absent
+    name:
+      - gnome-boxes
+      - gnome-calendar
+      - gnome-characters
+      - gnome-classic-session
+      - gnome-contacts
+      - gnome-documents
+      - gnome-documents-libs
+      - gnome-getting-started-docs
+      - gnome-initial-setup
+      - gnome-maps
+      - gnome-photos
+      - gnome-system-monitor
+      - gnome-weather
+      - powerline
+      - ntp
+      - tmux-powerline
+
+- name: add new group - docker
+  group:
+    name: docker
+
+- name: add new group - libvirt
+  group:
+    name: libvirt
+
+- name: add target user
+  user: name={{ target_user }} comment='{{ target_user_name }}' groups=docker,libvirt,wheel append=yes
