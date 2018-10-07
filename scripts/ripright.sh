@@ -4,5 +4,5 @@
 # preferred naming scheme. Runs until terminated.
 #
 
-ripright -c /dev/sr1 -r -o "/home/$USER/Music/%b/%D/%N %T.flac"
+ripright -c /dev/sr1 -o "$HOME/Music/%b/%D/%N %T.flac"
 
