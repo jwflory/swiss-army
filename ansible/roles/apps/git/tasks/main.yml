@@ -1,0 +1,8 @@
+---
+- name: configure git
+  become_user: "{{ target_user }}"
+  file: force=yes src={{ git_conf_dir }}/git/{{ item }} dest={{ user_home_dir }}/.{{ item }} state=link
+  with_items:
+    - gitconfig
+    - gitconfig-jump
+    - gitconfig-unicef

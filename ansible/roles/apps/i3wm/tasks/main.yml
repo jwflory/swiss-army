@@ -1,0 +1,20 @@
+---
+- name: install i3wm
+  package:
+    state: latest
+    name:
+      - i3
+      - i3lock
+
+- name: create i3wm config directory
+  become_user: "{{ target_user }}"
+  file: path={{ user_home_dir }}/.config/i3 state=directory
+
+- name: configure i3wm
+  become_user: "{{ target_user }}"
+  file: force=yes src={{ git_conf_dir }}/i3wm/{{ item }} dest={{ user_home_dir }}/.config/i3/{{ item }} state=link
+  with_items:
+    - config
+    - fuzzy_lock.sh
+    - i3exit.sh
+    - i3status.conf
