@@ -23,6 +23,7 @@
 
 - name: install base packages
   ### Package notes ###
+  # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
   # chromaprint-tools: Capture digital fingerprints of audio files
   # gstreamer1-plugins-bad-nonfree: MPEG2 codec support
   # jpegoptim: Utility to optimize JPEG files
@@ -38,8 +39,11 @@
       - brasero
       - brasero-nautilus
       - chromaprint-tools
+      - copr-cli
       - docker
       - epiphany
+      - fedpkg
+      - fedora-packager
       - feh
       - ffmpeg
       - firewalld
