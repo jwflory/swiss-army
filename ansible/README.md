@@ -12,7 +12,7 @@ They also install and configure other software used in my environment.
 To use the Ansible infrastructure here, some things will always be assumed:
 
 1. You must execute `ansible-playbook` commands from this directory (`ansible/`)
-2. `inventory/inventory` and `inventory/group_vars/all` are customized to your needs
+2. `inventory/inventory` and `playbooks/group_vars/all` are customized to your needs
 
 
 ## Provision Fedora workstation
