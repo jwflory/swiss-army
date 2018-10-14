@@ -12,10 +12,12 @@ set background=dark " Use a dark background
 " === Editor preferences ===
 syntax on
 filetype plugin indent on
-set backspace=2     " Fix backspace key behavior to work on older systems
-set cursorline      " Add line beneath cursor
-set noshowmode      " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set number          " Turn on line numbers
+set backspace=2         " fix backspace key behavior on older systems
+set cursorline          " add line beneath cursor
+set noshowmode          " hide default mode (e.g. -- INSERT -- below statusline)
+set number              " show line numbers
+set foldmethod=indent   " automatically fold by indent level
+set nofoldenable        " …but have folds open by default
 
 
 " === Encoding / color support ===
