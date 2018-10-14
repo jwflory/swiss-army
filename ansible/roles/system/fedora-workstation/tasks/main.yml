@@ -1,4 +1,10 @@
 ---
+- name: configure dnf to keep two versions of kernel installed at once
+  lineinfile:
+    dest: /etc/dnf/dnf.conf
+    regexp: '^installonly_limit='
+    line: 'installonly_limit=2'
+
 - name: import third-party repository signing keys
   rpm_key: key={{ item }} state=present
   with_items:
@@ -20,6 +26,11 @@
     - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
   args:
     warn: no
+
+- name: install Google Play Music Manager
+  package:
+    state: present
+    name: https://dl.google.com/linux/direct/google-musicmanager-beta_current_x86_64.rpm
 
 - name: install base packages
   ### Package notes ###

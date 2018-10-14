@@ -1,4 +1,9 @@
 ---
+- name: upgrade all current packages to latest versions
+  package:
+    state: latest
+    name: '*'
+
 - name: remove unused packages
   package:
     state: absent
