@@ -97,6 +97,7 @@
       - telegram-desktop
       - thunderbird
       - thunderbird-enigmail
+      - tomahawk
       - typetype-molot-fonts
       - '@vagrant'
       - vagrant-doc
