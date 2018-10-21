@@ -26,7 +26,15 @@
       - strace
       - which
 
-- name: install python packages (currently pipenv only)
+- name: remove unused user Python packages
+  become_user: "{{ target_user }}"
+  pip:
+    executable: pip3.6
+    state: absent
+    name:
+      - powerline-status
+
+- name: install user Python packages
   become_user: "{{ target_user }}"
   pip:
     executable: pip3.6
