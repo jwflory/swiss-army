@@ -21,17 +21,15 @@
       - gnome-photos
       - gnome-system-monitor
       - gnome-weather
+      - logwatch
+      - mosh
       - powerline
+      - python34
+      - python34-libs
+      - python34-pip
+      - python34-setuptools
       - ntp
       - tmux-powerline
 
-- name: add new group - docker
-  group:
-    name: docker
-
-- name: add new group - libvirt
-  group:
-    name: libvirt
-
 - name: add target user
-  user: name={{ target_user }} comment='{{ target_user_name }}' groups=docker,libvirt,wheel append=yes
+  user: name={{ target_user }} comment='{{ target_user_name }}' groups=wheel append=yes

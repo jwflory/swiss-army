@@ -1,4 +1,13 @@
 ---
+- name: add new groups - docker, libvirt
+  group: name={{ item }}
+  with_items:
+    - docker
+    - libvirt
+
+- name: add target user to new groups
+  user: name={{ target_user }} groups=docker,libvirt append=yes
+
 - name: import third-party repository signing keys
   rpm_key: key={{ item }} state=present
   with_items:
@@ -37,6 +46,7 @@
       - docker
       # - feh
       # - ffmpeg
+      - firewalld
       # - flash-plugin
       - git
       # - gnome-shell-extension-pomodoro
