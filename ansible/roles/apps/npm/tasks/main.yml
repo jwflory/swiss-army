@@ -7,8 +7,14 @@
 
 - name: create npm local package cache directory
   become_user: "{{ target_user }}"
-  file: path={{ user_home_dir }}/.npm-global state=directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.npm-global"
 
 - name: configure npm
   become_user: "{{ target_user }}"
-  file: force=yes src={{ git_conf_dir }}/npm/npmrc dest={{ user_home_dir }}/.npmrc state=link
+  file:
+    force: yes
+    state: link
+    src: "{{ git_conf_dir }}/npm/npmrc"
+    dest: "{{ user_home_dir }}/.npmrc"

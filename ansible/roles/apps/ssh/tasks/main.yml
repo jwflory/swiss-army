@@ -1,8 +1,24 @@
 ---
-- name: create ssh config directories
-  become_user: "{{ target_user }}"
-  file: path={{ user_home_dir }}/.ssh state=directory
+- name: create SSH config directories for target user
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.ssh"
+    owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0700
 
-- name: configure ssh
+- name: add SSH public key to authorized_keys
+  template: 
+    src: authorized_keys
+    dest: "{{ user_home_dir }}/.ssh/authorized_keys"
+    owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0400
+
+- name: configure SSH
   become_user: "{{ target_user }}"
-  file: force=yes src={{ git_conf_dir }}/ssh/config dest={{ user_home_dir }}/.ssh/config state=link
+  file:
+    force: yes
+    state: link
+    src: "{{ git_conf_dir }}/ssh/config"
+    dest: "{{ user_home_dir }}/.ssh/config"

@@ -7,4 +7,8 @@
 
 - name: configure tmux
   become_user: "{{ target_user }}"
-  file: force=yes src={{ git_conf_dir }}/tmux/tmux.conf dest={{ user_home_dir }}/.tmux.conf state=link
+  file:
+    force: yes
+    state: link
+    src: "{{ git_conf_dir }}/tmux/tmux.conf"
+    dest: "{{ user_home_dir }}/.tmux.conf"

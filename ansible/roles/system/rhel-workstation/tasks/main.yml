@@ -6,7 +6,10 @@
     - libvirt
 
 - name: add target user to new groups
-  user: name={{ target_user }} groups=docker,libvirt append=yes
+  user:
+    name: "{{ target_user }}"
+    groups: docker,libvirt
+    append: yes
 
 - name: import third-party repository signing keys
   rpm_key: key={{ item }} state=present
@@ -16,13 +19,13 @@
 
 - name: add EPEL and IUS repositories
   package:
-    state: present
+    state: latest
     name:
       - epel-release
       - https://rhel7.iuscommunity.org/ius-release.rpm
 
 - name: add other third-party repositories
-  command: yum-config-manager --add-repo {{ item }}
+  command: "yum-config-manager --add-repo {{ item }}"
   with_items:
     - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
     - https://negativo17.org/repos/epel-flash-plugin.repo

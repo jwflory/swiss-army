@@ -6,7 +6,10 @@
     - libvirt
 
 - name: add target user to new groups
-  user: name={{ target_user }} groups=docker,libvirt append=yes
+  user:
+    name: "{{ target_user }}"
+    groups: docker,libvirt
+    append: yes
 
 - name: configure dnf to keep two versions of kernel installed at once
   lineinfile:
@@ -28,7 +31,7 @@
       - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
 
 - name: add other third-party repositories
-  command: dnf config-manager --add-repo {{ item }}
+  command: "dnf config-manager --add-repo {{ item }}"
   with_items:
     - https://negativo17.org/repos/fedora-flash-plugin.repo
     - https://negativo17.org/repos/fedora-spotify.repo

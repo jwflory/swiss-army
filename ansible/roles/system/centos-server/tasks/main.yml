@@ -1,20 +1,4 @@
 ---
-- name: create SSH directory for target user
-  file:
-    path: "/home/{{ target_user }}/.ssh/"
-    state: directory
-    owner: "{{ target_user }}"
-    group: "{{ target_user }}"
-    mode: 0700
-
-- name: add SSH public key to authorized_keys
-  template: 
-    src: authorized_keys
-    dest: "/home/{{ target_user }}/.ssh/authorized_keys"
-    owner: "{{ target_user }}"
-    group: "{{ target_user }}"
-    mode: 0400
-
 - name: add EPEL and IUS repositories
   package:
     state: latest

@@ -1,12 +1,16 @@
 ---
 - name: create misc. workspace directories
   become_user: "{{ target_user }}"
-  file: path={{ user_home_dir }}/{{ item }} state=directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/{{ item }}"
   with_items:
     - .ansible/tmp
     - wkspc
 
 - name: clone dotfile repository from GitHub
   become_user: "{{ target_user }}"
-  # git: repo=git@github.com:jwflory/conf.git dest={{ git_conf_dir }}
-  git: repo=https://github.com/jwflory/conf.git dest={{ git_conf_dir }}
+  git:
+    repo: "https://github.com/jwflory/conf.git"
+    # repo: "git@github.com:jwflory/conf.git"
+    dest: "{{ git_conf_dir }}"

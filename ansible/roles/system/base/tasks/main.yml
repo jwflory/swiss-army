@@ -32,4 +32,8 @@
       - tmux-powerline
 
 - name: add target user
-  user: name={{ target_user }} comment='{{ target_user_name }}' groups=wheel append=yes
+  user:
+    name: "{{ target_user }}"
+    comment: "{{ target_user_name }}"
+    groups: wheel
+    append: yes

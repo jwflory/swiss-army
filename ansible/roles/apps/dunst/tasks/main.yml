@@ -9,8 +9,14 @@
 
 - name: create dunst config directories
   become_user: "{{ target_user }}"
-  file: path={{ user_home_dir }}/.config/dunst state=directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.config/dunst"
 
 - name: configure dunst
   become_user: "{{ target_user }}"
-  file: force=yes src={{ git_conf_dir }}/dunst/dunstrc dest={{ user_home_dir }}/.config/dunst/dunstrc state=link
+  file:
+    force: yes
+    state: link
+    src: "{{ git_conf_dir }}/dunst/dunstrc"
+    dest: "{{ user_home_dir }}/.config/dunst/dunstrc"

@@ -2,13 +2,18 @@
 - name: install bugwarrior
   package:
     state: latest
-    name:
-      - bugwarrior
+    name: bugwarrior
 
 - name: create bugwarrior config directory
   become_user: "{{ target_user }}"
-  file: path={{ user_home_dir }}/.config/bugwarrior state=directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.config/bugwarrior"
 
 - name: configure bugwarrior
   become_user: "{{ target_user }}"
-  file: force=yes src={{ git_conf_dir }}/bugwarrior/bugwarriorrc dest={{ user_home_dir }}/.config/bugwarrior/bugwarriorrc state=link
+  file:
+    force: yes
+    state: link
+    src: "{{ git_conf_dir }}/bugwarrior/bugwarriorrc"
+    dest: "{{ user_home_dir }}/.config/bugwarrior/bugwarriorrc"
