@@ -7,15 +7,7 @@
     group: "{{ target_user }}"
     mode: 0700
 
-- name: add SSH public key to authorized_keys
-  template: 
-    src: authorized_keys
-    dest: "{{ user_home_dir }}/.ssh/authorized_keys"
-    owner: "{{ target_user }}"
-    group: "{{ target_user }}"
-    mode: 0400
-
-- name: configure SSH
+- name: configure SSH for target user (~/.ssh/config)
   become_user: "{{ target_user }}"
   file:
     force: yes
