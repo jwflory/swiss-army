@@ -10,8 +10,9 @@ fi
 # --- user-specific configuration and functions --------------------------------
 
 ## -- source all shell auto-completion definition files ----
-source ~/.bash_completion.d/task.sh
-
+if [ -f "$PATH/task" ]; then
+    source ~/.bash_completion.d/task.sh
+fi
 
 ## -- powerline-go configuration ---------------------------
 # https://github.com/justjanne/powerline-go
