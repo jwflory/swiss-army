@@ -23,6 +23,11 @@ Host estrella
 Host fiction
   HostName fiction.justinwflory.com
   User jflory
+Host horizon
+  HostName horizon.justinwflory.com
+  User jflory
+
+# HOSTS: Specific-purpose VMs
 Host ircfedora
   Hostname telegram-irc.fedorainfracloud.org
   User jflory
