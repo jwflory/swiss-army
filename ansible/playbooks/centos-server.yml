@@ -1,0 +1,16 @@
+---
+- name: set up Justin's preferred CentOS 7.x Server configuration
+  hosts: servers-centos
+  become: yes
+
+  roles:
+    - system/base
+    - system/centos-server
+    - apps/base
+    - apps/bash
+    - apps/git
+    - apps/npm
+    - apps/powerline-go
+    - apps/ssh
+    - apps/tmux
+    - apps/vim

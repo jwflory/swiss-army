@@ -1,0 +1,58 @@
+---
+- name: create SSH directory for target user
+  file:
+    path: "/home/{{ target_user }}/.ssh/"
+    state: directory
+    owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0700
+
+- name: add SSH public key to authorized_keys
+  template: 
+    src: authorized_keys
+    dest: "/home/{{ target_user }}/.ssh/authorized_keys"
+    owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0400
+
+- name: add EPEL and IUS repositories
+  package:
+    state: latest
+    name:
+      - epel-release
+      - https://rhel7.iuscommunity.org/ius-release.rpm
+
+- name: install base packages
+  package:
+    state: latest
+    name:
+      - ansible
+      # - ansible-python3
+      - firewalld
+      - git
+      - golang
+      - htop
+      - jq
+      - pandoc
+      - podman
+      - python-flake8
+      - python36u
+      - python36u-pip
+      - smartmontools
+      - strace
+      - which
+
+- name: install python packages (currently pipenv only)
+  become_user: "{{ target_user }}"
+  pip:
+    executable: pip3.6
+    state: latest
+    extra_args: --user
+    name:
+      - pipenv
+
+- name: start and enable firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
