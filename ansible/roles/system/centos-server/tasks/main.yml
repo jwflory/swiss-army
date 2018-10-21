@@ -10,8 +10,6 @@
   package:
     state: latest
     name:
-      - ansible
-      # - ansible-python3
       - firewalld
       - git
       - golang
