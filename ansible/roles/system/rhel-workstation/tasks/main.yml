@@ -62,7 +62,8 @@
       - pandoc
       - pass
       - pavucontrol
-      - picard
+      # - picard
+      - podman
       - pulseaudio-utils
       - python-flake8
       - python36u

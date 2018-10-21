@@ -85,6 +85,7 @@
       - pass
       - pavucontrol
       - picard
+      - podman
       - powerline-fonts
       - pulseaudio-utils
       - python2-flake8
