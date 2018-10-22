@@ -1,6 +1,6 @@
 ---
 - name: set up Justin's preferred Fedora Workstation configuration
-  hosts: all
+  hosts: desktop
   become: yes
 
   roles:
@@ -11,6 +11,7 @@
     - apps/dunst
     - apps/git
     - apps/i3wm
+    - apps/minecraft
     - apps/npm
     - apps/powerline-go
     - apps/ssh
