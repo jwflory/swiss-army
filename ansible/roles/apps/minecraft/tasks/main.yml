@@ -8,6 +8,8 @@
 
 - name: (hack) rename Minecraft launcher directory for consistency
   command: "mv /usr/local/games/minecraft-launcher-2.1.1431/ /usr/local/games/minecraft/"
+  args:
+    creates: "/usr/local/games/minecraft/"
 
 - name: copy desktop entry
   template:
