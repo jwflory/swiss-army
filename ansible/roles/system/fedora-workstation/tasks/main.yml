@@ -85,6 +85,7 @@
       - inkscape
       - jpegoptim
       - jq
+      - libselinux-python
       - libvirt
       - libvirt-devel
       - meld
