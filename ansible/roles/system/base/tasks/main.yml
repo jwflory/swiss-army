@@ -37,3 +37,4 @@
     comment: "{{ target_user_name }}"
     groups: wheel
     append: yes
+    generate_ssh_key: yes
