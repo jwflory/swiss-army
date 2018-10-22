@@ -11,12 +11,6 @@
     groups: docker,libvirt
     append: yes
 
-- name: configure dnf to keep two versions of kernel installed at once
-  lineinfile:
-    dest: /etc/dnf/dnf.conf
-    regexp: '^installonly_limit='
-    line: 'installonly_limit=2'
-
 - name: import third-party repository signing keys
   rpm_key: key={{ item }} state=present
   with_items:
@@ -118,6 +112,12 @@
       - vagrant-sshfs
       - '@virtualization'
       - visualboyadvance-m
+
+- name: configure dnf to keep two versions of kernel installed at once
+  lineinfile:
+    dest: /etc/dnf/dnf.conf
+    regexp: '^installonly_limit='
+    line: 'installonly_limit=2'
 
 - name: start and enable firewalld
   service:
