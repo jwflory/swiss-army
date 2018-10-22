@@ -1,6 +1,6 @@
 ---
 - name: set up Justin's preferred Fedora Workstation configuration
-  hosts: desktop
+  hosts: workstation
   become: yes
 
   roles:

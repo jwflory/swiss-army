@@ -1,6 +1,6 @@
 ---
 - name: set up Justin's preferred RHEL/CentOS Workstation configuration
-  hosts: all
+  hosts: workstation
   become: yes
 
   roles:

@@ -6,7 +6,7 @@ fiction.justinwflory.com
 grantgreen.justinwflory.com
 horizon.justinwflory.com
 
-[desktop]
+[workstation]
 127.0.0.1 ansible_connection=local
 
 [servers-centos]
