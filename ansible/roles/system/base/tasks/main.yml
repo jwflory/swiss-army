@@ -8,6 +8,9 @@
   package:
     state: absent
     name:
+      - evolution
+      - evolution-ews
+      - evolution-help
       - gnome-boxes
       - gnome-calendar
       - gnome-characters
