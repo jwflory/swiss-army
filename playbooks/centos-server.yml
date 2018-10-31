@@ -6,7 +6,7 @@
   roles:
     - system/base
     - system/centos-server
-    - apps/base
+    - apps/base-server
     - apps/bash
     - apps/git
     - apps/npm

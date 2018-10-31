@@ -6,7 +6,7 @@
   roles:
     - system/base
     - system/rhel-workstation
-    - apps/base
+    - apps/base-workstation
     - apps/bash
     # - apps/dunst
     - apps/git
