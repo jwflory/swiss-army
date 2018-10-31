@@ -1,5 +1,7 @@
 = How to use this repository
 
+_Licensed under_: https://creativecommons.org/licenses/by-sa/4.0/[CC BY-SA 4.0 International]
+
 This repository uses Ansible playbooks and roles to configure my workstation.
 Supported operating systems include Fedora 28 or later and RHEL/CentOS 7.
 The playbooks automate installation of base system installations and individual app installations.

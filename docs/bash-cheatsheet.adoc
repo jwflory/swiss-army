@@ -1,6 +1,6 @@
 = Bash cheat sheet
 
-Handy Bash shortcuts and handy references to make working at the prompt easier
+Handy Bash shortcuts and handy references to make working at the prompt easier (https://creativecommons.org/licenses/by-sa/4.0/[CC BY-SA 4.0 International])
 
 
 
