@@ -1,0 +1,35 @@
+= How to use this repository
+
+This repository uses Ansible playbooks and roles to configure my workstation.
+Supported operating systems include Fedora 28 or later and RHEL/CentOS 7.
+The playbooks automate installation of base system installations and individual app installations.
+Each playbook can modularly select different combinations of a base system and app roles.
+
+
+== Configuration
+
+Ensure `inventory/inventory` and `playbooks/group_vars/all` are customized to your needs.
+
+
+== Provision Fedora 28 Workstation
+
+[source,bash]
+----
+ansible-playbook-3 playbooks/fedora-workstation.yml
+----
+
+
+== Provision RHEL/CentOS 7 Workstation
+
+[source,bash]
+----
+ansible-playbook playbooks/rhel-workstation.yml
+----
+
+
+== Provision CentOS 7 Server (headless)
+
+[source,bash]
+----
+ansible-playbook-3 playbooks/centos-server.yml
+----

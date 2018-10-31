@@ -1,0 +1,95 @@
+= Bash cheat sheet
+
+Handy Bash shortcuts and handy references to make working at the prompt easier
+
+
+
+== `logger`
+
+Submit a message into the system log (`/var/log/messages`) with `logger`.
+It makes it easier to debug Bash scripts or other uses (e.g. cron) when writing out log messages.
+
+[source,bash]
+----
+logger ERROR: The script failed.
+logger -t svc_name ERROR: svc_name failed.
+----
+
+
+== Handy shortcuts
+
+'''
+
+First argument of last command:
+
+ !^
+
+'''
+
+Last argument of last command:
+
+ !$
+
+'''
+
+Execute last command matching given string:
+
+[source,bash]
+----
+$ !c
+cat hello.txt
+Hello world!
+----
+
+Alternatively…
+
+[source,bash]
+----
+$ !?ver
+python --version
+Python 3.6.6
+----
+
+'''
+
+Get third argument of last command:
+
+[source,bash]
+----
+$ echo 1 2 3 4
+1 2 3 4
+$ echo !:3
+3
+----
+
+'''
+
+Print expanded shell command without actually running it:
+
+[source,bash]
+----
+!c:p
+cat hello.txt
+----
+
+'''
+
+Get running processes as a tree, grep for string:
+
+[source,bash]
+----
+$ ps -efH | grep <arg>
+----
+
+'''
+
+Substitute the last matching command with a new word:
+
+[source,bash]
+----
+$ systemctl restart nginx
+$ ^restart^status
+systemctl status nginx
+----
+
+'''
