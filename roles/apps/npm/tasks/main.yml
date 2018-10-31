@@ -1,0 +1,20 @@
+---
+- name: install npm
+  package:
+    state: latest
+    name:
+      - npm
+
+- name: create npm user package cache directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.npm-global"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: add npmrc
+  copy:
+    src: "{{ role_path }}/files/npmrc"
+    dest: "{{ user_home_dir }}/.npmrc"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"

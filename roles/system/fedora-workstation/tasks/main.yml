@@ -1,0 +1,124 @@
+---
+- name: add new groups - docker, libvirt
+  group: name={{ item }}
+  with_items:
+    - docker
+    - libvirt
+
+- name: add target user to new groups
+  user:
+    name: "{{ target_user }}"
+    groups: docker,libvirt
+    append: yes
+
+- name: import third-party repository signing keys
+  rpm_key: key={{ item }} state=present
+  with_items:
+    - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+    - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+
+- name: add RPM Fusion repositories
+  package:
+    state: present
+    name:
+      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
+      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
+
+- name: add other third-party repositories
+  command: "dnf config-manager --add-repo {{ item }}"
+  with_items:
+    - https://negativo17.org/repos/fedora-flash-plugin.repo
+    - https://negativo17.org/repos/fedora-spotify.repo
+    - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+  args:
+    warn: no
+
+- name: install Google Play Music Manager
+  package:
+    state: present
+    name: https://dl.google.com/linux/direct/google-musicmanager-beta_current_x86_64.rpm
+
+- name: install base packages
+  ### Package notes ###
+  # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
+  # chromaprint-tools: Capture digital fingerprints of audio files
+  # gstreamer1-plugins-bad-nonfree: MPEG2 codec support
+  # jpegoptim: Utility to optimize JPEG files
+  # meld: Visual diff and merge tool
+  # network-manager-applet: Network control / status applet for NetworkManager
+  package:
+    state: latest
+    name:
+      - ansible
+      - ansible-python3
+      - arandr
+      - blueman
+      - brasero
+      - brasero-nautilus
+      - chromaprint-tools
+      - copr-cli
+      - docker
+      - epiphany
+      - fedpkg
+      - fedora-packager
+      - feh
+      - ffmpeg
+      - firewalld
+      - flash-plugin
+      - git
+      - gnome-shell-extension-pomodoro
+      - gobby05
+      - golang
+      - google-roboto-slab-fonts
+      - gstreamer-ffmpeg
+      - gstreamer1-plugins-bad-free-extras
+      - gstreamer1-plugins-bad-nonfree
+      - gstreamer1-plugins-ugly
+      - hexchat
+      - htop
+      - inkscape
+      - java-11-openjdk
+      - jpegoptim
+      - jq
+      - libselinux-python
+      - libvirt
+      - libvirt-devel
+      - meld
+      - mpv
+      - nautilus-dropbox
+      - network-manager-applet
+      - overpass-fonts
+      - overpass-mono-fonts
+      - pandoc
+      - pass
+      - pavucontrol
+      - picard
+      - podman
+      - powerline-fonts
+      - pulseaudio-utils
+      - python2-flake8
+      - python3-flake8
+      - ripright
+      - smartmontools
+      - spotify-client
+      - strace
+      - sublime-text
+      - telegram-desktop
+      - typetype-molot-fonts
+      - '@vagrant'
+      - vagrant-doc
+      - vagrant-sshfs
+      - '@virtualization'
+      - visualboyadvance-m
+
+- name: configure dnf to keep two versions of kernel installed at once
+  lineinfile:
+    dest: /etc/dnf/dnf.conf
+    regexp: '^installonly_limit='
+    line: 'installonly_limit=2'
+
+- name: start and enable firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: yes
