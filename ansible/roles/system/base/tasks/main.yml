@@ -33,6 +33,7 @@
       - python34-setuptools
       - ntp
       - tmux-powerline
+      - tomahawk
 
 - name: add target user
   user:
