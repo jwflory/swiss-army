@@ -5,6 +5,8 @@ swiss-army
 
 Ansible-driven configuration management for maintaining a preferred environment (base system and app configurations)
 
+[![Ansible-driven swiss army knife](https://openclipart.org/image/300px/svg_to_png/98191/swiss-knife.png)](https://openclipart.org/detail/98191/swiss-knife)
+
 
 ## About
 
