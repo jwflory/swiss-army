@@ -1,0 +1,35 @@
+---
+- name: install i3wm
+  package:
+    state: latest
+    name:
+      - i3
+      - i3lock
+
+- name: create i3wm user config directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.config/i3"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: add i3wm user config files
+  copy:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "{{ user_home_dir }}/.config/i3/{{ item }}"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+  with_items:
+    - config
+    - i3status.conf
+
+- name: add i3wm user scripts
+  copy:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "{{ user_home_dir }}/.config/i3/{{ item }}"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+    mode: 0775
+  with_items:
+    - fuzzy_lock.sh
+    - i3exit.sh

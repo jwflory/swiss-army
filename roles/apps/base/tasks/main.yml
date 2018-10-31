@@ -1,0 +1,22 @@
+---
+- name: create misc. workspace directories
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/{{ item }}"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+  with_items:
+    - .ansible/tmp
+    - git
+    - wkspc
+
+- name: create SSH key for root user
+  command: 'ssh-keygen -b 4096 -t rsa -N "" -C "root@localhost" -f /root/.ssh/id_rsa'
+  args:
+    creates: "/root/.ssh/id_rsa"
+
+- name: clone dotfile repository from GitHub
+  become_user: "{{ target_user }}"
+  git:
+    repo: "git@github.com:jwflory/conf.git"
+    dest: "{{ user_home_dir }}/git/swiss-army"

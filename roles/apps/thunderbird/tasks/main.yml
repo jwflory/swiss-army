@@ -1,0 +1,15 @@
+---
+- name: install thunderbird
+  package:
+    state: latest
+    name:
+      - thunderbird
+      - thunderbird-enigmail
+
+- name: add mail filters for primary email account
+  copy:
+    src: "{{ role_path }}/files/msgFilterRules.dat"
+    dest: "{{ user_home_dir }}/.thunderbird/cq8izn4c.default/ImapMail/imap.googlemail.com/msgFilterRules.dat"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+    mode: 0660

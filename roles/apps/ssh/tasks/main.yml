@@ -1,0 +1,15 @@
+---
+- name: create SSH user config directory (~/.ssh/)
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.ssh"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+    mode: 0700
+
+- name: add user config (~/.ssh/config)
+  copy:
+    src: "{{ role_path }}/files/config"
+    dest: "{{ user_home_dir }}/.ssh/config"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"

@@ -1,0 +1,13 @@
+---
+- name: install tmux
+  package:
+    state: latest
+    name:
+      - tmux
+
+- name: add tmux.conf
+  copy:
+    src: "{{ role_path }}/files/tmux.conf"
+    dest: "{{ user_home_dir }}/.tmux.conf"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"

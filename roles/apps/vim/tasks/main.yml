@@ -1,0 +1,84 @@
+---
+- name: install vim
+  package:
+    state: latest
+    name:
+      - vim
+
+- name: create vim user config directories
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/{{ item }}"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+  with_items:
+    - .vim/autoload
+    - .vim/bundle
+
+- name: add vimrc
+  copy:
+    src: "{{ role_path }}/files/vimrc"
+    dest: "{{ user_home_dir }}/.vimrc"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: configure vim - pathogen
+  become_user: "{{ target_user }}"
+  get_url:
+    url: "https://tpo.pe/pathogen.vim"
+    dest: "{{ user_home_dir }}/.vim/autoload/pathogen.vim"
+    mode: 0750
+
+- name: add vim plugin - code_complete
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/mbbill/code_complete.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-code-complete"
+
+- name: add vim plugin - Dockerfile.vim
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/ekalinin/Dockerfile.vim.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-dockerfile"
+
+- name: add vim plugin - syntastic
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/vim-syntastic/syntastic.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-syntastic"
+
+- name: add vim plugin - vim-airline
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/vim-airline/vim-airline.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-airline"
+
+- name: add vim plugin - vim-closetag
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/alvan/vim-closetag.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-closetag"
+
+- name: add vim plugin - vim-flake8
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/nvie/vim-flake8.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-flake8"
+
+- name: add vim plugin - vim-jinja
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/mitsuhiko/vim-jinja.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-jinja"
+
+- name: add vim plugin - vim-snippets
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/honza/vim-snippets.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-snippets"
+
+- name: add vim plugin - vim-surround
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/tpope/vim-surround.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/vim-surround"
