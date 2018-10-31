@@ -16,7 +16,8 @@
     creates: "/root/.ssh/id_rsa"
 
 - name: clone dotfile repository from GitHub
+  become: yes
   become_user: "{{ target_user }}"
   git:
-    repo: "git@github.com:jwflory/conf.git"
+    repo: "git@github.com:jwflory/swiss-army.git"
     dest: "{{ user_home_dir }}/git/swiss-army"
