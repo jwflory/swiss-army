@@ -110,6 +110,7 @@
       - vagrant-sshfs
       - '@virtualization'
       - visualboyadvance-m
+      - youtube-dl
 
 - name: configure dnf to keep two versions of kernel installed at once
   lineinfile:
