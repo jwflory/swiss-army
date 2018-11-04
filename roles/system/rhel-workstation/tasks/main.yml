@@ -96,7 +96,7 @@
   pip:
     executable: pip3.6
     state: latest
-    extra_args: --user
+    extra_args: "--user"
     name:
       - pipenv
 
