@@ -21,3 +21,4 @@
   git:
     repo: "git@github.com:jwflory/swiss-army.git"
     dest: "{{ user_home_dir }}/git/swiss-army"
+    update: no
