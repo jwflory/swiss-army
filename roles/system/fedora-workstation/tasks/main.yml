@@ -35,11 +35,6 @@
     - https://negativo17.org/repos/fedora-spotify.repo
     - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
-- name: install Google Play Music Manager
-  package:
-    state: present
-    name: https://dl.google.com/linux/direct/google-musicmanager-beta_current_x86_64.rpm
-
 - name: install base packages
   ### Package notes ###
   # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
@@ -51,6 +46,7 @@
   package:
     state: latest
     name:
+      - https://dl.google.com/linux/direct/google-musicmanager-beta_current_x86_64.rpm
       - ansible
       - ansible-python3
       - arandr
