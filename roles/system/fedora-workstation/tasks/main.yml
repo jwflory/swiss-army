@@ -25,13 +25,15 @@
       - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
 
 - name: add other third-party repositories
-  command: "dnf config-manager --add-repo {{ item }}"
+  get_url:
+    dest: "/etc/yum.repos.d/"
+    url: "{{ item }}"
+    setype: "system_conf_t"
+    seuser: "system_u"
   with_items:
     - https://negativo17.org/repos/fedora-flash-plugin.repo
     - https://negativo17.org/repos/fedora-spotify.repo
     - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-  args:
-    warn: no
 
 - name: install Google Play Music Manager
   package:

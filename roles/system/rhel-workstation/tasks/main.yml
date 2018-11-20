@@ -25,13 +25,15 @@
       - https://rhel7.iuscommunity.org/ius-release.rpm
 
 - name: add other third-party repositories
-  command: "yum-config-manager --add-repo {{ item }}"
+  get_url:
+    dest: "/etc/yum.repos.d/"
+    url: "{{ item }}"
+    setype: "system_conf_t"
+    seuser: "system_u"
   with_items:
     - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
     - https://negativo17.org/repos/epel-flash-plugin.repo
     - https://negativo17.org/repos/epel-spotify.repo
-  args:
-    warn: no
 
 - name: install base packages
   ### Package notes ###
