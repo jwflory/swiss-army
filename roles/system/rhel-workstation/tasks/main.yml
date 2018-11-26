@@ -41,7 +41,7 @@
   # meld: Visual diff and merge tool
   # network-manager-applet: Network control / status applet for NetworkManager
   package:
-    state: latest
+    state: present
     name:
       - ansible
       # - ansible-python3

@@ -1,5 +1,5 @@
 ---
-- name: add EPEL and IUS repositories
+- name: install/upgrade EPEL and IUS repositories
   package:
     state: latest
     name:
@@ -8,7 +8,7 @@
 
 - name: install base packages
   package:
-    state: latest
+    state: present
     name:
       - firewalld
       - git
