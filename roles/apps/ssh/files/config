@@ -36,7 +36,7 @@ Host irclo
   User jwf
 Host ircritlug
   HostName irc-lug.rit.edu
-  User shared
+  User jflory
 
 # HOSTS: Rochester Institute of Technology
 Host banjo
