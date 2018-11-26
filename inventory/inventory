@@ -5,6 +5,7 @@ estrella.justinwflory.com
 fiction.justinwflory.com
 grantgreen.justinwflory.com
 horizon.justinwflory.com
+irc-lug.rit.edu
 
 [workstation]
 127.0.0.1 ansible_connection=local
@@ -17,3 +18,4 @@ estrella
 fiction
 grantgreen
 horizon
+irc-lug.rit.edu
