@@ -9,8 +9,8 @@
   package:
     state: present
     name:
-      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-28.noarch.rpm
-      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-28.noarch.rpm
+      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
+      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
 
 - name: add other third-party repositories
   get_url:
