@@ -5,7 +5,12 @@
     state: started
     enabled: yes
 
+- name: get type of system install (desktop|laptop)
+  command: "cat {{ user_home_dir }}/.jwf-identifier"
+  register: system_type
+
 - name: add jwf-fix-desktop-monitor-on-boot.service
+  when: system_type.stdout == "desktop"
   template:
     src: jwf-fix-desktop-monitor-on-boot.service
     dest: "/usr/lib/systemd/system/jwf-fix-desktop-monitor-on-boot.service"
@@ -14,6 +19,7 @@
     setype: systemd_unit_file_t
 
 - name: start/enable jwf-fix-desktop-monitor-on-boot
+  when: system_type.stdout == "desktop"
   service:
     name: jwf-fix-desktop-monitor-on-boot
     state: started
