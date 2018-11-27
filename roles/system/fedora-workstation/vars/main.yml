@@ -1,0 +1,6 @@
+---
+desktop_name: ff.justinwflory.com
+fedora_version: 28
+
+xrandr_params:
+  primary_output: HDMI-2

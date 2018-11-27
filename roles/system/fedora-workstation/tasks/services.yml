@@ -1,6 +1,20 @@
 ---
-- name: start and enable firewalld
+- name: start/enable firewalld
   service:
     name: firewalld
+    state: started
+    enabled: yes
+
+- name: add jwf-fix-desktop-monitor-on-boot.service
+  template:
+    src: jwf-fix-desktop-monitor-on-boot.service
+    dest: "/usr/lib/systemd/system/jwf-fix-desktop-monitor-on-boot.service"
+    mode: 0644
+    seuser: system_u
+    setype: systemd_unit_file_t
+
+- name: start/enable jwf-fix-desktop-monitor-on-boot
+  service:
+    name: jwf-fix-desktop-monitor-on-boot
     state: started
     enabled: yes
