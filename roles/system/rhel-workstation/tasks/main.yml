@@ -46,6 +46,7 @@
       - ansible
       # - ansible-python3
       # - arandr
+      - bash-completion
       - brasero
       - brasero-nautilus
       - docker

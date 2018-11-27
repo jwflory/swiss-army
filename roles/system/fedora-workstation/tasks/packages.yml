@@ -38,6 +38,7 @@
       - ansible
       - ansible-python3
       - arandr
+      - bash-completion
       - blueman
       - brasero
       - brasero-nautilus
