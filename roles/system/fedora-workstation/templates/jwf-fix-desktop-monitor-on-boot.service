@@ -1,0 +1,11 @@
+[Unit]
+Description=Adjust XRandR configuration for 2018+ home desktop ({{ desktop_name }})
+Requires=network.target
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=xrandr --output {{ xrandr_params.primary_output }} --primary && i3 restart
+
+[Install]
+WantedBy=multi-user.target
