@@ -17,7 +17,7 @@ Ensure `inventory/inventory` and `playbooks/group_vars/all` are customized to yo
 
 [source,bash]
 ----
-sudo ansible-playbook-3 playbooks/fedora-workstation.yml
+ansible-playbook-3 -K playbooks/fedora-workstation.yml
 ----
 
 
@@ -25,7 +25,7 @@ sudo ansible-playbook-3 playbooks/fedora-workstation.yml
 
 [source,bash]
 ----
-sudo ansible-playbook playbooks/rhel-workstation.yml
+ansible-playbook -K playbooks/rhel-workstation.yml
 ----
 
 
@@ -33,5 +33,5 @@ sudo ansible-playbook playbooks/rhel-workstation.yml
 
 [source,bash]
 ----
-ansible-playbook-3 -l jflory playbooks/centos-server.yml
+ansible-playbook-3 playbooks/centos-server.yml
 ----
