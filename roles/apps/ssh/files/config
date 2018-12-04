@@ -8,9 +8,6 @@ Host *.phx2.fedoraproject.org *.qa.fedoraproject.org 10.5.125.* 10.5.126.* 10.5.
   ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 
 # HOSTS: Personal
-Host bryn
-  HostName bryn.justinwflory.com
-  User jflory
 Host cortana
   HostName cortana.justinwflory.com
   User jflory
