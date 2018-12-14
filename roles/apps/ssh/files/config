@@ -17,9 +17,6 @@ Host derezzed
 Host estrella
   HostName estrella.justinwflory.com
   User jflory
-Host fiction
-  HostName fiction.justinwflory.com
-  User jflory
 Host horizon
   HostName horizon.justinwflory.com
   User jflory
