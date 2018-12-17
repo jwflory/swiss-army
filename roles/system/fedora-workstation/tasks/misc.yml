@@ -7,7 +7,7 @@
 
 - name: protect file permissions on ~/.jwf-identifier
   file:
-    state: touch
+    state: file
     path: "{{ user_home_dir }}/.jwf-identifier"
     mode: 0600
     owner: "{{ target_user }}"
