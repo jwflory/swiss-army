@@ -189,12 +189,12 @@ assign [class="Telegram"] 4
 ########################
 
 # Set compose key: Special character support
-exec --no-startup-id "setxkbmap -option 'compose:ralt'"
+exec --no-startup-id setxkbmap -option "compose:ralt"
 
 # Enable US English and Indian (Hindi) keyboards
 #   Switch between them with Left Alt + Shift
-exec --no-startup-id "setxkbmap -layout us,in"
-exec --no-startup-id "setxkbmap -option 'grp:lalt_shift_toggle'"
+exec --no-startup-id setxkbmap -layout "us,in"
+exec --no-startup-id setxkbmap -option "grp:lalt_shift_toggle"
 
 # PulseAudio controls
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ unmute    # increase volume
