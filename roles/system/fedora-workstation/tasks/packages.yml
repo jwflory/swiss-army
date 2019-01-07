@@ -97,4 +97,5 @@
       - vagrant-sshfs
       - '@virtualization'
       - visualboyadvance-m
+      - yamllint
       - youtube-dl
