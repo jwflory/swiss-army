@@ -33,6 +33,7 @@ alias hdmi2primary='xrandr --output HDMI-2 --primary && i3 restart'
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%Y-%m-%d %H:%M"'
 alias lsa='ls -Alh'
 alias lsz='ls -AZlh'
+alias pwd_size='du -sh ./* | sort -hr'
 alias t='task'
 alias ts='task sync'
 
