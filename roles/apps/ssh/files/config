@@ -36,6 +36,9 @@ Host ircritlug
 Host banjo
   HostName banjo.rit.edu
   User jwf9260
+Host fossrit
+  HostName fossrit.community
+  User jflory
 Host serenity
   HostName serenity.ist.rit.edu
   User jwf9260
