@@ -20,6 +20,10 @@ Host estrella
 Host horizon
   HostName horizon.justinwflory.com
   User jflory
+Host intermission
+  HostName intermission.justinwflory.com
+  Port 60597
+  User jflory
 
 # HOSTS: Specific-purpose VMs
 Host ircfedora
