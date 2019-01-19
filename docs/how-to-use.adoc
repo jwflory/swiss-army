@@ -10,10 +10,13 @@ Each playbook can modularly select different combinations of a base system and a
 
 == Configuration
 
-Ensure `inventory/inventory` and `playbooks/group_vars/all` are customized to your needs.
+* Adjust the following files as needed:
+** `inventory/inventory`
+** `playbooks/group_vars/all`
+* Create `~/.jwf-identifier` file with string containing `desktop` or `laptop`
 
 
-== Provision Fedora 28 Workstation
+== Provision Fedora 29 Workstation
 
 [source,bash]
 ----
