@@ -1,15 +1,17 @@
-" === Plugin management: Pathogen ===
+" ===== plugin management: pathogen =====
 " Note: Eventually, this can be deprecated when versions of Vim with proper
 "       package management are more widely available on enterprise Linux distros
 execute pathogen#infect()
 
 
-" === Theming ===
+
+" ===== theming =====
 colorscheme slate
 set background=dark " Use a dark background
 
 
-" === Editor preferences ===
+
+" ===== editor preferences =====
 syntax on
 filetype plugin indent on
 set backspace=2         " fix backspace key behavior on older systems
@@ -20,13 +22,15 @@ set foldmethod=indent   " automatically fold by indent level
 set nofoldenable        " …but have folds open by default
 
 
-" === Encoding / color support ===
+
+" ===== encoding / color support =====
 set encoding=utf-8  " Force encoding to UTF-8 compliance
 set laststatus=2    " Always display the statusline in all windows
 set t_Co=256        " Set terminal color support to 256 colors (for Powerline)
 
 
-" === Indentation preferences ===
+
+" ===== indentation preferences =====
 set expandtab       " On pressing tab, insert four spaces
 set shiftwidth=4    " When indenting with '>', use four spaces width
 set showtabline=2   " Always display the tabline, even if there is only one tab
@@ -34,13 +38,15 @@ set smarttab        " On pressing tab, indent to previous line's indention
 set tabstop=4       " Show existing tab with four spaces width
 
 
-" === Text formatting preferences ===
+
+" ===== text formatting preferences =====
 set textwidth=80
 set colorcolumn=81
 set wrapscan
 
 
-" === Custom file preferences ===
+
+" ===== custom file preferences =====
 
 " AsciiDoc
 autocmd FileType asciidoc setlocal textwidth=0 colorcolumn=0
@@ -65,7 +71,8 @@ autocmd FileType rst setlocal textwidth=0 colorcolumn=0
 autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 
-" === Plugin configuration ===
+
+" ===== plugin configuration =====
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.shtml' " vim-closetags
 let g:airline#extensions#tabline#enabled = 1                " vim-airline
 let g:airline_powerline_fonts = 1                           " vim-airline
