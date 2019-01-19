@@ -1,13 +1,13 @@
 ---
 - name: import third-party repository signing keys
   rpm_key: key={{ item }} state=present
-  with_items:
+  loop:
     - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
     - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
 
-- name: add RPM Fusion repositories
+- name: add/upgrade RPM Fusion repositories
   package:
-    state: present
+    state: latest
     name:
       - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
       - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
@@ -16,9 +16,9 @@
   get_url:
     dest: "/etc/yum.repos.d/"
     url: "{{ item }}"
-    setype: "system_conf_t"
-    seuser: "system_u"
-  with_items:
+    setype: system_conf_t
+    seuser: system_u
+  loop:
     - https://negativo17.org/repos/fedora-flash-plugin.repo
     - https://negativo17.org/repos/fedora-spotify.repo
     - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo

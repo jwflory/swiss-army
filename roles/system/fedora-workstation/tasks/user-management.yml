@@ -1,7 +1,7 @@
 ---
 - name: add new groups - docker, libvirt
   group: name={{ item }}
-  with_items:
+  loop:
     - docker
     - libvirt
 
