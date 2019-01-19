@@ -20,7 +20,7 @@ Each playbook can modularly select different combinations of a base system and a
 
 [source,bash]
 ----
-ansible-playbook-3 -K playbooks/fedora-workstation.yml
+ansible-playbook -K playbooks/fedora-workstation.yml
 ----
 
 
