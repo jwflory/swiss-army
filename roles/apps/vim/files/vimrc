@@ -21,6 +21,9 @@ set number              " show line numbers
 set foldmethod=indent   " automatically fold by indent level
 set nofoldenable        " …but have folds open by default
 
+" automatically trim hanging whitespace on file save
+autocmd BufWritePre * %s/\s\+$//e
+
 
 
 " ===== encoding / color support =====
