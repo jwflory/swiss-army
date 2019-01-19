@@ -1,22 +1,12 @@
 ---
 - name: install taskwarrior
   package:
-    state: latest
-    name:
-      - task
+    state: present
+    name: task
 
-- name: add taskrc (Fedora only)
-  when: ansible_distribution == 'Fedora'
-  copy:
-    src: "{{ role_path }}/files/taskrc.fedora"
-    dest: "{{ user_home_dir }}/.taskrc"
-    group: "{{ target_user }}"
-    owner: "{{ target_user }}"
-
-- name: add taskrc (Enterprise Linux only)
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+- name: add taskrc
   template:
-    src: "{{ role_path }}/files/taskrc.rhel"
+    src: "{{ role_path }}/files/taskrc"
     dest: "{{ user_home_dir }}/.taskrc"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
