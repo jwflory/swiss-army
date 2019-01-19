@@ -21,6 +21,7 @@
       - python-flake8
       - python36u
       - python36u-pip
+      - rpmconf
       - smartmontools
       - strace
       - which
