@@ -32,7 +32,7 @@
   # meld: Visual diff and merge tool
   # network-manager-applet: Network control / status applet for NetworkManager
   package:
-    state: latest
+    state: present
     name:
       - https://dl.google.com/linux/direct/google-musicmanager-beta_current_x86_64.rpm
       - ansible
