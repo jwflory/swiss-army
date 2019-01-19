@@ -15,7 +15,6 @@
     - apps/powerline-go
     - apps/ssh
     - apps/task
-    - apps/bugwarrior  # intentionally after taskwarrior role
     # - apps/thunderbird
     - apps/tmux
     - apps/vim
