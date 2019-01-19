@@ -1,4 +1,8 @@
 ---
+- name: import global variables
+  include_vars:
+    dir: "{{ inventory_dir }}/group_vars/"
+
 - name: remove unused packages
   package:
     state: absent
