@@ -13,7 +13,7 @@
   command: "mv {{ user_home_dir }}/go {{ user_home_dir }}/wkspc/go"
   args:
     creates: "{{ user_home_dir }}/wkspc/go"
-    removes:  "{{ user_home_dir }}/go"
+    removes: "{{ user_home_dir }}/go"
 
 - name: (hack) create powerline-go system-level symbolic link
   file:
