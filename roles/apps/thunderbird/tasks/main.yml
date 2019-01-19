@@ -6,12 +6,8 @@
       - thunderbird
       - thunderbird-enigmail
 
-- name: get type of system install (desktop|laptop)
-  command: "cat {{ user_home_dir }}/.jwf-identifier"
-  register: system_type
-
 - name: add mail filters for primary email account (desktop path)
-  when: system_type.stdout == "desktop"
+  when: ansible_hostname == "ff"
   copy:
     src: "{{ role_path }}/files/msgFilterRules.dat"
     dest: "{{ user_home_dir }}/.thunderbird/cq8izn4c.default/ImapMail/imap.googlemail.com/msgFilterRules.dat"
@@ -20,7 +16,7 @@
     mode: 0660
 
 - name: add mail filters for primary email account (laptop path)
-  when: system_type.stdout == "laptop"
+  when: ansible_hostname == "fossbook"
   copy:
     src: "{{ role_path }}/files/msgFilterRules.dat"
     dest: "{{ user_home_dir }}/.thunderbird/cl5szv8k.default/ImapMail/imap.googlemail.com/msgFilterRules.dat"

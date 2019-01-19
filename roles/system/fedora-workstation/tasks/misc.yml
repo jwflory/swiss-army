@@ -4,12 +4,3 @@
     dest: /etc/dnf/dnf.conf
     regexp: '^installonly_limit='
     line: 'installonly_limit=2'
-
-- name: protect file permissions on ~/.jwf-identifier
-  file:
-    state: file
-    path: "{{ user_home_dir }}/.jwf-identifier"
-    mode: 0600
-    owner: "{{ target_user }}"
-    group: "{{ target_user }}"
-    seuser: system_u

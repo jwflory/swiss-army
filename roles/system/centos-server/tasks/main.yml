@@ -1,4 +1,3 @@
 ---
-- include_tasks: misc.yml
 - include_tasks: packages.yml
 - include_tasks: services.yml
