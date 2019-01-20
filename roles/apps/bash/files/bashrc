@@ -15,6 +15,9 @@ export EDITOR=vim
 if [ -f "$PATH/task" ]; then
     source ~/.bash_completion.d/task.sh
 fi
+if [ -f "$PATH/wp" ]; then
+    source ~/.bash_completion.d/wp-completion.bash
+fi
 
 ## -- powerline-go configuration ---------------------------
 # https://github.com/justjanne/powerline-go
