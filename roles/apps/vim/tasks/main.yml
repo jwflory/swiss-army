@@ -1,9 +1,8 @@
 ---
-- name: install vim
+- name: install/upgrade vim
   package:
     state: latest
-    name:
-      - vim
+    name: vim
 
 - name: create vim user config directories
   file:
