@@ -53,6 +53,7 @@
       - flash-plugin
       - git
       - gnome-shell-extension-pomodoro
+      - gnome-tweaks
       - gobby05
       - golang
       - google-roboto-slab-fonts
