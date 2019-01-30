@@ -41,6 +41,7 @@
       - blueman
       - brasero
       - brasero-nautilus
+      - buildah
       - chromaprint-tools
       - copr-cli
       - docker
