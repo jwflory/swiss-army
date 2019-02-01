@@ -206,9 +206,9 @@ bindsym XF86MonBrightnessUp exec brightlight -p --increment 10        # increase
 bindsym XF86MonBrightnessDown exec brightlight -p --decrement 10      # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec rhythmbox-client --no-start --play-pause
-bindsym XF86AudioNext exec rhythmbox-client --no-start --next
-bindsym XF86AudioPrev exec rhythmbox-client --no-start --previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 
 #########################
