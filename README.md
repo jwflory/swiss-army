@@ -26,8 +26,11 @@ For a fully automated setup, two environments are supported: **Fedora** and **Ce
 See [`docs/how-to-use.adoc`](https://github.com/jwflory/swiss-army/blob/master/docs/how-to-use.adoc "How to use jwflory/swiss-army").
 
 
-## Using my playbooks or configurations
+## Reusing and remixing swiss-army?
 
 This repository is licensed under the [BSD 3-Clause License](https://choosealicense.com/licenses/bsd-3-clause/ "BSD 3-Clause “New” or “Revised” License").
 Reuse anything you want in your own configurations.
-If you publicly share your dotfiles, a link to point here in your README is appreciated. :+1:
+If you publish your remixed work on GitHub, drop a link back here in your README please. :memo:
+And you can say :wave: to me in your git commit.
+Tag me!
+`@jwflory`
