@@ -6,6 +6,10 @@ Host bastion.fedoraproject.org
 Host *.phx2.fedoraproject.org *.qa.fedoraproject.org 10.5.125.* 10.5.126.* 10.5.127.* *.vpn.fedoraproject.org
   User jflory7
   ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
+Host fedorapeople
+  HostName fedorapeople.org
+  User jflory7
+  ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 
 # HOSTS: Personal
 Host cortana
