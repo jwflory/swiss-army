@@ -74,6 +74,7 @@
       - mpv
       - nautilus-dropbox
       - network-manager-applet
+      - nodejs-yarn
       - overpass-fonts
       - overpass-mono-fonts
       - pandoc
