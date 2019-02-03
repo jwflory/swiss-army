@@ -4,4 +4,10 @@ install: "pip install yamllint"
 script: "yamllint -c .yamllint ."
 
 notifications:
-  irc: "ircs://chat.freenode.net:6697/##jwf"
+  irc:
+    channels:
+      - "ircs://chat.freenode.net:6697/##jwf"
+    template:
+      - "[%{repository_name}:%{branch}@%{commit} - build #%{build_number}] CI %{result}! (%{build_url})"
+    on_success: change
+    on_failure: always
