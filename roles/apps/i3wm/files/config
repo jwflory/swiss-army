@@ -169,7 +169,7 @@ bar {
 ########################
 
 # Invert scrolling (natural scrolling)
-exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
+exec --no-startup-id "synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111"
 
 # Focus window on click
 focus_follows_mouse no
@@ -189,25 +189,25 @@ assign [class="Telegram"] 4
 ########################
 
 # Set compose key: Special character support
-exec_always --no-startup-id setxkbmap -option "compose:ralt"
+exec_always --no-startup-id "setxkbmap -option \\"compose:ralt\\""
 
 # Enable US English and Indian (Hindi) keyboards
 #   Switch between them with Left Alt + Shift
-exec_always --no-startup-id setxkbmap -layout "us,in"; setxkbmap -option "grp:alt_shift_toggle"
+exec_always --no-startup-id "setxkbmap -layout \\"us,in\\"; setxkbmap -option \\"grp:alt_shift_toggle\\""
 
 # PulseAudio controls
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ unmute    # increase volume
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- unmute    # decrease volume
-bindsym XF86AudioMute exec amixer -D pulse set Master toggle               # mute volume
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse set Master 5%+ unmute"   # increase volume
+bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master 5%- unmute"   # decrease volume
+bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"              # mute volume
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec brightlight -p --increment 10        # increase screen brightness
-bindsym XF86MonBrightnessDown exec brightlight -p --decrement 10      # decrease screen brightness
+bindsym XF86MonBrightnessUp exec "brightlight -p --increment 10"            # increase screen brightness
+bindsym XF86MonBrightnessDown exec "brightlight -p --decrement 10"          # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec "playerctl play-pause"
+bindsym XF86AudioNext exec "playerctl next"
+bindsym XF86AudioPrev exec "playerctl previous"
 
 
 #########################
@@ -215,28 +215,28 @@ bindsym XF86AudioPrev exec playerctl previous
 #########################
 
 # feh: Wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec --no-startup-id "feh --bg-scale ~/Pictures/wallpaper.jpg"
 
 # xfce4-power-manager: Low battery notifications
-exec xfce4-power-manager
+exec "xfce4-power-manager"
 
 # dropbox: Start daemon
-exec dropbox start
+exec "dropbox start"
 
 # blueman-applet: Bluetooth management in systray
-exec blueman-applet
+exec "blueman-applet"
 
 # nm-applet: Network management in systray
-exec nm-applet
+exec "nm-applet"
 
 # gnome-pomodoro: Pomodoro timer in systray
-exec gnome-pomodoro --no-default-window
+exec "gnome-pomodoro --no-default-window"
 
 # Restore GNOME-style locking
-bindsym $mod+Control+l exec $HOME/.config/i3/i3exit.sh lock
-bindsym $mod+Control+s exec $HOME/.config/i3/i3exit.sh suspend
-exec xautolock -time 15 -locker '$HOME/.config/i3/fuzzy_lock.sh' &
+bindsym $mod+Control+l exec "$HOME/.config/i3/i3exit.sh lock"
+bindsym $mod+Control+s exec "$HOME/.config/i3/i3exit.sh suspend"
+exec "xautolock -time 15 -locker '$HOME/.config/i3/fuzzy_lock.sh' &"
 
 # Standard desktop applications I always use on start
-exec firefox
-exec thunderbird
+exec "firefox"
+exec "thunderbird"
