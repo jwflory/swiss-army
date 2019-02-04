@@ -195,14 +195,14 @@ exec_always --no-startup-id "setxkbmap -option \\"compose:ralt\\""
 #   Switch between them with Left Alt + Shift
 exec_always --no-startup-id "setxkbmap -layout \\"us,in\\"; setxkbmap -option \\"grp:alt_shift_toggle\\""
 
-# PulseAudio controls
-bindsym XF86AudioRaiseVolume exec "amixer -D pulse set Master 5%+ unmute"   # increase volume
-bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master 5%- unmute"   # decrease volume
-bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"              # mute volume
+# PulseAudio (volume) controls
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse set Master 5%+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse set Master 5%- unmute"
+bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "brightlight -p --increment 10"            # increase screen brightness
-bindsym XF86MonBrightnessDown exec "brightlight -p --decrement 10"          # decrease screen brightness
+bindsym XF86MonBrightnessUp exec "brightlight -p --increment 10"
+bindsym XF86MonBrightnessDown exec "brightlight -p --decrement 10"
 
 # Media player controls
 bindsym XF86AudioPlay exec "playerctl play-pause"
