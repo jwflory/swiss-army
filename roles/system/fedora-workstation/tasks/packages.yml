@@ -31,6 +31,7 @@
   # jpegoptim: Utility to optimize JPEG files
   # meld: Visual diff and merge tool
   # network-manager-applet: Network control / status applet for NetworkManager
+  # poppler-utils: Command line utilities for converting PDF files
   package:
     state: present
     name:
@@ -82,6 +83,7 @@
       - pavucontrol
       - picard
       - podman
+      - poppler-utils
       - powerline-fonts
       - pulseaudio-utils
       - python2-flake8
