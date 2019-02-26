@@ -46,6 +46,7 @@
       - chromaprint-tools
       - copr-cli
       - docker
+      - docker-compose
       - epiphany
       - fedpkg
       - fedora-packager
