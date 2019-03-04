@@ -18,6 +18,10 @@ Host happinesspackets-stg
   HostName happinesspackets-stg.fedorainfracloud.org
   User root
   ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
+Host ircfedora
+  Hostname telegram-irc.fedorainfracloud.org
+  User jflory
+  ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 
 # HOSTS: Personal
 Host cortana
@@ -38,9 +42,6 @@ Host intermission
   User jflory
 
 # HOSTS: Specific-purpose VMs
-Host ircfedora
-  Hostname telegram-irc.fedorainfracloud.org
-  User jflory
 Host irclo
   Hostname vm205.documentfoundation.org
   User jwf
