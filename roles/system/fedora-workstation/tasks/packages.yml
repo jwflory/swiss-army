@@ -27,6 +27,7 @@
   ### Package notes ###
   # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
   # chromaprint-tools: Capture digital fingerprints of audio files
+  # cmus: ncurses-based music player
   # gstreamer1-plugins-bad-nonfree: MPEG2 codec support
   # jpegoptim: Utility to optimize JPEG files
   # meld: Visual diff and merge tool
@@ -44,6 +45,7 @@
       - brasero-nautilus
       - buildah
       - chromaprint-tools
+      - cmus
       - copr-cli
       - docker
       - docker-compose
