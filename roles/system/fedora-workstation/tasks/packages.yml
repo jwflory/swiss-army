@@ -75,6 +75,7 @@
       - libvirt
       - libvirt-devel
       - meld
+      - mpris-scrobbler
       - mpv
       - nautilus-dropbox
       - network-manager-applet
