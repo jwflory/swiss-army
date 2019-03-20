@@ -40,6 +40,30 @@ alias pwd_size='du -sh ./* | sort -hr'
 alias t='task'
 alias ts='task sync'
 
+## -- aliases: git Pagure pull request reviews -------------
+
+# Pagure pull request, non-master branch
+function pag_pull_nm {
+    git checkout master
+    git branch -D $2
+    git fetch origin pull/$1/head:$2
+    git checkout $2
+}
+
+# Pagure pull request, master branch
+function pag_pull_m {
+    git checkout master
+    git branch -D pr-$1
+    git checkout -b pr-$1
+    git fetch origin pull/$1/head:master -f
+    git checkout master
+    git branch -D pr-$1
+    git checkout -b pr-$1
+    git checkout master
+    git reset --hard origin/master
+    git checkout pr-$1
+}
+
 ## -- aliases: git [short versions] ------------------------
 alias gitss='git shoeshine'
 alias gitst='git short-status'
