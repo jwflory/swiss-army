@@ -43,8 +43,8 @@ set tabstop=4       " Show existing tab with four spaces width
 
 
 " ===== text formatting preferences =====
-set textwidth=80
-set colorcolumn=81
+set textwidth=79
+set colorcolumn=80
 set wrapscan
 
 
