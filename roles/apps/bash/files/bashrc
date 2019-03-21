@@ -22,7 +22,10 @@ fi
 ## -- powerline-go configuration ---------------------------
 # https://github.com/justjanne/powerline-go
 function _update_ps1() {
-    PS1="$($GOPATH/bin/powerline-go -error $?)"
+    PS1="$($GOPATH/bin/powerline-go \
+        -colorize-hostname \
+        -cwd-max-depth 4 \
+        -error $?)"
 }
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
