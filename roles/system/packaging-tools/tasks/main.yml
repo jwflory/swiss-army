@@ -7,17 +7,11 @@
     owner: "{{ target_user }}"
 
 - name: clone/pull from remote github.com/jwflory/rpmbuild
+  become: yes
+  become_user: "{{ target_user }}"
   git:
     repo: git@github.com:jwflory/rpmbuild.git
     dest: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild"
-
-- name: (hack) set target user as owner/group of git repository path
-  file:
-    path: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild"
-    state: directory
-    recurse: yes
-    group: "{{ target_user }}"
-    owner: "{{ target_user }}"
 
 - name: set symbolic link on system path to preferred path for RPM packaging
   file:
