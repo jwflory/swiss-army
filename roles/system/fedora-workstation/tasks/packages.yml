@@ -58,6 +58,7 @@
       - flash-plugin
       - git
       - gnome-shell-extension-pomodoro
+      - gnome-mahjongg
       - gobby05
       - golang
       - google-roboto-slab-fonts
