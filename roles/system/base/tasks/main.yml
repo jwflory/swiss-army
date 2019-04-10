@@ -21,6 +21,7 @@
       - gnome-initial-setup
       - gnome-maps
       - gnome-photos
+      - gnome-shell-extension-pomodoro
       - gnome-system-monitor
       - gnome-weather
       - logwatch
