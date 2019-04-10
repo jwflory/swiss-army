@@ -1,0 +1,43 @@
+---
+- name: create preferred path for RPM packaging
+  file:
+    path: "{{ user_home_dir }}/git/fedora/rpms/"
+    state: directory
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: clone/pull from remote github.com/jwflory/rpmbuild
+  git:
+    repo: git@github.com:jwflory/rpmbuild.git
+    dest: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild"
+
+- name: (hack) set target user as owner/group of git repository path
+  file:
+    path: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild"
+    state: directory
+    recurse: yes
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: set symbolic link on system path to preferred path for RPM packaging
+  file:
+    src: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild/rpmbuild"
+    dest: "{{ user_home_dir }}/rpmbuild"
+    state: link
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: install Fedora packaging tools
+  package:
+    state: present
+    name:
+      - copr-cli
+      - fedpkg
+      - fedora-packager
+      - mock
+
+- name: add target user to mock group
+  user:
+    name: "{{ target_user }}"
+    groups: mock
+    append: yes

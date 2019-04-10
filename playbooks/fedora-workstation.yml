@@ -6,6 +6,7 @@
   roles:
     - system/base
     - system/fedora-workstation
+    - system/packaging-tools
     - apps/base-workstation
     - apps/bash
     - apps/dunst
