@@ -87,6 +87,7 @@
       - pass
       - pavucontrol
       - picard
+      - planner
       - podman
       - poppler-utils
       - powerline-fonts
