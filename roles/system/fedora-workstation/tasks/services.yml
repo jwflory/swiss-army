@@ -11,12 +11,6 @@
     state: started
     enabled: yes
 
-- name: start/enable tor
-  service:
-    name: tor
-    state: started
-    enabled: yes
-
 #
 # Need upstream bug fixed with i3wm before systemd service file will work
 # correctly. See https://github.com/i3/i3/issues/3565 for more info.

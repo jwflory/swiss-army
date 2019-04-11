@@ -1,0 +1,13 @@
+---
+- name: install tor and torbrowser-launcher
+  package:
+    state: present
+    name:
+      - tor
+      - torbrowser-launcher
+
+- name: start/enable tor
+  service:
+    name: tor
+    state: started
+    enabled: yes
