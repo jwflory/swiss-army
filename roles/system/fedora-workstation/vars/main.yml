@@ -5,4 +5,5 @@ hostnames:
 fedora_version: 29
 
 xrandr_params:
-  primary_output: HDMI-2
+  primary_output: VGA-1
+  secondary_output: HDMI-2

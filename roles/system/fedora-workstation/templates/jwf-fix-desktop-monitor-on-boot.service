@@ -6,7 +6,7 @@ After=multi-user.target
 Type=oneshot
 User={{ target_user }}
 Environment="DISPLAY=:0"
-ExecStart=/usr/bin/xrandr --output {{ xrandr_params.primary_output }} --primary
+ExecStart=/usr/bin/xrandr --output {{ xrandr_params.primary_output }} --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output {{ xrandr_params.secondary_output }} --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --off
 ExecStartPost=/usr/bin/i3-msg restart
 
 [Install]
