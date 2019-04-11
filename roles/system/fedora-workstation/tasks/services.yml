@@ -1,7 +1,19 @@
 ---
+- name: start/enable docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
 - name: start/enable firewalld
   service:
     name: firewalld
+    state: started
+    enabled: yes
+
+- name: start/enable tor
+  service:
+    name: tor
     state: started
     enabled: yes
 

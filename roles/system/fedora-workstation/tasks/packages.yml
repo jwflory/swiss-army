@@ -96,6 +96,8 @@
       - spotify-client
       - strace
       - sublime-text
+      - tor
+      - torbrowser-launcher
       - telegram-desktop
       - typetype-molot-fonts
       - '@vagrant'
