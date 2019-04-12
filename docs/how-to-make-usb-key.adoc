@@ -1,0 +1,32 @@
+= How to make a bootable Linux USB key
+
+_Licensed under_: https://creativecommons.org/licenses/by-sa/4.0/[CC BY-SA 4.0 International]
+
+This document explains how to create a bootable Linux USB key.
+There are many methods to do this and many tools available to make this easier.
+However, over time, these tools may change or break.
+One tool that has not changed is `dd`.
+Instead of searching my browser history each time I make a USB key, this is a more definitive guide for me to reference.
+
+
+== Requirements
+
+You need the following:
+
+* ISO image of your choice
+* USB key (8GB+ preferred)
+* Existing Linux or macOS system
+
+
+== How to use `dd` to make a USB key
+
+ sudo dd if=/path/to/image.iso of=/dev/sdX bs=128K conv=noerror,sync status=progress
+
+From https://www.cyberciti.biz/faq/unix-linux-dd-create-make-disk-image-commands/[nixCraft]:
+
+. *`if=/path/to/image.iso`*: Input device / ISO
+. *`of=/dev/sdX`*: Output device
+. *`bs=128K`*: Set block size to 128 KB (citation needed - _what does this really mean?_)
+. *`conv=noerror`*: Tell dd to continue operation, ignoring all read errors
+. *`sync`*: Add input blocks with zeroes if there were read errors, so data offsets stay in sync
+. *`status=progress`*: See progress while making an image (requires GNU coreutils 8.24 or later)
