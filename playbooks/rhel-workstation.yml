@@ -4,17 +4,19 @@
   become: yes
 
   roles:
-    - system/base
-    - system/rhel-workstation
-    - apps/base-workstation
-    - apps/bash
-    # - apps/dunst
-    - apps/git
-    - apps/i3wm
-    - apps/npm
-    - apps/powerline-go
-    - apps/ssh
-    - apps/task
-    # - apps/thunderbird
-    - apps/tmux
-    - apps/vim
+    - { role: system/base, tags: ['base', 'system'] }
+    - { role: system/rhel-workstation, tags: ['rhel', 'system'] }
+    - { role: system/packaging-tools, tags: ['packaging-tools', 'system'] }
+    - { role: apps/base-workstation, tags: ['apps-base-workstation', 'apps'] }
+    - { role: apps/bash, tags: ['bash', 'apps'] }
+    # - { role: apps/dunst, tags: ['dunst', 'apps'] }
+    - { role: apps/git, tags: ['git', 'apps'] }
+    - { role: apps/i3wm, tags: ['i3wm', 'apps'] }
+    - { role: apps/npm, tags: ['npm', 'apps'] }
+    - { role: apps/powerline-go, tags: ['powerline', 'apps'] }
+    - { role: apps/ssh, tags: ['ssh', 'apps'] }
+    - { role: apps/task, tags: ['task', 'apps'] }
+    # - { role: apps/thunderbird, tags: ['thunderbird', 'apps'] }
+    - { role: apps/tmux, tags: ['tmux', 'apps'] }
+    # - { role: apps/tor, tags: ['tor', 'apps'] }
+    - { role: apps/vim, tags: ['vim', 'apps'] }
