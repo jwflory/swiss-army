@@ -37,6 +37,7 @@
       - brasero
       - brasero-nautilus
       - docker
+      - duply
       # - feh
       # - ffmpeg
       - firewalld

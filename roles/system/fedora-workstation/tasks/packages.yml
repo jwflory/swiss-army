@@ -49,6 +49,7 @@
       - cmus
       - docker
       - docker-compose
+      - duply
       - epiphany
       - feh
       - ffmpeg
