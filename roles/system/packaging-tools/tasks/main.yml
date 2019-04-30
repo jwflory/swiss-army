@@ -28,6 +28,7 @@
       - copr-cli
       - fedpkg
       - fedora-packager
+      - fedora-review
       - mock
 
 - name: add target user to mock group
