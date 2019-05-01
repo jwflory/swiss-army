@@ -68,6 +68,7 @@ function pag_pull_m {
 }
 
 ## -- aliases: git [short versions] ------------------------
+alias gitpf='git push-lease'
 alias gitss='git shoeshine'
 alias gitst='git short-status'
 alias gitsy='git sync-fork-master'

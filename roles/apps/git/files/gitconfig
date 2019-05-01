@@ -22,7 +22,7 @@
     # miscellaneous
     ## See https://johnblackbourn.com/git-changelog-generator
     changelog = "!_() { t=$(git describe --abbrev=0 --tags); git log ${t}..HEAD --no-merges --pretty=format:'* %s'; }; _"
-    pfal = push --force-with-lease
+    push-lease = push --force-with-lease
     shoeshine = !git remote update --prune && git gc --prune=now
     short-status = status -s
     sync-fork-master = !git pull upstream master && git push
