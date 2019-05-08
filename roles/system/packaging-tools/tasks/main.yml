@@ -12,6 +12,7 @@
   git:
     repo: git@github.com:jwflory/rpmbuild.git
     dest: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild"
+    version: HEAD
 
 - name: set symbolic link on system path to preferred path for RPM packaging
   file:

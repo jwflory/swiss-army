@@ -1,7 +1,7 @@
 ---
-- name: install/upgrade thunderbird
+- name: install thunderbird
   package:
-    state: latest
+    state: present
     name:
       - thunderbird
       - thunderbird-enigmail

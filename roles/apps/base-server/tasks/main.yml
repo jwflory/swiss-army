@@ -5,7 +5,7 @@
     path: "{{ user_home_dir }}/{{ item }}"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
-  with_items:
+  loop:
     - .ansible/tmp
     - git
     - wkspc

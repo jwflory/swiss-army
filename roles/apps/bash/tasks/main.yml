@@ -6,17 +6,17 @@
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
 
-- name: add user bashrc and bash_profile
+- name: copy bashrc and bash_profile
   copy:
     src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ user_home_dir }}/.{{ item }}"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
-  with_items:
+  loop:
     - bashrc
     - bash_profile
 
-- name: add Taskwarrior user Bash auto-completion script
+- name: copy Taskwarrior user Bash auto-completion script
   copy:
     src: "{{ role_path }}/files/task.sh"
     dest: "{{ user_home_dir }}/.bash_completion.d/task.sh"

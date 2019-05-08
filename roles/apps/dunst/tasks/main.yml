@@ -1,11 +1,10 @@
 ---
 # dunst: Simple and configurable notification-daemon
 
-- name: install dunst
+- name: install/upgrade dunst
   package:
     state: latest
-    name:
-      - dunst
+    name: dunst
 
 - name: create dunst user config directories
   file:
@@ -14,7 +13,7 @@
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
 
-- name: add dunstrc
+- name: copy dunstrc
   copy:
     src: "{{ role_path }}/files/dunstrc"
     dest: "{{ user_home_dir }}/.config/dunst/dunstrc"

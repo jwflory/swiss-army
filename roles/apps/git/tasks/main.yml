@@ -1,11 +1,11 @@
 ---
-- name: add git user config files
+- name: copy git user config files
   copy:
     src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ user_home_dir }}/.{{ item }}"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
-  with_items:
+  loop:
     - gitconfig
     - gitconfig-jump
     - gitconfig-unicef

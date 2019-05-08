@@ -1,7 +1,7 @@
 ---
 - name: install i3wm
   package:
-    state: latest
+    state: present
     name:
       - i3
       - i3lock
@@ -19,7 +19,7 @@
     dest: "{{ user_home_dir }}/.config/i3/{{ item }}"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
-  with_items:
+  loop:
     - config
     - i3status.conf
 
@@ -30,6 +30,6 @@
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
     mode: 0775
-  with_items:
+  loop:
     - fuzzy_lock.sh
     - i3exit.sh

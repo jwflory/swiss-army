@@ -7,7 +7,7 @@
     owner: "{{ target_user }}"
     mode: 0700
 
-- name: add user config (~/.ssh/config)
+- name: copy SSH config (~/.ssh/config)
   copy:
     src: "{{ role_path }}/files/config"
     dest: "{{ user_home_dir }}/.ssh/config"
