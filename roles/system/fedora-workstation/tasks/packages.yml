@@ -55,6 +55,7 @@
       - ffmpeg
       - firewalld
       - flash-plugin
+      - fpaste
       - git
       - gnome-mahjongg
       - gobby05

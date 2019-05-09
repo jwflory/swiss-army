@@ -12,6 +12,7 @@
     name:
       - bash-completion
       - firewalld
+      - fpaste
       - git
       - golang
       - htop
