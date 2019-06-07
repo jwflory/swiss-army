@@ -1,0 +1,41 @@
+= How to install Powerline fonts on Red Hat Enterprise Linux (RHEL) or CentOS Workstation
+
+tl;dr: Use install script of https://github.com/powerline/fonts[github.com/powerline/fonts].
+
+
+== Background
+
+This document explains how to install fonts that support the Powerline status line plugin.
+There are many derivatives and forks, although the one I currently use is https://github.com/justjanne/powerline-go[justjanne/powerline-go].
+I prefer `powerline-go` for the following reasons:
+
+* Active upstream (i.e. it is regularly improved)
+* Better defaults for VCS support (i.e. I don't fitz with configurations)
+* Golang is pretty cool for things like this
+
+However, font support is always tricky.
+I install or patch my fonts once on a machine, and then a year later, I forget how to do it on a new machine.
+So this guide provides step-by-step commands to save my time and remember how to do this whenever I need to set up `powerline-go` on a new machine.
+
+
+== Installation
+
+=== Fedora
+
+[source,bash]
+----
+sudo dnf install powerline-fonts
+----
+
+=== RHEL / CentOS
+
+[source,bash]
+----
+cd ~/git/
+git clone git@github.com:powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+i3-msg restart
+cd ..
+rm -rf ~/git/fonts/
+----
