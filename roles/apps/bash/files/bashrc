@@ -70,11 +70,23 @@ function pag_pull_m {
 }
 
 ## -- aliases: git [short versions] ------------------------
+alias gitco='git co'
+alias gitcob='git cob'
+
+alias gitcp='git create-patch'
+
+alias gitm='git mine'
+alias gitmol='git mine-oneline'
+alias gittr='git tree'
+
+alias gitpr='git pull-rebase'
+alias gitpu='git pull-upstream'
+alias gitpur='git pull-upstream-rebase'
+
 alias gitpf='git push-lease'
 alias gitss='git shoeshine'
 alias gitst='git short-status'
 alias gitsy='git sync-fork-master'
-alias gittr='git tree'
 
 alias gitd1='git dammit1'
 alias gitd2='git dammit2'
