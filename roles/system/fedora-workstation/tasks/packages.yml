@@ -26,6 +26,7 @@
 - name: install base packages
   ### Package notes ###
   # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
+  # cherrytree: https://opensource.com/article/19/5/cherrytree-notetaking
   # chromaprint-tools: Capture digital fingerprints of audio files
   # cmus: ncurses-based music player
   # gstreamer1-plugins-bad-nonfree: MPEG2 codec support
@@ -45,6 +46,7 @@
       - brasero
       - brasero-nautilus
       - buildah
+      - cherrytree
       - chromaprint-tools
       - cmus
       - docker
