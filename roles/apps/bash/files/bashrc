@@ -10,19 +10,16 @@ fi
 # --- user-specific configuration and functions --------------------------------
 
 ## -- useful and frequently-used environment variables -----
-
 export DAY=$(date +%Y%m%d)
 export EDITOR=vim
 export TERM=xterm-256color
 export YESTERDAY=$(($DAY - 1))
 
 ## -- bash history configuration improvements --------------
-
 unset HISTFILESIZE
 export HISTSIZE=1000
 export HISTTIMEFORMAT='%Y-%m-%d %H:%M.%S | '
 export HISTIGNORE="exit:gitst:history:ls:lsa"
-
 ### append instead of overwriting history file
 shopt -s histappend
 
