@@ -15,6 +15,22 @@ logger ERROR: The script failed.
 logger -t svc_name ERROR: svc_name failed.
 ----
 
+== Piping
+
+=== Redirect stderr to stdout
+
+Sometimes a command sends output to `stderr` instead of `stdout`.
+To catch that in a pipe redirection, you need to merge the two together.
+See https://unix.stackexchange.com/questions/128975/why-doesnt-grep-using-pipe-work-here[this Unix & Linux Stack Exchange question] for more info.
+
+[source,bash]
+----
+# Long-form:  2>&1
+# Short-form: |&
+
+$ some_command_stderr |& grep -i 'filter_keyword'
+----
+
 
 == Handy shortcuts
 
