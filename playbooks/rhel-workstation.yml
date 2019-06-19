@@ -15,6 +15,7 @@
     - { role: apps/npm, tags: ['npm', 'apps'] }
     - { role: apps/powerline-go, tags: ['powerline', 'apps'] }
     - { role: apps/ssh, tags: ['ssh', 'apps'] }
+    - { role: apps/sublime-text, tags: ['sublime-text', 'desktop', 'apps'] }
     - { role: apps/task, tags: ['task', 'apps'] }
     # - { role: apps/thunderbird, tags: ['thunderbird', 'apps'] }
     - { role: apps/tmux, tags: ['tmux', 'apps'] }

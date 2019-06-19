@@ -1,0 +1,6 @@
+// These settings override both User and Default settings for the Python syntax
+{
+    // Columns in which to display vertical rulers
+    "rulers": [88],
+    "sublack.black_on_save": true
+}

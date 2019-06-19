@@ -1,0 +1,8 @@
+{
+    "anaconda_linter_mark_style": "squiggly_underline",
+    "pep8_ignore":
+    [
+        "W503"
+    ],
+    "pep8_max_line_length": 88,
+}

@@ -1,0 +1,46 @@
+---
+- name: import Sublime HQ RPM signing key
+  rpm_key:
+    key: "https://download.sublimetext.com/sublimehq-rpm-pub.gpg"
+    state: present
+
+- name: add Sublime Text repository
+  get_url:
+    dest: /etc/yum.repos.d/
+    url: "https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo"
+    owner: root
+    group: root
+    setype: system_conf_t
+    seuser: system_u
+    mode: 0644
+
+- name: install sublime-text package
+  package:
+    state: present
+    name: sublime-text
+
+- name: create user configuration directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.config/sublime-text-3/Packages/User"
+    owner: "{{ target_user }}"
+    group: "{{ target_group }}"
+    setype: config_home_t
+    seuser: system_u
+    mode: 0700
+
+- name: push sublime-settings files to user configuration directory
+  copy:
+    src: "{{ item }}"
+    dest: "{{ user_home_dir }}/.config/sublime-text-3/Packages/User/{{ item }}"
+    owner: "{{ target_user }}"
+    group: "{{ target_group }}"
+    setype: config_home_t
+    seuser: system_u
+    mode: 0644
+  loop:
+    - Anaconda.sublime-settings
+    - Markdown.sublime-settings
+    - Package Control.sublime-settings
+    - Preferences.sublime-settings
+    - Python.sublime-settings

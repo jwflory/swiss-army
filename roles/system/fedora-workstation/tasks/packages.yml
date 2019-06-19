@@ -2,7 +2,6 @@
 - name: import third-party repository signing keys
   rpm_key: key={{ item }} state=present
   loop:
-    - https://download.sublimetext.com/sublimehq-rpm-pub.gpg
     - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
 
 - name: add/upgrade RPM Fusion repositories
@@ -21,7 +20,6 @@
   loop:
     - https://negativo17.org/repos/fedora-flash-plugin.repo
     - https://negativo17.org/repos/fedora-spotify.repo
-    - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 
 - name: install base packages
   ### Package notes ###
@@ -99,7 +97,6 @@
       - smartmontools
       - spotify-client
       - strace
-      - sublime-text
       - telegram-desktop
       - typetype-molot-fonts
       - '@vagrant'
