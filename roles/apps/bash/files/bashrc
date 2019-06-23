@@ -83,9 +83,6 @@ function pag_pull_m {
 }
 
 ## -- aliases: git [short versions] ------------------------
-alias gitco='git co'
-alias gitcob='git cob'
-
 alias gitcp='git create-patch'
 
 alias gitm='git mine'
