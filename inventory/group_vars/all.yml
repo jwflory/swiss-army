@@ -1,4 +1,5 @@
 ---
+ansible_python_interpreter: /usr/bin/python3
 target_user: jflory
 target_user_name: Justin W. Flory
 user_home_dir: /home/jflory
