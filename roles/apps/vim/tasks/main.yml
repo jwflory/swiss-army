@@ -45,6 +45,14 @@
     dest: "{{ user_home_dir }}/.vim/bundle/vim-dockerfile"
     version: HEAD
 
+- name: add vim plugin - salt-vim
+  become: true
+  become_user: "{{ target_user }}"
+  git:
+    repo: "git clone https://github.com/saltstack/salt-vim.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/salt-vim"
+    version: HEAD
+
 - name: add vim plugin - syntastic
   become: true
   become_user: "{{ target_user }}"

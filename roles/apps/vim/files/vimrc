@@ -70,6 +70,9 @@ autocmd FileType markdown setlocal textwidth=0 colorcolumn=0
 " reStructuredText
 autocmd FileType rst setlocal textwidth=0 colorcolumn=0
 
+" SLS: SaLt State files
+autocmd FileType sls setlocal shiftwidth=2 softtabstop=2 tabstop=2 textwidth=0 colorcolumn=0
+
 " YAML
 autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
