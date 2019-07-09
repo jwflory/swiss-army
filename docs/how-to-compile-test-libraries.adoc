@@ -1,0 +1,46 @@
+= How to compile and test for a library with C
+
+This is a short how-to that explains one way of discovering a package name from a C library.
+In this example, a simple C program is used.
+When compiled with GCC, it links to a library (in this case, `systemd`).
+`ldd` lets us check the libraries used during compile-time, and we then use `rpm` to look up the package name for one of the libraries.
+
+.hello.c
+[source,c]
+----
+#include <stdio.h>
+
+void main() {
+    printf("Hello world!\n");
+};
+----
+
+[source,bash]
+----
+$ gcc -lsystemd hello.c
+$ ldd a.out
+    linux-vdso.so.1 =>  (0x00007ffff7ffa000)
+    libsystemd.so.0 => /lib64/libsystemd.so.0 (0x00007ffff7ba9000)
+    libc.so.6 => /lib64/libc.so.6 (0x00007ffff77dc000)
+    libcap.so.2 => /lib64/libcap.so.2 (0x00007ffff75d7000)
+    libm.so.6 => /lib64/libm.so.6 (0x00007ffff72d5000)
+    librt.so.1 => /lib64/librt.so.1 (0x00007ffff70cd000)
+    libselinux.so.1 => /lib64/libselinux.so.1 (0x00007ffff6ea6000)
+    liblzma.so.5 => /lib64/liblzma.so.5 (0x00007ffff6c80000)
+    liblz4.so.1 => /lib64/liblz4.so.1 (0x00007ffff6a6b000)
+    libgcrypt.so.11 => /lib64/libgcrypt.so.11 (0x00007ffff67ea000)
+    libgpg-error.so.0 => /lib64/libgpg-error.so.0 (0x00007ffff65e5000)
+    libresolv.so.2 => /lib64/libresolv.so.2 (0x00007ffff63cc000)
+    libdw.so.1 => /lib64/libdw.so.1 (0x00007ffff6185000)
+    libdl.so.2 => /lib64/libdl.so.2 (0x00007ffff5f81000)
+    libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x00007ffff5d6b000)
+    libpthread.so.0 => /lib64/libpthread.so.0 (0x00007ffff5b4f000)
+    /lib64/ld-linux-x86-64.so.2 (0x00007ffff7dda000)
+    libattr.so.1 => /lib64/libattr.so.1 (0x00007ffff594a000)
+    libpcre.so.1 => /lib64/libpcre.so.1 (0x00007ffff56e8000)
+    libelf.so.1 => /lib64/libelf.so.1 (0x00007ffff54d0000)
+    libz.so.1 => /lib64/libz.so.1 (0x00007ffff52ba000)
+    libbz2.so.1 => /lib64/libbz2.so.1 (0x00007ffff50aa000)
+$ rpm -qf /lib64/libsystemd.so.0
+systemd-libs-219-57.el7.x86_64
+----
