@@ -69,9 +69,9 @@
       # - picard
       - podman
       - pulseaudio-utils
+      - python36
+      - python36-pip
       - python-flake8
-      - python36u
-      - python36u-pip
       - ripright
       - rpmconf
       - smartmontools
