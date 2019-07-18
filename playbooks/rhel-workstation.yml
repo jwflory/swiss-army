@@ -6,7 +6,7 @@
   roles:
     - { role: system/base, tags: ['base', 'system'] }
     - { role: system/rhel-workstation, tags: ['rhel', 'system'] }
-    - { role: system/packaging-tools, tags: ['packaging-tools', 'system'] }
+    # - { role: system/packaging-tools, tags: ['packaging-tools', 'system'] }
     - { role: apps/base-workstation, tags: ['apps-base-workstation', 'apps'] }
     - { role: apps/bash, tags: ['bash', 'apps'] }
     # - { role: apps/dunst, tags: ['dunst', 'apps'] }
