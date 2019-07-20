@@ -49,7 +49,7 @@
   become: true
   become_user: "{{ target_user }}"
   git:
-    repo: "git clone https://github.com/saltstack/salt-vim.git"
+    repo: "https://github.com/saltstack/salt-vim.git"
     dest: "{{ user_home_dir }}/.vim/bundle/salt-vim"
     version: HEAD
 
