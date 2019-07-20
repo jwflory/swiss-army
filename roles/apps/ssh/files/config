@@ -24,12 +24,6 @@ Host ircfedora
   ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 
 # HOSTS: Personal
-Host cortana
-  HostName cortana.justinwflory.com
-  User jflory
-Host derezzed
-  HostName derezzed.justinwflory.com
-  User jflory
 Host estrella
   HostName estrella.justinwflory.com
   User jflory
