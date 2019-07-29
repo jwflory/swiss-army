@@ -67,6 +67,9 @@ autocmd FileType java setlocal textwidth=120 colorcolumn=121
 " Markdown
 autocmd FileType markdown setlocal textwidth=0 colorcolumn=0
 
+" Python
+autocmd FileType py setlocal textwidth=88 colorcolumn=89
+
 " reStructuredText
 autocmd FileType rst setlocal textwidth=0 colorcolumn=0
 

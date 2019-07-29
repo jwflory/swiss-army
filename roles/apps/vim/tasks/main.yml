@@ -29,6 +29,14 @@
     dest: "{{ user_home_dir }}/.vim/autoload/pathogen.vim"
     mode: 0750
 
+- name: add vim plugin - black
+  become: true
+  become_user: "{{ target_user }}"
+  git:
+    repo: "https://github.com/psf/black.git"
+    dest: "{{ user_home_dir }}/.vim/bundle/black"
+    version: HEAD
+
 - name: add vim plugin - code_complete
   become: true
   become_user: "{{ target_user }}"
