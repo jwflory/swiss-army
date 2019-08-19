@@ -57,6 +57,7 @@ alias watch_p='watch -b -c --differences=permanent -n 5 -p'
 alias pwds='du -sh ./* | sort -hr'
 alias t='task'
 alias ts='task sync'
+alias wlp2s0='ip address show dev wlp2s0'
 
 ## -- aliases: git Pagure pull request reviews -------------
 
