@@ -1,7 +1,7 @@
 [workstation]
 127.0.0.1 ansible_connection=local
 
-[servers-centos]
+[servers_centos]
 estrella.justinwflory.com
 horizon.justinwflory.com
 irc-lug.rit.edu
