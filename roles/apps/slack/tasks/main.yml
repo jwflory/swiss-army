@@ -1,0 +1,14 @@
+---
+- name: copy repository configuration file for Fedora
+  copy:
+    src: slack.repo
+    dest: /etc/yum.repos.d/slack.repo
+    mode: 0644
+    owner: root
+    group: root
+    seuser: system_u
+
+- name: install Slack
+  package:
+    state: present
+    name: slack
