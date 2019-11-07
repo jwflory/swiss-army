@@ -12,12 +12,13 @@
     - { role: apps/dunst, tags: ['dunst', 'apps'] }
     - { role: apps/git, tags: ['git', 'apps'] }
     - { role: apps/i3wm, tags: ['i3wm', 'apps'] }
-    - { role: apps/minecraft, apps: ['minecraft', 'apps'] }
+    - { role: apps/minecraft, apps: ['minecraft', 'desktop', 'apps'] }
     - { role: apps/npm, tags: ['npm', 'apps'] }
     - { role: apps/powerline-go, tags: ['powerline', 'apps'] }
+    - { role: apps/slack, tags: ['slack', 'desktop', 'apps'] }
     - { role: apps/ssh, tags: ['ssh', 'apps'] }
     - { role: apps/task, tags: ['task', 'apps'] }
-    - { role: apps/thunderbird, tags: ['thunderbird', 'apps'] }
+    - { role: apps/thunderbird, tags: ['thunderbird', 'desktop', 'apps'] }
     - { role: apps/tmux, tags: ['tmux', 'apps'] }
     - { role: apps/tor, tags: ['tor', 'apps'] }
     - { role: apps/vim, tags: ['vim', 'apps'] }
