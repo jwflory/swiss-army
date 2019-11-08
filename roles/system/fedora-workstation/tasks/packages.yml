@@ -24,15 +24,17 @@
 - name: install base packages
   ### Package notes ###
   # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
-  # cherrytree: https://opensource.com/article/19/5/cherrytree-notetaking
   # chromaprint-tools: Capture digital fingerprints of audio files
   # cmus: ncurses-based music player
+  # exfat-utils: FS formatting tools (exFAT)
+  # f2fs-tools: FS formatting tools (Flash-Friendly File System)
   # gstreamer1-plugins-bad-nonfree: MPEG2 codec support
   # jpegoptim: Utility to optimize JPEG files
   # meld: Visual diff and merge tool
   # network-manager-applet: Network control / status applet for NetworkManager
   # remmina: Remote Desktop client
   # poppler-utils: Command line utilities for converting PDF files
+  # udftools: FS formatting tools (Universal Disk Format)
   package:
     state: present
     name:
@@ -44,12 +46,13 @@
       - brasero
       - brasero-nautilus
       - buildah
-      - cherrytree
       - chromaprint-tools
       - cmus
       - docker-compose
       - duply
       - epiphany
+      - exfat-utils
+      - f2fs-tools
       - feh
       - ffmpeg
       - firewalld
@@ -62,7 +65,6 @@
       - google-roboto-slab-fonts
       - gstreamer-ffmpeg
       - gstreamer1-plugins-bad-free-extras
-      - gstreamer1-plugins-bad-nonfree
       - gstreamer1-plugins-ugly
       - hexchat
       - htop
@@ -70,7 +72,6 @@
       - java-11-openjdk
       - jpegoptim
       - jq
-      - libselinux-python
       - libvirt
       - libvirt-devel
       - meld
@@ -99,6 +100,7 @@
       - strace
       - telegram-desktop
       - typetype-molot-fonts
+      - udftools
       - '@vagrant'
       - vagrant-doc
       - vagrant-sshfs
