@@ -49,7 +49,6 @@
       - cherrytree
       - chromaprint-tools
       - cmus
-      - docker
       - docker-compose
       - duply
       - epiphany
@@ -77,6 +76,7 @@
       - libvirt
       - libvirt-devel
       - meld
+      - moby-engine
       - mpris-scrobbler
       - mpv
       - nautilus-dropbox
