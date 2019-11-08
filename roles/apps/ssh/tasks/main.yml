@@ -3,13 +3,26 @@
   file:
     state: directory
     path: "{{ user_home_dir }}/.ssh"
-    group: "{{ target_user }}"
     owner: "{{ target_user }}"
+    group: "{{ target_group }}"
+    seuser: system_u
     mode: 0700
 
 - name: copy SSH config (~/.ssh/config)
   copy:
     src: "{{ role_path }}/files/config"
     dest: "{{ user_home_dir }}/.ssh/config"
-    group: "{{ target_user }}"
     owner: "{{ target_user }}"
+    group: "{{ target_group }}"
+    seuser: system_u
+    mode: 0644
+
+- name: template sshd_config (/etc/ssh/sshd_config)
+  template:
+    src: sshd_config.jinja
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    seuser: system_u
+    setype: etc_t
+    mode: 0600
