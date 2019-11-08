@@ -1,0 +1,17 @@
+{
+	"added_words":
+	[
+		"justinwflory",
+		"playbook"
+	],
+	"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"font_size": 9,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"spell_check": true,
+	"theme": "Flatland Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
+}

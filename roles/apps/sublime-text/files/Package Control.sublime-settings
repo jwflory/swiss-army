@@ -1,0 +1,15 @@
+{
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "Anaconda",
+        "GitGutter",
+        "Package Control",
+        "SideBarEnhancements",
+        "sublack",
+        "Theme - Flatland"
+    ]
+}
