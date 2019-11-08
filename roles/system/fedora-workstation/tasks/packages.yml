@@ -42,6 +42,7 @@
       - ansible
       - arandr
       - bash-completion
+      - black
       - blueman
       - brasero
       - brasero-nautilus
