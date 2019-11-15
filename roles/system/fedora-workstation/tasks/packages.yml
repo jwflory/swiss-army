@@ -44,6 +44,7 @@
       - bash-completion
       - black
       - blueman
+      - bpftrace
       - brasero
       - brasero-nautilus
       - buildah
