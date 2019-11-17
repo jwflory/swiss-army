@@ -1,15 +1,14 @@
 // These settings override both User and Default settings for the Markdown syntax
 {
+    // https://packagecontrol.io/packages/MarkdownLight
+    "color_scheme": "Packages/MarkdownLight/MarkdownDark.tmTheme",
+
     // set vertical rulers in specified columns.
     // Use "rulers": [80] for just one ruler
     // default value is []
-    "rulers": [80],
+    "rulers": [],
 
     // turn on word wrap for source and text
     // default value is "auto", which means off for source and on for text
-    "word_wrap": "auto",
-
-    // set word wrapping at this column
-    // default value is 0, meaning wrapping occurs at window width
-    "wrap_width": 0
+    "word_wrap": false,
 }
