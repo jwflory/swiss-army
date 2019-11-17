@@ -2,5 +2,5 @@
 {
     // Columns in which to display vertical rulers
     "rulers": [88],
-    "sublack.black_on_save": true
+    // "sublack.black_on_save": true
 }
