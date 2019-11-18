@@ -49,6 +49,7 @@
       - brasero-nautilus
       - buildah
       - chromaprint-tools
+      - chromium
       - cmus
       - docker-compose
       - duply
