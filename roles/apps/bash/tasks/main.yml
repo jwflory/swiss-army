@@ -16,10 +16,13 @@
     - bashrc
     - bash_profile
 
-- name: copy Taskwarrior user Bash auto-completion script
+- name: copy user Bash auto-completion scripts
   copy:
     src: "{{ role_path }}/files/task.sh"
-    dest: "{{ user_home_dir }}/.bash_completion.d/task.sh"
+    dest: "{{ user_home_dir }}/.bash_completion.d/{{ item }}"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
     mode: 0775
+  loop:
+    - poetry.bash-completion
+    - task.bash-completion
