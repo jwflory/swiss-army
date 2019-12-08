@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f740436855ca172604038d30235f4ce8d7e7f4fe709069ba6210bc2a7b5bd702"
+            "sha256": "f72ed91390424396f810b56902fa2cddbc7b9c0f693ebe65e35ab5dd011c5931"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -157,5 +157,37 @@
             "version": "==1.13.0"
         }
     },
-    "develop": {}
+    "develop": {
+        "pathspec": {
+            "hashes": [
+                "sha256:dd6ea2cd07cfbe794d8b07718add102e07b41084af8166359742462fd83e9a75",
+                "sha256:e285ccc8b0785beadd4c18e5708b12bb8fcf529a1e61215b3feff1d1e559ea5c"
+            ],
+            "version": "==0.6.0"
+        },
+        "pyyaml": {
+            "hashes": [
+                "sha256:0e7f69397d53155e55d10ff68fdfb2cf630a35e6daf65cf0bdeaf04f127c09dc",
+                "sha256:2e9f0b7c5914367b0916c3c104a024bb68f269a486b9d04a2e8ac6f6597b7803",
+                "sha256:35ace9b4147848cafac3db142795ee42deebe9d0dad885ce643928e88daebdcc",
+                "sha256:38a4f0d114101c58c0f3a88aeaa44d63efd588845c5a2df5290b73db8f246d15",
+                "sha256:483eb6a33b671408c8529106df3707270bfacb2447bf8ad856a4b4f57f6e3075",
+                "sha256:4b6be5edb9f6bb73680f5bf4ee08ff25416d1400fbd4535fe0069b2994da07cd",
+                "sha256:7f38e35c00e160db592091751d385cd7b3046d6d51f578b29943225178257b31",
+                "sha256:8100c896ecb361794d8bfdb9c11fce618c7cf83d624d73d5ab38aef3bc82d43f",
+                "sha256:c0ee8eca2c582d29c3c2ec6e2c4f703d1b7f1fb10bc72317355a746057e7346c",
+                "sha256:e4c015484ff0ff197564917b4b4246ca03f411b9bd7f16e02a2f586eb48b6d04",
+                "sha256:ebc4ed52dcc93eeebeae5cf5deb2ae4347b3a81c3fa12b0b8c976544829396a4"
+            ],
+            "version": "==5.2"
+        },
+        "yamllint": {
+            "hashes": [
+                "sha256:0260121ed6a428b98bbadb7b6b66e9cd00114382e3d7ad06fa80e0754414cf15",
+                "sha256:c65f6df10e2752054ac89fbe7b32abc00864aecb747cf40c73fe445aea1da5f1"
+            ],
+            "index": "pypi",
+            "version": "==1.19.0"
+        }
+    }
 }
