@@ -3,17 +3,18 @@
   file:
     state: directory
     path: "{{ user_home_dir }}/{{ item }}"
-    group: "{{ target_user }}"
+    group: "{{ target_group }}"
     owner: "{{ target_user }}"
+    seuser: system_u
   loop:
     - .ansible/tmp
     - git
     - wkspc
 
 - name: create SSH key for root user
-  command: 'ssh-keygen -b 4096 -t rsa -N "" -C "root@localhost" -f /root/.ssh/id_rsa'
+  command: 'ssh-keygen -t ed25519 -N "" -C "root@localhost" -f /root/.ssh/id_ed25519'
   args:
-    creates: "/root/.ssh/id_rsa"
+    creates: "/root/.ssh/id_ed25519"
 
 - name: clone dotfile repository from GitHub
   become: yes
