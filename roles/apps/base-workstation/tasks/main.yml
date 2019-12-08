@@ -23,3 +23,10 @@
     dest: "{{ user_home_dir }}/git/swiss-army"
     update: no
     version: HEAD
+
+- name: purge unused files
+  file:
+    path: "{{ user_home_dir }}/{{ item }}"
+    state: absent
+  loop:
+    - .bash_completion.d/task.sh
