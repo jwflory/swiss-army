@@ -5,6 +5,8 @@
     path: "{{ user_home_dir }}/.bash_completion.d"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
+    mode: 0750
+    seuser: system_u
 
 - name: copy bashrc and bash_profile
   copy:
@@ -12,17 +14,20 @@
     dest: "{{ user_home_dir }}/.{{ item }}"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
+    mode: 0444
+    seuser: system_u
   loop:
     - bashrc
     - bash_profile
 
 - name: copy user Bash auto-completion scripts
   copy:
-    src: "{{ role_path }}/files/task.sh"
+    src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ user_home_dir }}/.bash_completion.d/{{ item }}"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
-    mode: 0775
+    mode: 0444
+    seuser: system_u
   loop:
     - poetry.bash-completion
     - task.bash-completion
