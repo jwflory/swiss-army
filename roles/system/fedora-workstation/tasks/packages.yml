@@ -96,6 +96,7 @@
       - poppler-utils
       - powerline-fonts
       - pulseaudio-utils
+      - python38
       - python3-flake8
       - remmina
       - rpmconf
