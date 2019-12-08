@@ -92,6 +92,7 @@
       - picard
       - planner
       - podman
+      - poetry
       - poppler-utils
       - powerline-fonts
       - pulseaudio-utils
