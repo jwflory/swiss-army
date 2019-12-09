@@ -23,17 +23,6 @@ export HISTIGNORE="exit:gitst:history:ls:lsa"
 ### append instead of overwriting history file
 shopt -s histappend
 
-## -- source all shell auto-completion definition files ----
-if [ -x "$PATH/poetry" ]; then
-    source $HOME/.bash_completion.d/poetry.bash-completion
-fi
-if [ -x "$PATH/task" ]; then
-    source $HOME/.bash_completion.d/task.bash-completion
-fi
-if [ -x "$PATH/wp" ]; then
-    source $HOME/.bash_completion.d/wp-completion.bash
-fi
-
 ## -- powerline-go configuration ---------------------------
 ### https://github.com/justjanne/powerline-go
 function _update_ps1() {

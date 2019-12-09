@@ -1,11 +1,11 @@
 ---
-- name: create user bash_completion.d directory
+- name: set permissions on system bash_completion.d directory
   file:
     state: directory
-    path: "{{ user_home_dir }}/.bash_completion.d"
-    group: "{{ target_user }}"
-    owner: "{{ target_user }}"
-    mode: 0750
+    path: "/etc/bash_completion.d"
+    mode: 0755
+    serole: object_r
+    setype: etc_t
     seuser: system_u
 
 - name: copy bashrc and bash_profile
@@ -20,13 +20,13 @@
     - bashrc
     - bash_profile
 
-- name: copy user Bash auto-completion scripts
+- name: copy user Bash auto-completion scripts to system directory
   copy:
     src: "{{ role_path }}/files/{{ item }}"
-    dest: "{{ user_home_dir }}/.bash_completion.d/{{ item }}"
-    group: "{{ target_user }}"
-    owner: "{{ target_user }}"
-    mode: 0444
+    dest: "/etc/bash_completion.d/{{ item }}"
+    mode: 0644
+    serole: object_r
+    setype: etc_t
     seuser: system_u
   loop:
     - poetry.bash-completion
