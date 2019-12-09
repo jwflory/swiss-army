@@ -42,10 +42,13 @@
 - name: add target user
   user:
     name: "{{ target_user }}"
+    group: "{{ target_group }}"
     comment: "{{ target_user_name }}"
     groups: wheel
     append: yes
     generate_ssh_key: yes
+    ssh_key_file: ".ssh/id_ed25519"
+    ssh_key_type: ed25519
 
 # gids/uids required for podman rootless mode
 # https://github.com/jwflory/swiss-army/issues/11
