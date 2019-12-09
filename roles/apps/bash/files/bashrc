@@ -101,3 +101,8 @@ alias gitd6='git dammit6'
 alias gitd7='git dammit7'
 alias gitd8='git dammit8'
 alias gitd9='git dammit9'
+
+## -- aliases: miscellaneous -------------------------------
+
+# $1 is directory, $2 is expression
+function grap { grep -rnw $1 -e "$2"; }
