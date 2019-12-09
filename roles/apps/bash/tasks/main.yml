@@ -30,4 +30,3 @@
     seuser: system_u
   loop:
     - poetry.bash-completion
-    - task.bash-completion
