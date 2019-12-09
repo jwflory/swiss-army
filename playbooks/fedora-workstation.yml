@@ -18,7 +18,6 @@
     - { role: apps/slack, tags: ['slack', 'desktop', 'apps'] }
     - { role: apps/ssh, tags: ['ssh', 'apps'] }
     - { role: apps/sublime-text, tags: ['sublime-text', 'desktop', 'apps'] }
-    - { role: apps/task, tags: ['task', 'apps'] }
     - { role: apps/thunderbird, tags: ['thunderbird', 'desktop', 'apps'] }
     - { role: apps/tmux, tags: ['tmux', 'apps'] }
     - { role: apps/tor, tags: ['tor', 'apps'] }
