@@ -36,6 +36,7 @@
       - python36u-pip
       - python36u-setuptools
       - ntp
+      - task
       - tmux-powerline
       - tomahawk
 
@@ -65,3 +66,12 @@
     regexp: "^{{ target_user }}:"
     line: "{{ target_user }}:10000:65536"
     seuser: system_u
+
+- name: purge unused files
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - "{{ user_home_dir }}/.bash_completion.d/"
+    - "{{ user_home_dir }}/.taskrc"
+    - "/etc/bash_completion.d/task.bash-completion"
