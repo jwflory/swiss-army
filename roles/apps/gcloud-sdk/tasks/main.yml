@@ -1,0 +1,24 @@
+---
+- name: import Google repository signing keys
+  rpm_key: key={{ item }} state=present
+  loop:
+    - https://packages.cloud.google.com/yum/doc/yum-key.gpg
+    - https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+
+- name: install google-cloud-sdk repository file
+  copy:
+    src: google-cloud-sdk.repo
+    dest: /etc/yum.repos.d/google-cloud-sdk.repo
+    mode: 0644
+    setype: system_conf_t
+    seuser: system_u
+
+- name: install/upgrade google-cloud-sdk
+  package:
+    name: google-cloud-sdk
+    state: latest
+
+- name: install kubectl
+  package:
+    name: kubectl
+    state: present

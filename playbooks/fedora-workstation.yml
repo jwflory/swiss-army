@@ -9,6 +9,7 @@
     - { role: system/packaging-tools, tags: ['packaging-tools', 'system'] }
     - { role: apps/bash, tags: ['bash', 'apps'] }
     - { role: apps/dunst, tags: ['dunst', 'apps'] }
+    - { role: apps/gcloud-sdk, tags: ['google-cloud', 'devops', 'apps'] }
     - { role: apps/git, tags: ['git', 'apps'] }
     - { role: apps/i3wm, tags: ['i3wm', 'apps'] }
     - { role: apps/minecraft, apps: ['minecraft', 'desktop', 'apps'] }
