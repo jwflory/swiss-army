@@ -10,3 +10,11 @@
     name: "{{ target_user }}"
     groups: docker,libvirt
     append: yes
+
+# Requires Ansible >= 2.8.
+- name: create ed25519 SSH key for root user
+  openssh_keypair:
+    path: "/root/.ssh/id_ed25519"
+    comment: "ansible-generated root@{{ ansible_hostname }}"
+    type: ed25519
+    seuser: system_u

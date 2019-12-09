@@ -67,6 +67,18 @@
     line: "{{ target_user }}:10000:65536"
     seuser: system_u
 
+- name: create misc. workspace directories
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/{{ item }}"
+    group: "{{ target_group }}"
+    owner: "{{ target_user }}"
+    seuser: system_u
+  loop:
+    - .ansible/tmp
+    - git
+    - wkspc
+
 - name: purge unused files
   file:
     path: "{{ item }}"
@@ -75,3 +87,12 @@
     - "{{ user_home_dir }}/.bash_completion.d/"
     - "{{ user_home_dir }}/.taskrc"
     - "/etc/bash_completion.d/task.bash-completion"
+
+- name: clone dotfile repository from GitHub
+  become: yes
+  become_user: "{{ target_user }}"
+  git:
+    repo: "git@github.com:jwflory/swiss-army.git"
+    dest: "{{ user_home_dir }}/git/swiss-army"
+    update: no
+    version: HEAD
