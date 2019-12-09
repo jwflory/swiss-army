@@ -7,16 +7,16 @@
     - { role: system/base, tags: ['base', 'system'] }
     - { role: system/rhel-workstation, tags: ['rhel', 'system'] }
     # - { role: system/packaging-tools, tags: ['packaging-tools', 'system'] }
-    - { role: apps/bash, tags: ['bash', 'apps'] }
-    # - { role: apps/dunst, tags: ['dunst', 'apps'] }
+    - { role: apps/bash, tags: ['bash', 'terminal', 'apps'] }
+    # - { role: apps/dunst, tags: ['dunst', 'desktop', 'apps'] }
     - { role: apps/gcloud-sdk, tags: ['google-cloud', 'devops', 'apps'] }
-    - { role: apps/git, tags: ['git', 'apps'] }
-    - { role: apps/i3wm, tags: ['i3wm', 'apps'] }
-    - { role: apps/npm, tags: ['npm', 'apps'] }
-    - { role: apps/powerline-go, tags: ['powerline', 'apps'] }
-    - { role: apps/ssh, tags: ['ssh', 'apps'] }
+    - { role: apps/git, tags: ['git', 'terminal', 'apps'] }
+    - { role: apps/i3wm, tags: ['i3wm', 'desktop', 'apps'] }
+    - { role: apps/npm, tags: ['npm', 'terminal', 'apps'] }
+    - { role: apps/powerline-go, tags: ['powerline', 'terminal', 'apps'] }
+    - { role: apps/ssh, tags: ['ssh', 'terminal', 'apps'] }
     - { role: apps/sublime-text, tags: ['sublime-text', 'desktop', 'apps'] }
-    # - { role: apps/thunderbird, tags: ['thunderbird', 'apps'] }
-    - { role: apps/tmux, tags: ['tmux', 'apps'] }
-    # - { role: apps/tor, tags: ['tor', 'apps'] }
-    - { role: apps/vim, tags: ['vim', 'apps'] }
+    # - { role: apps/thunderbird, tags: ['thunderbird', 'desktop', 'apps'] }
+    - { role: apps/tmux, tags: ['tmux', 'terminal', 'apps'] }
+    # - { role: apps/tor, tags: ['tor', 'desktop', 'apps'] }
+    - { role: apps/vim, tags: ['vim', 'terminal', 'apps'] }
