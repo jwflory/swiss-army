@@ -3,12 +3,6 @@
 *.retry
 
 
-########## Vagrant ##########
-
-**/.vagrant
-Vagrantfile
-
-
 ########## Vim.gitignore ##########
 # https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
 
