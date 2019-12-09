@@ -35,5 +35,5 @@ ansible-playbook -K playbooks/rhel-workstation.yml
 
 [source,bash]
 ----
-ansible-playbook playbooks/centos-server.yml
+ansible-playbook -e "ansible_python_interpreter=/usr/bin/python2.7" playbooks/centos-server.yml
 ----
