@@ -1,7 +1,7 @@
 ---
-- name: install taskwarrior
+- name: install/upgrade taskwarrior
   package:
-    state: present
+    state: latest
     name: task
 
 - name: add taskrc
@@ -10,3 +10,12 @@
     dest: "{{ user_home_dir }}/.taskrc"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
+    seuser: system_u
+
+- name: copy Bash auto-completion script to /etc/bash_completion.d/
+  copy:
+    src: "{{ role_path }}/files/task.bash-completion"
+    dest: "/etc/bash_completion.d/task.bash-completion"
+    mode: 0644
+    setype: etc_t
+    seuser: system_u
