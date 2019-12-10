@@ -25,6 +25,7 @@
       - gnome-system-monitor
       - gnome-weather
       - logwatch
+      - mediawriter
       - mosh
       - powerline
       - ntp
