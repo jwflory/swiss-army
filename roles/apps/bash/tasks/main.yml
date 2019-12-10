@@ -4,7 +4,6 @@
     state: directory
     path: "/etc/bash_completion.d"
     mode: 0755
-    serole: object_r
     setype: etc_t
     seuser: system_u
 
@@ -19,14 +18,3 @@
   loop:
     - bashrc
     - bash_profile
-
-- name: copy user Bash auto-completion scripts to system directory
-  copy:
-    src: "{{ role_path }}/files/{{ item }}"
-    dest: "/etc/bash_completion.d/{{ item }}"
-    mode: 0644
-    serole: object_r
-    setype: etc_t
-    seuser: system_u
-  loop:
-    - poetry.bash-completion
