@@ -11,9 +11,10 @@
   copy:
     src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ user_home_dir }}/.{{ item }}"
-    group: "{{ target_user }}"
+    group: "{{ target_group }}"
     owner: "{{ target_user }}"
     mode: 0444
+    setype: config_home_t
     seuser: system_u
   loop:
     - bashrc
