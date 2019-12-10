@@ -27,6 +27,7 @@
       - logwatch
       - mediawriter
       - mosh
+      - origin-clients
       - powerline
       - ntp
       - task
