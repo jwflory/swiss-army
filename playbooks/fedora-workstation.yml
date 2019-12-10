@@ -7,6 +7,7 @@
     - { role: system/base, tags: ['base', 'system'] }
     - { role: system/fedora-workstation, tags: ['fedora', 'system'] }
     - { role: system/packaging-tools, tags: ['packaging-tools', 'system'] }
+    - { role: system/python, tags: ['python', 'system'] }
     - { role: apps/bash, tags: ['bash', 'terminal', 'apps'] }
     - { role: apps/dunst, tags: ['dunst', 'desktop', 'apps'] }
     - { role: apps/gcloud-sdk, tags: ['google-cloud', 'devops', 'apps'] }
