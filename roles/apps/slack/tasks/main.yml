@@ -6,9 +6,10 @@
     mode: 0644
     owner: root
     group: root
+    setype: system_conf_t
     seuser: system_u
 
-- name: install Slack
+- name: install/upgrade slack
   package:
-    state: present
+    state: latest
     name: slack
