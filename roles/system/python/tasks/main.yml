@@ -25,7 +25,7 @@
     name:
       - python38
       - python3-flake8
-    when: ansible_facts['distribution'] == "Fedora"
+  when: ansible_facts['distribution'] == "Fedora"
 
 - name: (CentOS/RedHat) install python-flake8
   package:
