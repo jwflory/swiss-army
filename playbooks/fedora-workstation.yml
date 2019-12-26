@@ -16,6 +16,7 @@
     - { role: apps/minecraft, apps: ['minecraft', 'desktop', 'apps'] }
     - { role: apps/npm, tags: ['npm', 'terminal', 'apps'] }
     - { role: apps/powerline-go, tags: ['powerline', 'terminal', 'apps'] }
+    - { role: apps/protonvpn, tags: ['protonvpn', 'terminal', 'apps'] }
     - { role: apps/slack, tags: ['slack', 'desktop', 'apps'] }
     - { role: apps/ssh, tags: ['ssh', 'terminal', 'apps'] }
     - { role: apps/sublime-text, tags: ['sublime-text', 'desktop', 'apps'] }
