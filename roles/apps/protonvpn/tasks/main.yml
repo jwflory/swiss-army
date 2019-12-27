@@ -1,0 +1,15 @@
+---
+- name: install Fedora COPR plugin
+  package:
+    state: present
+    name: dnf-command(copr)
+
+- name: install jflory7/protonvpn-cli COPR repository (via dnf command)
+  command: "dnf -y copr enable jflory7/protonvpn-cli"
+  args:
+    creates: "/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:jflory7:protonvpn-cli.repo"
+
+- name: install protonvpn-cli
+  package:
+    state: present
+    name: protonvpn-cli
