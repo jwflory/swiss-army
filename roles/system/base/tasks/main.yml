@@ -90,3 +90,12 @@
     dest: "{{ user_home_dir }}/git/swiss-army"
     update: no
     version: HEAD
+
+- name: install custom /etc/hosts file from someonewhocares.org
+  get_url:
+    url: https://someonewhocares.org/hosts/zero/hosts
+    dest: /etc/hosts
+    force: yes
+    mode: 0644
+    setype: net_conf_t
+    seuser: system_u
