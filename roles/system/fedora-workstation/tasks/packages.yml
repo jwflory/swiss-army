@@ -108,6 +108,7 @@
       - vagrant-sshfs
       - '@virtualization'
       - visualboyadvance-m
+      - whipper
       - wireshark
       - yamllint
       - youtube-dl
