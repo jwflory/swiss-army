@@ -10,12 +10,18 @@
   file:
     state: directory
     path: "{{ user_home_dir }}/.config/dunst"
-    group: "{{ target_user }}"
     owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0750
+    setype: config_home_t
+    seuser: system_u
 
-- name: copy dunstrc
+- name: push dunstrc config
   copy:
-    src: "{{ role_path }}/files/dunstrc"
+    src: dunstrc
     dest: "{{ user_home_dir }}/.config/dunst/dunstrc"
-    group: "{{ target_user }}"
     owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0640
+    setype: config_home_t
+    seuser: system_u
