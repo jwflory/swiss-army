@@ -209,6 +209,17 @@ bindsym XF86AudioPlay exec "playerctl play-pause"
 bindsym XF86AudioNext exec "playerctl next"
 bindsym XF86AudioPrev exec "playerctl previous"
 
+# Restore GNOME-style locking
+bindsym $mod+Control+l exec "$HOME/.config/i3/i3exit.sh lock"
+bindsym $mod+Control+s exec "$HOME/.config/i3/i3exit.sh suspend"
+exec "xautolock -time 15 -locker '$HOME/.config/i3/fuzzy_lock.sh' &"
+
+# ProtonVPN connection controls
+bindsym --release $mod+Control+1 exec sudo protonvpn connect --sc && notify-send -u low -a "protonvpn-cli" "ProtonVPN" "Connected to VPN (Secure Core)."
+bindsym --release $mod+Control+2 exec sudo protonvpn reconnect && notify-send -u low -a "protonvpn-cli" "ProtonVPN" "Reconnected to last VPN connection."
+bindsym --release $mod+Control+3 exec sudo protonvpn disconnect && notify-send -u low -a "protonvpn-cli" "ProtonVPN" "Disconnected from VPN."
+bindsym --release $mod+Control+4 exec notify-send -u low -a "protonvpn-cli" "ProtonVPN" "$(echo -e $(protonvpn status))"
+
 
 #########################
 # Start-up applications #
@@ -231,11 +242,6 @@ exec "nm-applet"
 
 # gnome-pomodoro: Pomodoro timer in systray
 exec "gnome-pomodoro --no-default-window"
-
-# Restore GNOME-style locking
-bindsym $mod+Control+l exec "$HOME/.config/i3/i3exit.sh lock"
-bindsym $mod+Control+s exec "$HOME/.config/i3/i3exit.sh suspend"
-exec "xautolock -time 15 -locker '$HOME/.config/i3/fuzzy_lock.sh' &"
 
 # Standard desktop applications I always use on start
 exec "firefox"
