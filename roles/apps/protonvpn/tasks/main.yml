@@ -13,3 +13,13 @@
   package:
     state: present
     name: protonvpn-cli
+
+- name: push sudoers.d rule file for protonvpn (wheel group only)
+  copy:
+    src: 10_protonvpn
+    dest: "/etc/sudoers.d/10_protonvpn"
+    owner: root
+    group: root
+    mode: 0640
+    setype: etc_t
+    seuser: system_u
