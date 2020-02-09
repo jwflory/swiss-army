@@ -1,0 +1,2 @@
+## Allows members of the users group to run protonvpn commands as root
+%wheel	ALL=NOPASSWD: /usr/bin/protonvpn
