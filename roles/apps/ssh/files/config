@@ -10,17 +10,9 @@ Host fedorapeople
   HostName fedorapeople.org
   User jflory7
   ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
-Host happinesspackets
-  HostName happinesspackets.fedorainfracloud.org
-  User root
-  ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
-Host happinesspackets-stg
-  HostName happinesspackets-stg.fedorainfracloud.org
-  User root
-  ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 Host ircfedora
-  Hostname telegram-irc.fedorainfracloud.org
-  User jflory
+  Hostname telegram-irc-01.fedorainfracloud.org
+  User fedora
   ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 
 # HOSTS: Personal
