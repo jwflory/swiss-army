@@ -33,6 +33,7 @@
   # meld: Visual diff and merge tool
   # network-manager-applet: Network control / status applet for NetworkManager
   # remmina: Remote Desktop client
+  # shotwell: Photo organizer and editor
   # poppler-utils: Command line utilities for converting PDF files
   # udftools: FS formatting tools (Universal Disk Format)
   package:
@@ -97,6 +98,7 @@
       - pulseaudio-utils
       - remmina
       - rpmconf
+      - shotwell
       - smartmontools
       - spotify-client
       - strace
