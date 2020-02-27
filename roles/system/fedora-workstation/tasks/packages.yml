@@ -25,7 +25,6 @@
   ### Package notes ###
   # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
   # chromaprint-tools: Capture digital fingerprints of audio files
-  # cmus: ncurses-based music player
   # exfat-utils: FS formatting tools (exFAT)
   # f2fs-tools: FS formatting tools (Flash-Friendly File System)
   # gstreamer1-plugins-bad-nonfree: MPEG2 codec support
@@ -51,7 +50,6 @@
       - buildah
       - chromaprint-tools
       - chromium
-      - cmus
       - docker-compose
       - duply
       - epiphany
@@ -78,6 +76,7 @@
       - jq
       - libvirt
       - libvirt-devel
+      - lollypop
       - meld
       - moby-engine
       - mpris-scrobbler
