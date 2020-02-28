@@ -65,6 +65,7 @@
       - gobby05
       - golang
       - google-roboto-slab-fonts
+      - gparted
       - gstreamer-ffmpeg
       - gstreamer1-plugins-bad-free-extras
       - gstreamer1-plugins-ugly
