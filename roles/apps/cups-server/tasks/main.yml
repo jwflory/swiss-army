@@ -1,0 +1,17 @@
+---
+- name: install/upgrade cups
+  package:
+    state: latest
+    name:
+      - cups
+      - cups-ipptool
+
+- name: allow ipp/mdns services in firewall
+  firewalld:
+    service: "{{ item }}"
+    permanent: yes
+    immediate: yes
+    state: enabled
+  loop:
+    - ipp
+    - mdns
