@@ -26,6 +26,9 @@ Host intermission
   HostName intermission.justinwflory.com
   Port 60597
   User jflory
+Host lucie
+  HostName 192.168.1.2
+  User jwf
 
 # HOSTS: Specific-purpose VMs
 Host irclo
