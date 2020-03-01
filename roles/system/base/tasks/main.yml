@@ -52,6 +52,7 @@
     path: "{{ user_home_dir }}/{{ item }}"
     group: "{{ target_group }}"
     owner: "{{ target_user }}"
+    mode: 0700
     seuser: system_u
   loop:
     - .ansible/tmp
