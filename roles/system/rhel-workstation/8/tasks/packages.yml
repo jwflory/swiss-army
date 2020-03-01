@@ -1,0 +1,76 @@
+---
+- name: import third-party repository signing keys
+  rpm_key: key={{ item }} state=present
+  loop:
+    - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+
+- name: add/upgrade EPEL repositories
+  package:
+    state: latest
+    name:
+      - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+- name: add other third-party repositories
+  get_url:
+    dest: "/etc/yum.repos.d/"
+    url: "{{ item }}"
+    setype: system_conf_t
+    seuser: system_u
+  loop:
+    - https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+    - https://negativo17.org/repos/epel-flash-plugin.repo
+
+- name: install base packages
+  ### Package notes ###
+  # jpegoptim: Utility to optimize JPEG files
+  # meld: Visual diff and merge tool
+  # network-manager-applet: Network control / status applet for NetworkManager
+  package:
+    state: present
+    name:
+      - ansible
+      # - arandr
+      - bash-completion
+      - brasero
+      - brasero-nautilus
+      - chromium
+      - docker
+      # - duply
+      # - feh
+      # - ffmpeg
+      - firewalld
+      - flash-plugin
+      - fpaste
+      - git
+      - golang
+      - google-roboto-fonts
+      - gparted
+      # - gstreamer-ffmpeg
+      # - gstreamer1-plugins-bad-free-extras
+      # - gstreamer1-plugins-bad-nonfree
+      # - gstreamer1-plugins-ugly
+      - hexchat
+      - htop
+      - inkscape
+      - jpegoptim
+      - jq
+      - libvirt
+      - libvirt-devel
+      # - lollypop
+      # - meld
+      # - mpv
+      - network-manager-applet
+      - overpass-fonts
+      - overpass-mono-fonts
+      # - pandoc
+      # - pass
+      - pavucontrol
+      # - picard
+      - podman
+      - pulseaudio-utils
+      - rpmconf
+      - smartmontools
+      - strace
+      - which
+      - xclip
+      - youtube-dl
