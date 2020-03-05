@@ -45,6 +45,12 @@ Host banjo
 Host fossrit
   HostName fossrit.community
   User jflory
+Host saskia
+    ForwardAgent yes
+    HostName banjo.rit.edu
+    RemoteCommand ssh jwf@saskia.igm.rit.edu
+    RequestTTY force
+    User jwf9260
 Host serenity
   HostName serenity.ist.rit.edu
   User jwf9260
