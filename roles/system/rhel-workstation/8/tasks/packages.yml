@@ -42,6 +42,7 @@
       - flash-plugin
       - fpaste
       - git
+      - gnome-tweaks
       - golang
       - google-roboto-fonts
       - gparted
@@ -66,11 +67,12 @@
       # - pass
       - pavucontrol
       # - picard
-      - podman
+      # - podman (something is wrong with AppStream, need to figure out later)
       - pulseaudio-utils
       - rpmconf
       - smartmontools
       - strace
+      - thunderbird
       - which
       - xclip
       - youtube-dl
