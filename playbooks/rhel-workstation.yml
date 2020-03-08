@@ -3,6 +3,13 @@
   hosts: workstation
   become: yes
 
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    target_group: jwf
+    target_user: jwf
+    target_user_name: Justin W. Flory
+    user_home_dir: /home/jwf
+
   roles:
     - { role: system/base, tags: ['base', 'system'] }
     - { role: system/rhel-workstation, tags: ['rhel', 'system'] }
