@@ -3,6 +3,13 @@
   hosts: servers_centos
   become: yes
 
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    target_group: jflory
+    target_user: jflory
+    target_user_name: Justin W. Flory
+    user_home_dir: /home/jflory
+
   roles:
     - { role: system/base, tags: ['base', 'system'] }
     - { role: system/centos-server, tags: ['centos', 'system'] }
