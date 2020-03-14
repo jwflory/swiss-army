@@ -75,6 +75,5 @@
       - strace
       - sublime-text
       - typetype-molot-fonts
-      # - vagrant
       - which
       - xclip
