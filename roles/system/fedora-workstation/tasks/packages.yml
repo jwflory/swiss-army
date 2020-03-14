@@ -105,9 +105,6 @@
       - telegram-desktop
       - typetype-molot-fonts
       - udftools
-      - '@vagrant'
-      - vagrant-doc
-      - vagrant-sshfs
       - '@virtualization'
       - visualboyadvance-m
       - whipper
