@@ -1,0 +1,1 @@
+gem: --user-install --bindir {{ user_home_dir }}/wkspc/bin
