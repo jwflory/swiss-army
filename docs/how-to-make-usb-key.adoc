@@ -1,6 +1,7 @@
 = How to make a bootable Linux USB key
 
-_Licensed under_: https://creativecommons.org/licenses/by-sa/4.0/[CC BY-SA 4.0 International]
+[link=https://creativecommons.org/licenses/by-sa/4.0/]
+image::https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg[License: CC BY-SA 4.0]
 
 This document explains how to create a bootable Linux USB key.
 There are many methods to do this and many tools available to make this easier.
@@ -13,12 +14,33 @@ Instead of searching my browser history each time I make a USB key, this is a mo
 
 You need the following:
 
-* ISO image of your choice
-* USB key (8GB+ preferred)
 * Existing Linux or macOS system
+* USB key (8GB minimum)
+* https://gparted.org/[`gparted`]
+* ISO image of your choice
 
 
-== How to use `dd` to make a USB key
+== Use `gparted` to clear USB key
+
+_Note_: This is only applicable to Linux systems.
+
+Before creating a bootable USB key, make sure the USB key is cleared and unallocated.
+In the past, I ran into weird issues when creating the bootable media before clearing the existing data.
+Theoretically, it shouldn't be an issue, but technology is weird sometimes.
+
+. Insert USB key into system.
+. Open `gparted` as root (`sudo gparted`)
+. Change partitioning scheme to `gpt`, wipe drive clean
+
+
+== Download ISO image and check SHA sum
+
+If provided, check the ISO image checksum against a provided checksum:
+
+ echo "<sha512sum> <file name to check>" | sha512sum --check
+
+
+== Create install media with `dd`
 
  sudo dd if=/path/to/image.iso of=/dev/sdX bs=128K conv=noerror,sync status=progress
 
