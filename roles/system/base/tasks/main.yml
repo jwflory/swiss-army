@@ -7,27 +7,16 @@
       - evolution
       - evolution-ews
       - evolution-help
-      - gnome-boxes
-      - gnome-calendar
-      - gnome-characters
       - gnome-classic-session
-      - gnome-contacts
       - gnome-documents
       - gnome-documents-libs
-      - gnome-getting-started-docs
-      - gnome-initial-setup
-      - gnome-maps
-      - gnome-photos
-      - gnome-shell-extension-pomodoro
       - gnome-system-monitor
-      - gnome-weather
       - logwatch
       - mediawriter
       - mosh
       - origin-clients
       - powerline
       - ntp
-      - task
       - tmux-powerline
       - tomahawk
 
@@ -61,8 +50,6 @@
     state: absent
   loop:
     - "{{ user_home_dir }}/.bash_completion.d/"
-    - "{{ user_home_dir }}/.taskrc"
-    - "/etc/bash_completion.d/task.bash-completion"
 
 - name: clone dotfile repository from GitHub
   become: yes
