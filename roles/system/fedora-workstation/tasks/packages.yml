@@ -21,6 +21,21 @@
     - https://negativo17.org/repos/fedora-flash-plugin.repo
     - https://negativo17.org/repos/fedora-spotify.repo
 
+- name: remove unused packages
+  package:
+    state: absent
+    name:
+      - gnome-boxes
+      - gnome-calendar
+      - gnome-characters
+      - gnome-contacts
+      - gnome-font-viewer
+      - gnome-getting-started-docs
+      - gnome-initial-setup
+      - gnome-maps
+      - gnome-photos
+      - gnome-weather
+
 - name: install base packages
   ### Package notes ###
   # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
