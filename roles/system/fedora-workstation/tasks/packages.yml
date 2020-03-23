@@ -39,6 +39,7 @@
 - name: install base packages
   ### Package notes ###
   # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
+  # bat: cat(1) clone with wings
   # chromaprint-tools: Capture digital fingerprints of audio files
   # exfat-utils: FS formatting tools (exFAT)
   # f2fs-tools: FS formatting tools (Flash-Friendly File System)
@@ -57,6 +58,7 @@
       - ansible
       - arandr
       - bash-completion
+      - bat
       - black
       - blueman
       - bpftrace
