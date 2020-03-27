@@ -1,6 +1,6 @@
 ---
 - name: synchronize Ginny's preferred RHEL 8 Workstation
-  hosts: 192.168.1.12
+  hosts: 192.168.1.3
   become: yes
 
   vars:
