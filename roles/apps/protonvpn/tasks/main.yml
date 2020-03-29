@@ -1,13 +1,10 @@
 ---
-- name: install Fedora COPR plugin
+- name: centos/rhel - install epel-release
   package:
     state: present
-    name: dnf-command(copr)
-
-- name: install jflory7/protonvpn-cli COPR repository (via dnf command)
-  command: "dnf -y copr enable jflory7/protonvpn-cli"
-  args:
-    creates: "/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:jflory7:protonvpn-cli.repo"
+    name: epel-release
+  when: (ansible_facts['os_family'] == "RedHat") and
+        (ansible_facts['distribution_major_version'] == "7" or ansible_facts['distribution_major_version'] == "8")
 
 - name: install protonvpn-cli
   package:
