@@ -12,14 +12,11 @@ Host fedorapeople
     ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 
 # HOSTS: Personal
-Host estrella
-    HostName estrella.justinwflory.com
-    User jflory
 Host horizon
-    HostName horizon.justinwflory.com
+    HostName horizon.jwf.io
     User jflory
 Host intermission
-    HostName intermission.justinwflory.com
+    HostName intermission.jwf.io
     Port 60597
     User jflory
 Host lucie
