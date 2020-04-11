@@ -42,6 +42,7 @@
   when: ansible_facts['distribution'] == "Fedora"
 
 - name: (CentOS/RedHat) install/upgrade pipenv, poetry (via pip)
+  become: true
   become_user: "{{ target_user }}"
   pip:
     executable: pip3
