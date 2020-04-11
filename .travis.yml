@@ -1,13 +1,16 @@
+---
 os: linux
 dist: bionic
 
-jobs:
-  include:
-    - language: python
-      python: 3.8
-      cache: pip
-      install: "pip install $(pipenv lock --dev --requirements)"
-      script: "yamllint -c .yamllint ."
+language: python
+python: "3.8"
+cache: pip
+install:
+  - pipenv lock --dev --requirements > /tmp/requirements.txt
+  - pip install -r /tmp/requirements.txt
+script:
+  - yamllint -c .yamllint .
+  - ansible-lint -x 305,401,403 playbooks/fedora-workstation.yml
 
 notifications:
   irc:
