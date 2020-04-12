@@ -54,6 +54,9 @@ set wrapscan
 " AsciiDoc
 autocmd FileType asciidoc setlocal textwidth=0 colorcolumn=0
 
+" CSS
+autocmd FileType css setlocal shiftwidth=2 softtabstop=2 tabstop=2 textwidth=0 colorcolumn=0
+
 " git commits
 autocmd FileType gitcommit setlocal colorcolumn=73 softtabstop=4 tabstop=4
 
