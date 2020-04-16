@@ -30,65 +30,76 @@
   get_url:
     url: "https://tpo.pe/pathogen.vim"
     dest: "{{ user_home_dir }}/.vim/autoload/pathogen.vim"
-    mode: 0500
+    mode: 0600
     owner: "{{ target_user }}"
     group: "{{ target_group }}"
     seuser: system_u
 
 - name: add vim plugin - black
   git:
-    repo: "git@github.com:psf/black.git"
+    repo: "https://github.com/psf/black.git"
     dest: "{{ user_home_dir }}/.vim/bundle/black"
+    accept_hostkey: yes
 
 - name: add vim plugin - code_complete
   git:
-    repo: "git@github.com:mbbill/code_complete.git"
+    repo: "https://github.com/mbbill/code_complete.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-code-complete"
+    accept_hostkey: yes
 
 - name: add vim plugin - Dockerfile.vim
   git:
-    repo: "git@github.com:ekalinin/Dockerfile.vim.git"
+    repo: "https://github.com/ekalinin/Dockerfile.vim.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-dockerfile"
+    accept_hostkey: yes
 
 - name: add vim plugin - salt-vim
   git:
-    repo: "git@github.com:saltstack/salt-vim.git"
+    repo: "https://github.com/saltstack/salt-vim.git"
     dest: "{{ user_home_dir }}/.vim/bundle/salt-vim"
+    accept_hostkey: yes
 
 - name: add vim plugin - syntastic
   git:
-    repo: "git@github.com:vim-syntastic/syntastic.git"
+    repo: "https://github.com/vim-syntastic/syntastic.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-syntastic"
+    accept_hostkey: yes
 
 - name: add vim plugin - vim-airline
   git:
-    repo: "git@github.com:vim-airline/vim-airline.git"
+    repo: "https://github.com/vim-airline/vim-airline.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-airline"
+    accept_hostkey: yes
 
 - name: add vim plugin - vim-closetag
   git:
-    repo: "git@github.com:alvan/vim-closetag.git"
+    repo: "https://github.com/alvan/vim-closetag.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-closetag"
+    accept_hostkey: yes
 
 - name: add vim plugin - vim-flake8
   git:
-    repo: "git@github.com:nvie/vim-flake8.git"
+    repo: "https://github.com/nvie/vim-flake8.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-flake8"
+    accept_hostkey: yes
 
 - name: add vim plugin - vim-jinja
   git:
-    repo: "git@github.com:mitsuhiko/vim-jinja.git"
+    repo: "https://github.com/mitsuhiko/vim-jinja.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-jinja"
+    accept_hostkey: yes
 
 - name: add vim plugin - vim-snippets
   git:
-    repo: "git@github.com:honza/vim-snippets.git"
+    repo: "https://github.com/honza/vim-snippets.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-snippets"
+    accept_hostkey: yes
 
 - name: add vim plugin - vim-surround
   git:
-    repo: "git@github.com:tpope/vim-surround.git"
+    repo: "https://github.com/tpope/vim-surround.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-surround"
+    accept_hostkey: yes
 
 - name: set owner/group on vim plugins to target user
   file:
@@ -97,4 +108,4 @@
     recurse: yes
     owner: "{{ target_user }}"
     group: "{{ target_group }}"
-    seowner: system_u
+    seuser: system_u

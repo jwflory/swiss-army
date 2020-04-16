@@ -64,9 +64,6 @@
 	name = Justin W. Flory
 	email = git@jwf.io
 	signingkey = 39E45FB6014131E4
-[url "git@github.com:"]
-    # Allow "go get" to use ssh and not https
-    insteadOf = https://github.com/
 [includeIf "gitdir:~/git/jump/"]
   path = .gitconfig-jump
 [includeIf "gitdir:~/git/unicef/"]
