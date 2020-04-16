@@ -11,6 +11,7 @@
       - gnome-documents
       - gnome-documents-libs
       - gnome-system-monitor
+      - gobby05
       - logwatch
       - mediawriter
       - mosh

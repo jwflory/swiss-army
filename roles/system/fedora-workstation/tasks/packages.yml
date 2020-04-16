@@ -79,8 +79,8 @@
       - fpaste
       - git
       - gnome-mahjongg
-      - gobby05
       - golang
+      - golang-godoc
       - google-roboto-slab-fonts
       - gparted
       - gstreamer-ffmpeg
