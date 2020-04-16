@@ -7,13 +7,13 @@
     setype: etc_t
     seuser: system_u
 
-- name: copy bashrc and bash_profile
+- name: push bashrc and bash_profile
   copy:
     src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ user_home_dir }}/.{{ item }}"
-    group: "{{ target_group }}"
+    mode: 0400
     owner: "{{ target_user }}"
-    mode: 0444
+    group: "{{ target_group }}"
     setype: config_home_t
     seuser: system_u
   loop:

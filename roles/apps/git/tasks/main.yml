@@ -1,10 +1,12 @@
 ---
-- name: copy git user config files
+- name: push git user config files
   copy:
     src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ user_home_dir }}/.{{ item }}"
-    group: "{{ target_user }}"
+    mode: 0600
     owner: "{{ target_user }}"
+    group: "{{ target_group }}"
+    seuser: system_u
   loop:
     - gitconfig
     - gitconfig-jump

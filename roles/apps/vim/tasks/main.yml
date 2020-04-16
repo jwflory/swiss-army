@@ -1,112 +1,100 @@
 ---
-- name: install/upgrade vim
+- name: install vim
   package:
-    state: latest
+    state: present
     name: vim
 
 - name: create vim user config directories
   file:
     state: directory
     path: "{{ user_home_dir }}/{{ item }}"
-    group: "{{ target_group }}"
+    mode: 0700
     owner: "{{ target_user }}"
-    mode: 0775
+    group: "{{ target_group }}"
     seuser: system_u
   loop:
     - .vim/autoload
     - .vim/bundle
 
-- name: copy vimrc
+- name: push vimrc
   copy:
     src: "{{ role_path }}/files/vimrc"
     dest: "{{ user_home_dir }}/.vimrc"
-    group: "{{ target_group }}"
+    mode: 0400
     owner: "{{ target_user }}"
-    mode: 0644
+    group: "{{ target_group }}"
+    setype: user_home_t
     seuser: system_u
 
 - name: configure vim - pathogen
-  become: true
-  become_user: "{{ target_user }}"
   get_url:
     url: "https://tpo.pe/pathogen.vim"
     dest: "{{ user_home_dir }}/.vim/autoload/pathogen.vim"
-    mode: 0750
+    mode: 0500
+    owner: "{{ target_user }}"
+    group: "{{ target_group }}"
     seuser: system_u
 
 - name: add vim plugin - black
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:psf/black.git"
     dest: "{{ user_home_dir }}/.vim/bundle/black"
 
 - name: add vim plugin - code_complete
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:mbbill/code_complete.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-code-complete"
 
 - name: add vim plugin - Dockerfile.vim
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:ekalinin/Dockerfile.vim.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-dockerfile"
 
 - name: add vim plugin - salt-vim
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:saltstack/salt-vim.git"
     dest: "{{ user_home_dir }}/.vim/bundle/salt-vim"
 
 - name: add vim plugin - syntastic
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:vim-syntastic/syntastic.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-syntastic"
 
 - name: add vim plugin - vim-airline
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:vim-airline/vim-airline.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-airline"
 
 - name: add vim plugin - vim-closetag
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:alvan/vim-closetag.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-closetag"
 
 - name: add vim plugin - vim-flake8
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:nvie/vim-flake8.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-flake8"
 
 - name: add vim plugin - vim-jinja
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:mitsuhiko/vim-jinja.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-jinja"
 
 - name: add vim plugin - vim-snippets
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:honza/vim-snippets.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-snippets"
 
 - name: add vim plugin - vim-surround
-  become: true
-  become_user: "{{ target_user }}"
   git:
     repo: "git@github.com:tpope/vim-surround.git"
     dest: "{{ user_home_dir }}/.vim/bundle/vim-surround"
+
+- name: set owner/group on vim plugins to target user
+  file:
+    path: "{{ user_home_dir }}/.vim"
+    state: directory
+    recurse: yes
+    owner: "{{ target_user }}"
+    group: "{{ target_group }}"
+    seowner: system_u
