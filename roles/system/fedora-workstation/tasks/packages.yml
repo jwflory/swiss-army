@@ -57,6 +57,7 @@
       - https://dl.google.com/linux/direct/google-musicmanager-beta_current_x86_64.rpm
       - ansible
       - arandr
+      - asciidoctor
       - bash-completion
       - bat
       - black
