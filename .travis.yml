@@ -2,15 +2,31 @@
 os: linux
 dist: bionic
 
-language: python
-python: "3.8"
-cache: pip
-install:
-  - pipenv lock --dev --requirements > /tmp/requirements.txt
-  - pip install -r /tmp/requirements.txt
-script:
-  - yamllint -c .yamllint .
-  - ansible-lint -x 305,401,403 playbooks/fedora-workstation.yml
+jobs:
+  include:
+
+    - language: python
+      python: 3.8
+      cache: pip
+      install:
+        - pipenv lock --dev --requirements > /tmp/requirements.txt
+        - pip install -r /tmp/requirements.txt
+      script:
+        - yamllint -c .yamllint .
+        - ansible-lint -x 305,401,403 playbooks/centos-server.yml
+        - ansible-lint -x 305,401,403 playbooks/fedora-workstation.yml
+        - ansible-lint -x 305,401,403 playbooks/rhel-workstation.yml
+
+    - language: ruby
+      rvm:
+        - 2.6.5
+      cache:
+        bundler: true
+        directories:
+          - $TRAVIS_BUILD_DIR/tmp/.htmlproofer
+      script:
+        - bundle exec sh gen_docs.sh
+        - bundle exec rake test
 
 notifications:
   irc:
