@@ -6,6 +6,7 @@ task :test do
   options = {
     :check_html => true,
     :http_status_ignore => [0,999],
+    :url_ignore => ["https://github.com/jwflory/swiss-army/generate"],
     :cache => {
       :timeframe => "6w"
     }
