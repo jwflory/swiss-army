@@ -4,7 +4,7 @@
 image::https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg[License: CC BY-SA 4.0]
 
 This doc explains how `jwflory/swiss-army` is used in practice.
-It provides a baseline for how upstream uses this repo daily, should you make a fork.
+It provides a baseline for how upstream uses this repo daily, should you https://github.com/jwflory/swiss-army/generate[use it as a template].
 
 
 == Support matrix
