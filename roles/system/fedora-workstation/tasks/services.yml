@@ -4,9 +4,6 @@
     name: docker
     state: started
     enabled: yes
-  # On Fedora 31 or later, Docker is broken with CgroupsV2.
-  # https://fedoraproject.org/wiki/Changes/CGroupsV2
-  ignore_errors: yes
 
 - name: start/enable firewalld
   service:
