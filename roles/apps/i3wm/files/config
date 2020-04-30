@@ -236,24 +236,13 @@ bindsym --release $mod+Control+4 exec notify-send -u low -a "protonvpn-cli" "Pro
 # Start-up applications #
 #########################
 
-# feh: Wallpaper
+# Set background wallpaper
 exec_always --no-startup-id "feh --bg-scale ~/Pictures/wallpaper.jpg"
 
-# xfce4-power-manager: Low battery notifications
-exec "xfce4-power-manager"
+exec "blueman-applet"       # Bluetooth management in systray
+exec "dropbox start"        # Start Dropbox daemon
+exec "nm-applet"            # Network management in systray
+exec "xfce4-power-manager"  # Low battery notifications
 
-# dropbox: Start daemon
-exec "dropbox start"
-
-# blueman-applet: Bluetooth management in systray
-exec "blueman-applet"
-
-# nm-applet: Network management in systray
-exec "nm-applet"
-
-# gnome-pomodoro: Pomodoro timer in systray
-exec "gnome-pomodoro --no-default-window"
-
-# Standard desktop applications I always use on start
-exec "firefox"
-exec "thunderbird"
+exec "firefox"              # GUI: Open Firefox on start
+exec "thunderbird"          # GUI: Open Thunderbird on start
