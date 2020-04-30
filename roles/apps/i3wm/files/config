@@ -1,9 +1,9 @@
-# vim:filetype=i3
-# i3 config file (v4)
+# vim:filetype=bash
+# i3 config file
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
-# Maintained by: Justin W. Flory (jwf / jflory7)
+# Maintained by: Justin W. Flory (jwf)
 #
 
 set $mod Mod4
@@ -175,13 +175,21 @@ exec --no-startup-id "synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDel
 focus_follows_mouse no
 
 # Default workspaces
+assign [class="ProtonMail Bridge"] 2
 assign [class="Thunderbird"] 2
+
+assign [class="Lollypop"] 3
 assign [class="Rhythmbox"] 3
-assign [class="Spotify"] 3
+for_window [title="Spotify"] move to workspace 3
+for_window [title="Spotify Free"] move to workspace 3
+
+assign [class="Bluejeans"] 4
 assign [class="HexChat"] 4
 assign [class="Riot"] 4
+assign [class="Signal"] 4
 assign [class="Slack"] 4
 assign [class="Telegram"] 4
+assign [class="zoom"] 4
 
 
 ########################
