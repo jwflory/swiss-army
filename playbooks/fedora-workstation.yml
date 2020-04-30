@@ -23,6 +23,7 @@
     - { role: apps/i3wm, tags: ['i3wm', 'desktop', 'apps'] }
     - { role: apps/minecraft, apps: ['minecraft', 'desktop', 'apps'] }
     - { role: apps/npm, tags: ['npm', 'terminal', 'apps'] }
+    - { role: apps/pass, tags: ['pass', 'terminal', 'apps'] }
     - { role: apps/powerline-go, tags: ['powerline', 'terminal', 'apps'] }
     - { role: apps/protonvpn, tags: ['protonvpn', 'terminal', 'apps'] }
     - { role: apps/slack, tags: ['slack', 'desktop', 'apps'] }

@@ -1,0 +1,25 @@
+---
+- name: install pass and other extensions
+  package:
+    state: present
+    name:
+      - pass
+      - passmenu
+
+- name: clone/update passwords
+  git:
+    repo: git@github.com:jwflory/passwd.git
+    dest: "{{ user_home_dir }}/.password-store"
+    accept_hostkey: yes
+    force: yes
+    version: HEAD
+
+- name: harden ~/.password-store permissions
+  file:
+    type: directory
+    path: "{{ user_home_dir }}/.password-store/"
+    mode: 0700
+    owner: "{{ target_user }}"
+    group: "{{ target_group }}"
+    setype: user_home_t
+    seuser: system_u
