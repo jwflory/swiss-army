@@ -188,6 +188,9 @@ assign [class="Telegram"] 4
 # Control key mappings #
 ########################
 
+# start passmenu on Mod+P
+bindsym $mod+p exec --no-startup-id passmenu
+
 # Set compose key: Special character support
 exec_always --no-startup-id "setxkbmap -option 'compose:ralt'"
 
