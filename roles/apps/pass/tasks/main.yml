@@ -16,7 +16,7 @@
 
 - name: harden ~/.password-store permissions
   file:
-    type: directory
+    state: directory
     path: "{{ user_home_dir }}/.password-store/"
     mode: 0700
     owner: "{{ target_user }}"
