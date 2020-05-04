@@ -1,28 +1,31 @@
 ---
-- name: create SSH user config directory (~/.ssh/)
+- name: create user SSH config directory (~/.ssh/)
   file:
     state: directory
     path: "{{ user_home_dir }}/.ssh"
+    mode: 0700
     owner: "{{ target_user }}"
     group: "{{ target_group }}"
+    setype: ssh_home_t
     seuser: system_u
-    mode: 0700
 
-- name: copy SSH config (~/.ssh/config)
+- name: push user SSH config (~/.ssh/config)
   copy:
     src: "{{ role_path }}/files/config"
     dest: "{{ user_home_dir }}/.ssh/config"
+    mode: 0644
     owner: "{{ target_user }}"
     group: "{{ target_group }}"
+    setype: ssh_home_t
     seuser: system_u
-    mode: 0644
 
-- name: template sshd_config (/etc/ssh/sshd_config)
+- name: push 01-system-owner-policy.conf (/etc/ssh/sshd_config.d/)
   template:
-    src: sshd_config.jinja
-    dest: /etc/ssh/sshd_config
+    src: 01-system-owner-policy.conf
+    dest: /etc/ssh/sshd_config.d/01-system-owner-policy.conf
+    mode: 0600
     owner: root
     group: root
     seuser: system_u
     setype: etc_t
-    mode: 0600
+  notify: restart sshd.service
