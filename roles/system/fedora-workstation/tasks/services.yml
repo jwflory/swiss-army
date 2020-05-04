@@ -1,10 +1,4 @@
 ---
-- name: start/enable docker
-  service:
-    name: docker
-    state: started
-    enabled: yes
-
 - name: start/enable firewalld
   service:
     name: firewalld
