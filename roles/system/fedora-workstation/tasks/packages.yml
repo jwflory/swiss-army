@@ -23,7 +23,6 @@
 
 - name: install base packages
   ### Package notes ###
-  # Fedora packaging tools: fedora-packager, fedpkg, copr-cli
   # bat: cat(1) clone with wings
   # chromaprint-tools: Capture digital fingerprints of audio files
   # exfat-utils: FS formatting tools (exFAT)
@@ -81,7 +80,6 @@
       - libvirt-devel
       - lollypop
       - meld
-      - moby-engine
       - mpris-scrobbler
       - mpv
       - nautilus-dropbox

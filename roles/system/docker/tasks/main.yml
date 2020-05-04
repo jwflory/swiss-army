@@ -1,0 +1,11 @@
+---
+- name: install moby-engine (/usr/bin/docker)
+  package:
+    name: moby-engine
+    state: present
+
+- name: start/enable docker.service
+  service:
+    name: docker.service
+    state: started
+    enabled: yes
