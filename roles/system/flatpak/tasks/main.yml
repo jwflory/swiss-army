@@ -1,0 +1,12 @@
+---
+- name: install flatpak
+  package:
+    name: flatpak
+    state: present
+
+- name: add flathub
+  flatpak_remote:
+    name: flathub
+    state: present
+    method: system
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo

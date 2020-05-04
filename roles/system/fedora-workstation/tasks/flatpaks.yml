@@ -1,0 +1,14 @@
+---
+- name: install default flatpaks as user-managed flatpaks
+  flatpak:
+    name: "{{ item }}"
+    state: present
+    method: system
+  loop:
+    - ch.protonmail.protonmail-bridge
+    - com.adobe.Flash-Player-Projector
+    - com.bluejeans.BlueJeans
+    - com.spotify.Client
+    - im.riot.Riot
+    - org.signal.Signal
+    - us.zoom.Zoom

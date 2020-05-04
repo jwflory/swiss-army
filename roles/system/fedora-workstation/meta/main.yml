@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  role_name: system/fedora-workstation
+  author: Justin W. Flory
+  description: Customized Ansible Role for Justin's Fedora Workstation set-up
+  license: BSD-3-Clause
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+
+  galaxy_tags:
+    - linux
+    - fedora
+    - desktop
+
+dependencies:
+  - role: system/flatpak
