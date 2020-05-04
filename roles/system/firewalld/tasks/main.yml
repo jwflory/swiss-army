@@ -1,0 +1,31 @@
+---
+- name: (EL) install epel-release
+  package:
+    name: epel-release
+    state: present
+  when: >
+    (ansible_facts['distribution'] == "CentOS"
+    or
+    ansible_facts['distribution'] == "RedHat")
+
+- name: install firewalld
+  package:
+    name: firewalld
+    status: present
+
+- name: install fail2ban
+  package:
+    name: "{{ item }}"
+    status: present
+  loop:
+    - fail2ban
+    - fail2ban-systemd
+
+- name: start/enable firewalld and fail2ban services
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  loop:
+    - firewalld.service
+    - fail2ban.service

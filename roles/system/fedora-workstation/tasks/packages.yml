@@ -59,7 +59,6 @@
       - f2fs-tools
       - feh
       - ffmpeg
-      - firewalld
       - fpaste
       - git
       - gnome-mahjongg

@@ -3,4 +3,3 @@
 - include_tasks: user-management.yml
 - include_tasks: packages.yml
 - include_tasks: flatpaks.yml
-- include_tasks: services.yml
