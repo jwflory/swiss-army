@@ -1,0 +1,24 @@
+---
+- name: install podman and related packages
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - buildah
+    - podman
+
+# gids/uids required for podman rootless mode
+# https://github.com/jwflory/swiss-army/issues/11
+- name: set multiple gids for target user
+  lineinfile:
+    path: "/etc/subgid"
+    regexp: "^{{ target_user }}:"
+    line: "{{ target_user }}:10000:65536"
+    seuser: system_u
+
+- name: set multiple uids for target user
+  lineinfile:
+    path: "/etc/subuid"
+    regexp: "^{{ target_user }}:"
+    line: "{{ target_user }}:10000:65536"
+    seuser: system_u

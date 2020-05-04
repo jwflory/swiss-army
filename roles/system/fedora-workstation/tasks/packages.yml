@@ -49,7 +49,6 @@
       - bpftrace
       - brasero
       - brasero-nautilus
-      - buildah
       - chromaprint-tools
       - chromium
       - docker-compose
@@ -89,7 +88,6 @@
       - pandoc
       - pavucontrol
       - picard
-      - podman
       - poppler-utils
       - powerline-fonts
       - pulseaudio-utils
