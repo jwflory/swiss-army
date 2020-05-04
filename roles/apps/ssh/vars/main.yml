@@ -1,0 +1,13 @@
+---
+# Notes:
+#   1. Make sure target_user is set before running this role.
+#   2. Wrap any "no" or "yes" strings in quotes so they are not reinterpreted
+#      by Ansible as True/False
+
+sshd:
+  authentication:
+    allow_users: "{{ target_user }}"
+    authorized_keys: |
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHr+JccK7HWKuI9GfjwuAzfeYW1en5ZdZZNxQh1bNGc/ justin@jwf.io
+    password_authentication: "no"
+    permit_root_login: "prohibit-password"
