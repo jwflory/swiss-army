@@ -1,25 +1,10 @@
 ---
-- name: import third-party repository signing keys
-  rpm_key: key={{ item }} state=present
-  loop:
-    - https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
-
 - name: add/upgrade RPM Fusion repositories
   package:
     state: latest
     name:
       - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
       - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
-
-- name: add other third-party repositories
-  get_url:
-    dest: "/etc/yum.repos.d/"
-    url: "{{ item }}"
-    setype: system_conf_t
-    seuser: system_u
-  loop:
-    - https://negativo17.org/repos/fedora-flash-plugin.repo
-    - https://negativo17.org/repos/fedora-spotify.repo
 
 - name: remove unused packages
   package:
@@ -76,7 +61,6 @@
       - feh
       - ffmpeg
       - firewalld
-      - flash-plugin
       - fpaste
       - git
       - gnome-mahjongg
@@ -108,7 +92,6 @@
       - pandoc
       - pavucontrol
       - picard
-      - planner
       - podman
       - poppler-utils
       - powerline-fonts
@@ -117,7 +100,6 @@
       - rpmconf
       - shotwell
       - smartmontools
-      - spotify-client
       - strace
       - telegram-desktop
       - typetype-molot-fonts

@@ -16,6 +16,7 @@
       - mediawriter
       - mosh
       - origin-clients
+      - planner
       - powerline
       - ntp
       - tmux-powerline
