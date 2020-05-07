@@ -1,0 +1,39 @@
+---
+  # There are very specific reasons I do not want to use the Flatpak version of
+  # Spotify Client for Linux.
+- name: purge Spotify Flatpak
+  flatpak:
+    name: com.spotify.Client
+    state: absent
+
+- name: (EL) add negativo17.org epel-spotify repository
+  when: >
+    (ansible_facts['distribution'] == "CentOS"
+    or
+    ansible_facts['distribution'] == "RedHat")
+  get_url:
+    url: https://negativo17.org/repos/epel-spotify.repo
+    dest: /etc/yum.repos.d/epel-spotify.repo
+    force: yes
+    mode: 0644
+    owner: root
+    group: root
+    setype: system_conf_t
+    seuser: system_u
+
+- name: (Fedora) add negativo17.org fedora-spotify repository
+  when: ansible_facts['distribution'] == "Fedora"
+  get_url:
+    url: https://negativo17.org/repos/fedora-spotify.repo
+    dest: /etc/yum.repos.d/fedora-spotify.repo
+    force: yes
+    mode: 0644
+    owner: root
+    group: root
+    setype: system_conf_t
+    seuser: system_u
+
+- name: install/upgrade spotify-client
+  package:
+    name: spotify-client
+    state: latest
