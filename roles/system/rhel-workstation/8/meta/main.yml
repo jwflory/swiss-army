@@ -1,20 +1,20 @@
 ---
 galaxy_info:
-  role_name: system/fedora-workstation
+  role_name: system/rhel-workstation/8
   author: Justin W. Flory
-  description: Customized Ansible Role for Justin's Fedora Workstation set-up
+  description: Customized Ansible Role for Justin's RHEL 8 Workstation set-up
   license: BSD-3-Clause
 
   min_ansible_version: 2.9
 
   platforms:
-    - name: Fedora
+    - name: EL
       versions:
-        - all
+        - 8
 
   galaxy_tags:
     - linux
-    - fedora
+    - rhel
     - desktop
 
 dependencies:

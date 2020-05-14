@@ -13,7 +13,6 @@
       - bash-completion
       - firewalld
       - fpaste
-      - git
       - golang
       - htop
       - jq

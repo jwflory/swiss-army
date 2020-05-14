@@ -42,7 +42,6 @@
       # - ffmpeg
       - firewalld
       # - flash-plugin
-      - git
       # - gnome-shell-extension-pomodoro
       - golang
       - google-roboto-slab-fonts

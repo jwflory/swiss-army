@@ -1,4 +1,9 @@
 ---
+- name: install/upgrade git
+  package:
+    state: latest
+    name: git
+
 - name: push git user config files
   copy:
     src: "{{ role_path }}/files/{{ item }}"

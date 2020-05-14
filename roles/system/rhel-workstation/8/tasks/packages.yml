@@ -41,7 +41,6 @@
       - firewalld
       - flash-plugin
       - fpaste
-      - git
       - gnome-tweaks
       - golang
       - google-roboto-fonts

@@ -46,13 +46,6 @@
     - git
     - wkspc
 
-- name: purge unused files
-  file:
-    path: "{{ item }}"
-    state: absent
-  loop:
-    - "{{ user_home_dir }}/.bash_completion.d/"
-
 - name: clone dotfile repository from GitHub
   become: yes
   become_user: "{{ target_user }}"
