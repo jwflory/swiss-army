@@ -12,6 +12,8 @@ Host fedorapeople
     ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 
 # HOSTS: Personal
+
+## Servers
 Host horizon
     HostName horizon.jwf.io
     User jflory
@@ -19,6 +21,11 @@ Host intermission
     HostName intermission.jwf.io
     Port 60597
     User jflory
+Host jubilee
+    HostName jubilee.jwf.io
+    User jwf
+
+## Workstations
 Host lucie
     HostName 192.168.1.2
     User jwf
