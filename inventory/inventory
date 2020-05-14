@@ -6,5 +6,6 @@
 
 [servers_centos]
 fedorapeople
-horizon.jwf.io
-irc-lug.rit.edu
+horizon
+jubilee
+ircritlug
