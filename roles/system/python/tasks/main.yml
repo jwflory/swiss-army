@@ -1,17 +1,4 @@
 ---
-- name: remove retired/deprecated Python runtime packages
-  package:
-    state: absent
-    name:
-      - python34
-      - python34-libs
-      - python34-pip
-      - python34-setuptools
-      - python36u
-      - python36u-libs
-      - python36u-pip
-      - python36u-setuptools
-
 - name: install default python3
   package:
     state: present

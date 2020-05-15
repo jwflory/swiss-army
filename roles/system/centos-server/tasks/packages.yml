@@ -9,7 +9,6 @@
     state: present
     name:
       - bash-completion
-      - firewalld
       - fpaste
       - golang
       - htop
