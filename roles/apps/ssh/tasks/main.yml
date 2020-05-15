@@ -1,4 +1,12 @@
 ---
+- name: install openssh
+  package:
+    state: present
+    name:
+      - openssh
+      - openssh-clients
+      - openssh-server
+
 - name: create user SSH config directory (~/.ssh/)
   file:
     state: directory
@@ -17,6 +25,16 @@
     owner: "{{ target_user }}"
     group: "{{ target_group }}"
     setype: ssh_home_t
+    seuser: system_u
+
+- name: create or update permissions on /etc/ssh/sshd_config.d/
+  file:
+    state: directory
+    path: /etc/ssh/sshd_config.d/
+    mode: 0700
+    owner: root
+    group: root
+    setype: etc_t
     seuser: system_u
 
 - name: push 01-system-owner-policy.conf (/etc/ssh/sshd_config.d/)
