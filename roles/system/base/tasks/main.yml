@@ -25,7 +25,6 @@
 - name: add target user
   user:
     name: "{{ target_user }}"
-    group: "{{ target_group }}"
     comment: "{{ target_user_name }}"
     groups: wheel
     append: yes
@@ -55,8 +54,9 @@
     accept_hostkey: yes
     update: no
     version: HEAD
+  ignore_errors: yes
 
-- name: install custom /etc/hosts file from someonewhocares.org
+- name: download /etc/hosts file from someonewhocares.org
   get_url:
     url: https://someonewhocares.org/hosts/zero/hosts
     dest: /etc/hosts

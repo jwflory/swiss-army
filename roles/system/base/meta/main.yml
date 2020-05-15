@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  role_name: system/base
+  author: Justin W. Flory
+  description: Customized Ansible Role for Justin's base system set-up
+  license: BSD-3-Clause
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+
+  galaxy_tags:
+    - linux
+
+dependencies:
+  - role: apps/git
