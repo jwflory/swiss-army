@@ -1,5 +1,5 @@
 ---
-- name: set up Justin's preferred CentOS 7.x Server configuration
+- name: set up Justin's CentOS 8.x Server
   hosts: jubilee
   become: yes
 

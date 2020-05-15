@@ -19,19 +19,31 @@
       - python3
       - python3-pip
 
-- name: (Fedora) install python38, python3-flake8
+- name: Fedora - install python39, python3-flake8
   package:
     state: present
     name:
-      - python38
+      - python39
       - python3-flake8
   when: ansible_facts['distribution'] == "Fedora"
 
-- name: (CentOS/RedHat) install python-flake8
+- name: RedHat 7 - install python-flake8
   package:
     state: present
     name: python-flake8
-  when: (ansible_facts['distribution'] == "CentOS" or ansible_facts['distribution'] == "RedHat")
+  when: >
+    (ansible_facts['distribution'] == "CentOS" or ansible_facts['distribution'] == "RedHat")
+    and
+    (ansible_facts['distribution_major_version'] == "7")
+
+- name: RedHat 8 - install python3-flake8
+  package:
+    state: present
+    name: python-flake8
+  when: >
+    (ansible_facts['distribution'] == "CentOS" or ansible_facts['distribution'] == "RedHat")
+    and
+    (ansible_facts['distribution_major_version'] == "7")
 
 - name: (Fedora) install/upgrade pipenv, poetry
   package:

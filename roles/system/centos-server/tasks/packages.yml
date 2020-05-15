@@ -1,10 +1,8 @@
 ---
-- name: install/upgrade EPEL and IUS repositories
+- name: install/upgrade EPEL repository
   package:
     state: latest
-    name:
-      - epel-release
-      - https://rhel7.iuscommunity.org/ius-release.rpm
+    name: epel-release
 
 - name: install base packages
   package:
