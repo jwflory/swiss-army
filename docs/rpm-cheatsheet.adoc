@@ -1,0 +1,15 @@
+= RPM cheat sheet
+
+[link=https://creativecommons.org/licenses/by/4.0/]
+image::https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg[License: *CC BY 4.0*]
+
+Handy references or shortcuts for working with https://rpm.org/[RPM].
+
+
+== `mock`
+
+[source,sh]
+----
+mock -r fedora-32-x86_64 rebuild SRPMS/mpris-scrobbler-0.3.90-1.fc32.src.rpm
+ls /etc/mock/
+----
