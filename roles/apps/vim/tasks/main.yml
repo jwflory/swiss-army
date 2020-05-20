@@ -39,6 +39,7 @@
   git:
     repo: "https://github.com/psf/black.git"
     dest: "{{ user_home_dir }}/.vim/bundle/black"
+    version: stable
     accept_hostkey: yes
 
 - name: add vim plugin - code_complete
