@@ -3,7 +3,7 @@
   file:
     path: "{{ user_home_dir }}/git/fedora/rpms/"
     state: directory
-    group: "{{ target_user }}"
+    group: "{{ target_group }}"
     owner: "{{ target_user }}"
 
 - name: clone/pull from remote github.com/jwflory/rpmbuild
@@ -19,7 +19,7 @@
     src: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild/rpmbuild"
     dest: "{{ user_home_dir }}/rpmbuild"
     state: link
-    group: "{{ target_user }}"
+    group: "{{ target_group }}"
     owner: "{{ target_user }}"
 
 - name: install Fedora packaging tools
@@ -31,6 +31,7 @@
       - fedora-packager
       - fedora-review
       - mock
+      - qemu-user-static
 
 - name: add target user to mock group
   user:
