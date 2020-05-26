@@ -11,6 +11,16 @@
     groups: docker,libvirt
     append: yes
 
+- name: create or update permissions on /root/.ssh/
+  file:
+    path: /root/.ssh/
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+    setype: ssh_home_t
+    seuser: system_u
+
 # Requires Ansible >= 2.8.
 - name: create ed25519 SSH key for root user
   openssh_keypair:

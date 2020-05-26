@@ -7,6 +7,8 @@
       - passmenu
 
 - name: clone/update passwords
+  become: true
+  become_user: "{{ target_user }}"
   git:
     repo: git@github.com:jwflory/passwd.git
     dest: "{{ user_home_dir }}/.password-store"

@@ -1,0 +1,30 @@
+---
+# Restores backed-up network scripts onto a new host. This is the easiest way
+# to share common networks and their wireless credentials across hosts.
+#
+# This playbook is intended to be run as a one-off migration. It should be used
+# on fresh installs only.
+
+- name: restore WiFi networks and login credentials on a new host
+  hosts: workstation
+  become: yes
+
+  vars:
+    user_home_dir: /home/jwf
+
+  tasks:
+    - name: unpack network script archive to /etc/sysconfig/network-scripts/
+      unarchive:
+        src: "{{ user_home_dir }}/wkspc/network-scripts.tar.xz"
+        dest: /etc/sysconfig/network-scripts
+        remote_src: yes
+        keep_newer: yes
+        owner: root
+        group: root
+        setype: net_conf_t
+        seuser: system_u
+
+    - name: restart NetworkManager.service
+      service:
+        name: NetworkManager.service
+        state: restarted
