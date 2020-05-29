@@ -20,3 +20,19 @@
     mode: 0640
     setype: etc_t
     seuser: system_u
+
+- name: push systemd unit file to automatically connect on system boot
+  template:
+    src: protonvpn.service
+    dest: /usr/lib/systemd/system/protonvpn.service
+    owner: root
+    group: root
+    mode: 0644
+    setype: systemd_unit_file_t
+    seuser: system_u
+
+- name: start/enable protonvpn.service
+  service:
+    name: protonvpn.service
+    state: started
+    enabled: yes
