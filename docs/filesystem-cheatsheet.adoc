@@ -1,0 +1,22 @@
+= Filesystem cheatsheet
+
+Miscellaneous filesystem tips and convenient operations I want to remember for later.
+
+
+== LVM
+
+=== PV headers, modify Volume Group (VG) (https://www.linuxquestions.org/questions/linux-software-2/pv-is-using-old-pv-header-4175663434/[source])
+
+When working with a LVM `ext4` filesystem, you might see an error like this:
+
+----
+WARNING: PV /dev/sdd3 in VG rhel_ginny is using an old PV header, modify the VG to update.
+----
+
+To remedy, update the Volume Group metadata:
+
+[source,sh]
+----
+sudo vgdisplay | grep "VG Name"
+sudo vgck --updatemetadata <vg_name>
+----
