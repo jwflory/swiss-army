@@ -14,5 +14,4 @@
     seuser: system_u
   loop:
     - gitconfig
-    - gitconfig-jump
     - gitconfig-unicef
