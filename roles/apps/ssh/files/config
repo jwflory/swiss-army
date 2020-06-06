@@ -1,9 +1,10 @@
 # HOSTS: Fedora Infrastructure
 Host bastion.fedoraproject.org
+    HostName bastion-iad01.fedoraproject.org
     User jflory7
     ProxyCommand none
     ForwardAgent no
-Host *.phx2.fedoraproject.org *.qa.fedoraproject.org 10.5.125.* 10.5.126.* 10.5.127.* *.vpn.fedoraproject.org
+Host *.iad2.fedoraproject.org *.qa.fedoraproject.org 10.5.125.* 10.5.126.* 10.5.127.* *.vpn.fedoraproject.org
     User jflory7
     ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
 Host fedorapeople
