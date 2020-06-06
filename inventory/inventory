@@ -7,5 +7,6 @@
 [servers_centos]
 fedorapeople
 horizon
-jubilee
 ircritlug
+jubilee
+kite
