@@ -39,18 +39,22 @@ fi
 # --- aliases ------------------------------------------------------------------
 
 ## -- aliases: general -------------------------------------
-alias grepper='grep -rnw . -e'
-alias hdmi2primary='xrandr --output HDMI-2 --primary && i3 restart'
+alias diff='diff --side-by-side --width=$(tput cols) --recursive --color=always'
 alias ls='ls --human-readable --group-directories-first --color=auto --classify --time-style=+"%Y-%m-%d %H:%M"'
 alias lsa='ls -Alh'
 alias lsz='ls -AZlh'
-alias watch='watch -b -c -d -n 5 -p'
-alias watch_p='watch -b -c --differences=permanent -n 5 -p'
+alias watch='watch --beep --color --differences --interval 5 --precise'
+alias watch_p='watch --beep --color --differences=permanent --interval 5 --precise'
 alias pwds='du -sh ./* | sort -hr'
-alias t='task'
-alias ts='task sync'
 alias wlp2s0='ip address show dev wlp2s0'
 alias wlp4s0='ip address show dev wlp4s0'
+
+# grap: a simple wrapper function for `grep`
+# $<N> represents parameters passed.
+#   $1: Path
+#   $2: Expression
+#   $3: Optional parameters
+function grap { grep -rnw $1 -e "$2" $3; }
 
 ## -- aliases: git Pagure pull request reviews -------------
 
@@ -101,8 +105,3 @@ alias gitd6='git dammit6'
 alias gitd7='git dammit7'
 alias gitd8='git dammit8'
 alias gitd9='git dammit9'
-
-## -- aliases: miscellaneous -------------------------------
-
-# $1 is directory, $2 is expression
-function grap { grep -rnw $1 -e "$2"; }
