@@ -21,18 +21,22 @@
     setype: etc_t
     seuser: system_u
 
-- name: push systemd unit file to automatically connect on system boot
-  template:
-    src: protonvpn.service
-    dest: /usr/lib/systemd/system/protonvpn.service
-    owner: root
-    group: root
-    mode: 0644
-    setype: systemd_unit_file_t
-    seuser: system_u
-
-- name: start/enable protonvpn.service
-  service:
-    name: protonvpn.service
-    state: started
-    enabled: yes
+# Not yet ready for prime time. Needs more debugging. Sometimes it gets hung
+# and causes network issues when started as a systemd service file. Will
+# revisit when I have time.
+#
+# - name: push systemd unit file to automatically connect on system boot
+#   template:
+#     src: protonvpn.service
+#     dest: /usr/lib/systemd/system/protonvpn.service
+#     owner: root
+#     group: root
+#     mode: 0644
+#     setype: systemd_unit_file_t
+#     seuser: system_u
+#
+# - name: start/enable protonvpn.service
+#   service:
+#     name: protonvpn.service
+#     state: started
+#     enabled: yes
