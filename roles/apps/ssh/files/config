@@ -25,6 +25,9 @@ Host intermission
 Host jubilee
     HostName jubilee.jwf.io
     User jwf
+Host kite
+    HostName kite.jwf.io
+    User jwf
 
 ## Workstations
 Host lucie
