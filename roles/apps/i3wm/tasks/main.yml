@@ -1,10 +1,11 @@
 ---
-- name: install i3wm
+- name: install i3wm and related system tools
   package:
     state: present
     name:
       - i3
       - i3lock
+      - playerctl
 
 - name: create i3wm user config directory
   file:
