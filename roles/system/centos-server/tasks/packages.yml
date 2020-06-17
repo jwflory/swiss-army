@@ -3,6 +3,7 @@
   package:
     state: latest
     name: epel-release
+  when: ansible_facts['distribution'] == "CentOS"
 
 - name: install base packages
   package:

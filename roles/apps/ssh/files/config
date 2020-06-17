@@ -28,6 +28,9 @@ Host jubilee
 Host kite
     HostName kite.jwf.io
     User jwf
+Host lorge
+    HostName lorge.jwf.io
+    User jwf
 
 ## Workstations
 Host lucie
