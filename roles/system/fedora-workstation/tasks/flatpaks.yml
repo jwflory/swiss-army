@@ -6,6 +6,7 @@
     method: system
   loop:
     - com.bluejeans.BlueJeans
+    - com.microsoft.Teams
     - im.riot.Riot
     - org.signal.Signal
     - us.zoom.Zoom
