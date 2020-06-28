@@ -1,22 +1,20 @@
 ---
-- name: set up Justin's preferred CentOS 7.x Server configuration
+- name: synchronize Justin's CentOS 8 Server environment
   hosts: servers_centos
   become: yes
 
   vars:
-    target_group: jflory
-    target_user: jflory
-    target_user_name: Justin W. Flory
-    user_home_dir: /home/jflory
+    target_group: jwf
+    target_user: jwf
+    target_user_name: "Justin W. Flory (he/him)"
+    user_home_dir: /home/jwf
 
   roles:
     - { role: system/base, tags: ['base', 'system'] }
     - { role: system/centos-server, tags: ['centos', 'system'] }
-    - { role: system/python, tags: ['python', 'system'] }
     - { role: apps/bash, tags: ['bash', 'terminal', 'apps'] }
     - { role: apps/git, tags: ['git', 'terminal', 'apps'] }
     - { role: apps/powerline-go, tags: ['powerline', 'terminal', 'apps'] }
-    - { role: apps/protonvpn, tags: ['protonvpn', 'terminal', 'apps'] }
     - { role: apps/ssh, tags: ['ssh', 'terminal', 'apps'] }
     - { role: apps/tmux, tags: ['tmux', 'terminal', 'apps'] }
     - { role: apps/vim, tags: ['vim', 'terminal', 'apps'] }

@@ -27,21 +27,23 @@ They could also be hooked up to a cronjob theoretically.
 
 [source,bash]
 ----
-ansible-playbook -K -v playbooks/fedora-workstation.yml
+ansible-playbook --ask-become-pass --verbose playbooks/fedora-workstation.yml
 ----
 
 === RHEL/CentOS Workstation
 
 [source,bash]
 ----
-ansible-playbook -K -v playbooks/rhel-workstation.yml
+ansible-playbook --ask-become-pass --verbose playbooks/rhel-workstation.yml
 ----
 
 === CentOS Server (headless)
 
+Substitute a host from `servers_centos` in `inventory/inventory` for `$HOST` in the below command:
+
 [source,bash]
 ----
-ansible-playbook -K -v playbooks/centos-server.yml
+ansible-playbook --ask-become-pass --verbose --limit $HOST playbooks/centos-server.yml
 ----
 
 
