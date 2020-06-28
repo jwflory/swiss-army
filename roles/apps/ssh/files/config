@@ -17,11 +17,7 @@ Host fedorapeople
 ## Servers
 Host horizon
     HostName horizon.jwf.io
-    User jflory
-Host intermission
-    HostName intermission.jwf.io
-    Port 60597
-    User jflory
+    User jwf
 Host jubilee
     HostName jubilee.jwf.io
     User jwf

@@ -1,0 +1,18 @@
+---
+- name: set up Justin's CentOS 8.x Server
+  hosts: horizon
+  become: yes
+
+  vars:
+    target_group: jwf
+    target_user: jwf
+    target_user_name: "Justin W. Flory (he/him)"
+    user_home_dir: /home/jwf
+
+  roles:
+    - { role: system/base, tags: ['base', 'system'] }
+    - { role: system/centos-server, tags: ['centos', 'system'] }
+    - { role: apps/bash, tags: ['bash', 'terminal', 'apps'] }
+    - { role: apps/powerline-go, tags: ['powerline', 'terminal', 'apps'] }
+    - { role: apps/tmux, tags: ['tmux', 'terminal', 'apps'] }
+    - { role: apps/vim, tags: ['vim', 'terminal', 'apps'] }
