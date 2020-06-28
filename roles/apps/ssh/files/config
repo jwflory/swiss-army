@@ -31,6 +31,9 @@ Host kite
 Host lorge
     HostName lorge.jwf.io
     User jwf
+Host midnight
+    HostName midnight.jwf.io
+    User jwf
 
 ## Workstations
 Host lucie
