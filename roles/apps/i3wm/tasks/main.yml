@@ -3,8 +3,10 @@
   package:
     state: present
     name:
+      - gnome-screenshot
       - i3
       - i3lock
+      - ImageMagick
       - playerctl
 
 - name: create i3wm user config directory
