@@ -5,10 +5,10 @@
 
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    target_group: jflory
-    target_user: jflory
-    target_user_name: Justin W. Flory
-    user_home_dir: /home/jflory
+    target_group: jwf
+    target_user: jwf
+    target_user_name: "Justin W. Flory (he/him)"
+    user_home_dir: /home/jwf
 
   roles:
     - { role: system/base, tags: ['base', 'system'] }
