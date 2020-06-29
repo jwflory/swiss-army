@@ -5,6 +5,15 @@
     name: epel-release
   when: ansible_facts['distribution'] == "CentOS"
 
+- name: enable CentOS PowerTools repository (for pandoc)
+  lineinfile:
+    path: /etc/yum.repos.d/CentOS-PowerTools.repo
+    regexp: '^enabled='
+    line: "enabled=1"
+  when:
+    - ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "8"
+
 - name: install base packages
   package:
     state: present
