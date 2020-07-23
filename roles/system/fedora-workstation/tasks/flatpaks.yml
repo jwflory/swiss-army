@@ -5,6 +5,7 @@
     state: present
     method: system
   loop:
+    - chat.rocket.RocketChat
     - com.bluejeans.BlueJeans
     - com.microsoft.Teams
     - im.riot.Riot
