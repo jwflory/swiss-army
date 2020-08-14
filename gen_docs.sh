@@ -12,6 +12,6 @@ for doc in *; do
     asciidoctor \
         --backend=html5 \
         --doctype=article\
-        --out-file _build/$(echo $doc | sed --expression='s/.adoc//').html \
+        --out-file _build/$(echo $doc | sed --expression='s/.adoc//')/index.html \
         $doc
 done
