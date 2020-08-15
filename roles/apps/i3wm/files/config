@@ -184,8 +184,9 @@ for_window [title="Spotify"] move to workspace 3
 for_window [title="Spotify Free"] move to workspace 3
 
 assign [class="Bluejeans"] 4
+assign [class="Element"] 4
 assign [class="HexChat"] 4
-assign [class="Riot"] 4
+assign [class="Rocket.Chat"] 4
 assign [class="Signal"] 4
 assign [class="Slack"] 4
 assign [class="Telegram"] 4
