@@ -49,6 +49,13 @@ alias pwds='du -sh ./* | sort -hr'
 alias wlp2s0='ip address show dev wlp2s0'
 alias wlp4s0='ip address show dev wlp4s0'
 
+# If the `bat` tool is present and installed, create an alias to override `cat`
+# with an executable file presumably in the user's path, `/usr/bin/bat`.
+#     https://github.com/sharkdp/bat
+if [ -x "/usr/bin/bat" ]; then
+    alias cat='bat'
+fi
+
 # grap: a simple wrapper function for `grep`
 # $<N> represents parameters passed.
 #   $1: Path
