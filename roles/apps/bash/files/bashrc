@@ -81,12 +81,6 @@ function pag_pull_m {
 }
 
 ## -- aliases: git [short versions] ------------------------
-alias gitcp='git create-patch'
-
-alias gitm='git mine'
-alias gitmol='git mine-oneline'
-alias gittr='git tree'
-
 alias gitpr='git pull-rebase'
 alias gitpu='git pull-upstream'
 alias gitpur='git pull-upstream-rebase'
