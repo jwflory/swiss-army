@@ -1,1 +1,0 @@
-{{ sshd.authentication.authorized_keys }}

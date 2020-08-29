@@ -1,6 +1,0 @@
----
-- name: configure dnf to keep two versions of kernel installed at once
-  lineinfile:
-    dest: /etc/dnf/dnf.conf
-    regexp: '^installonly_limit='
-    line: 'installonly_limit=2'

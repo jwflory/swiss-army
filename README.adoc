@@ -1,0 +1,7 @@
+= https://gitlab.com/jwflory/swiss-army[gitlab.com/jwflory/swiss-army]
+
+----
+This project was moved to GitLab.
+Find this repo over there!
+https://gitlab.com/jwflory/swiss-army
+----

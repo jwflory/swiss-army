@@ -1,6 +1,0 @@
----
-- include_tasks: misc.yml
-- include_tasks: user-management.yml
-- include_tasks: packages.yml
-- include_tasks: flash.yml
-- include_tasks: flatpaks.yml

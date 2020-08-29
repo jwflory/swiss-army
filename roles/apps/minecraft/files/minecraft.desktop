@@ -1,9 +1,0 @@
-[Desktop Entry]
-Categories=Game;ActionGame;AdventureGame;
-Exec=/usr/local/games/minecraft-launcher/minecraft-launcher
-Path=/usr/local/games/minecraft-launcher/
-Icon=minecraft
-Terminal=false
-Type=Application
-Name=Minecraft
-Comment=Explore your inner imagination in a block simulator sandbox
